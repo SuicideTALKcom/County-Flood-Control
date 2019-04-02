@@ -1,4 +1,4 @@
-# Belly Button Biodiversity
+# Example App Deployed to Heroku
 
 ![Bacteria by filterforge.com](Images/bacteria_by_filterforgedotcom.jpg)
 
