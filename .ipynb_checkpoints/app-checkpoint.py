@@ -31,20 +31,10 @@ Base = automap_base()
 Base.prepare(engine, reflect=True)
 
 # Save reference to the table
-Passenger = Base.classes.passenger
+home_table = Base.classes.home
 
 # Create our session (link) from Python to the DB
 session = Session(engine)
-
-
-
-
-conn = MySQLdb.connect("mysql+pymysql://root:banana@localhost/homes_db")
-cursor = conn.cursor()
-def example():
-    cursor.execute("select * from name")
-    data = cursor.fetchall() #data from database
-    return render_template("index.html", value=data)
 
 
 
