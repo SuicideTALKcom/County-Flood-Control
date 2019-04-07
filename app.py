@@ -81,7 +81,11 @@ def search():
 @app.route("/api/neighborhood/")
 #Send a list of houses in the neighborhood sorted by recency 
 
-
+#Neighborhood Name
+#Address
+#Price
+#Days on Market
+#Agent
 
 
 if __name__ == "__main__":

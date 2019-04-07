@@ -14,4 +14,5 @@ CREATE TABLE details(
 
 SELECT * FROM home;
 
-DROP TABLE hood_df2;
+DROP TABLE home;
+

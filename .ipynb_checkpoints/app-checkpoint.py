@@ -56,7 +56,7 @@ def index():
 
 @app.route("/search")
 def search():
-    """Return a list of sample names."""
+    """Return the list of homes in the database"""
 
     # Use Pandas to perform the sql query
     stmt = db.session.query(Samples).statement
@@ -65,9 +65,27 @@ def search():
     # Return a list of the column names (sample names)
     return jsonify(list(df.columns)[2:])
 
+@app.route("/analytics")
 
 
 
+@app.route("/faqs")
+
+
+
+
+@app.route("/about")
+
+
+
+@app.route("/api/neighborhood/")
+#Send a list of houses in the neighborhood sorted by recency 
+
+#Neighborhood Name
+#Address
+#Price
+#Days on Market
+#Agent
 
 
 if __name__ == "__main__":

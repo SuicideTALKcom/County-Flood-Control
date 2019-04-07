@@ -5,6 +5,7 @@ import pandas as pd
 import matplotlib 
 import numpy as np 
 import time
+from datetime import datetime
 from scrape import har_homes
 
 #create a connection to the sql database 
@@ -16,19 +17,21 @@ house_list = har_homes()
 #put the results of the function into a dataframe
 homesdf = pd.DataFrame(house_list)
 
+homesdf['datetime'] = pd.to_datetime.today()
+
 
 
 #loop thorugh each new df scrape and compare it against the sql database
-for i, row in homesdf.iterrows():
+for i, house in homesdf.iterrows():
     #read the sql database and take the address column to compare 
-    df = pd.read_sql(f"SELECT Address FROM home WHERE Address = {row['address']}", engine)
+    retrieved_data = pd.read_sql(f"SELECT Address FROM home WHERE Address = '{house['address']}'", engine)
     #grab the address from the web scrape and  
     #compare if the address exists against the address column in the sql database
-    print(df)
+    if retrieved_data.empty:
+        homesdf.iloc[i].to_sql('home', if_exists = 'append', con=engine)
 
 
-    
-
+       
 
     # if 
 
@@ -39,6 +42,10 @@ for i, row in homesdf.iterrows():
 
 
     # time.sleep(86400)
+
+
+
+
 
 
 
