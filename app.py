@@ -78,7 +78,9 @@ def search():
 
 
 
-@app.route("/api/")
+@app.route("/api/neighborhood/")
+#Send a list of houses in the neighborhood sorted by recency 
+
 
 
 
