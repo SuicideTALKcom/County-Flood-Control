@@ -12,4 +12,6 @@ CREATE TABLE details(
     PRIMARY KEY(id)
 );
 
-SELECT * FROM homes_db
+SELECT * FROM home;
+
+DROP TABLE hood_df2;
