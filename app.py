@@ -23,18 +23,6 @@ from flask_sqlalchemy import SQLAlchemy
 # Database Setup
 #################################################
 
-engine = create_engine("mysql+pymysql://root:banana@localhost/homes_db")
-
-# reflect an existing database into a new model
-Base = automap_base()
-# reflect the tables
-Base.prepare(engine, reflect=True)
-
-# Save reference to the table
-home_table = Base.classes.home
-
-# Create our session (link) from Python to the DB
-session = Session(engine)
 
 
 
@@ -54,38 +42,8 @@ def index():
     return render_template("index.html")
 
 
-@app.route("/search")
-def search():
-    """Return the list of homes in the database"""
-
-    # Use Pandas to perform the sql query
-    stmt = db.session.query(Samples).statement
-    df = pd.read_sql_query(stmt, db.session.bind)
-
-    # Return a list of the column names (sample names)
-    return jsonify(list(df.columns)[2:])
-
-@app.route("/analytics")
 
 
-
-@app.route("/faqs")
-
-
-
-
-@app.route("/about")
-
-
-
-@app.route("/api/neighborhood/")
-#Send a list of houses in the neighborhood sorted by recency 
-
-#Neighborhood Name
-#Address
-#Price
-#Days on Market
-#Agent
 
 
 if __name__ == "__main__":
