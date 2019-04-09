@@ -1,6 +1,6 @@
 # County Flood Control
 
-### Example App Deployed to Heroku 
+### App Deployed to Heroku 
 ### https://county-flood-control.herokuapp.com/
 
 ![hcfcd.org](Images/reservoirs.jpg)
