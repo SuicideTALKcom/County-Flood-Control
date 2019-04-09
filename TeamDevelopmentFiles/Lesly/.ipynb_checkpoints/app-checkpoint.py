@@ -60,21 +60,21 @@ def index():
 
 @app.route("/buyouts/search")
 def search():
-    return render_template("search.html")
+    return render_template("index.html")
     
 
 @app.route("/buyouts/analytics")
 def analytics():
-    return render_template("analytics.html")
+    return render_template("index.html")
 
 @app.route("/buyouts/faqs")
 def faqs():
-    return render_template("faqs.html")
+    return render_template("index.html")
 
 
 @app.route("/buyouts/alerts")
 def alerts():
-    return render_template("alerts.html")
+    return render_template("index.html")
 
 
 
@@ -83,9 +83,9 @@ def alerts():
     #return render_templates ("")
 
 
-@app.route("/buyouts/about")
+#@app.route("/buyouts/about")
 def about():
-    return render_template("about.html")
+    return render_template("index.html")
 
 
 
@@ -104,6 +104,9 @@ def api(neighborhood):
 
 #change from array of arrays into an array of objects
 #query for a specific neighborhood instead of all rows 
+
+
+
 
 #Neighborhood Name
 #Address

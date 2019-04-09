@@ -23,7 +23,7 @@ from flask import Flask, jsonify, render_template
 # Database Setup
 #################################################
 
-engine = create_engine("mysql+pymysql://root:banana@localhost/homes_db")
+engine = os.environ.get("JAWSDB_URL") or create_engine("mysql+pymysql://root:banana@localhost/homes_db")
 
 # reflect an existing database into a new model
 Base = automap_base()
@@ -58,23 +58,23 @@ def index():
     return render_template("index.html")
 
 
-@app.route("/buyouts/search")
-def search():
-    return render_template("search.html")
+# @app.route("/buyouts/search")
+# def search():
+#     return render_template("index.html")
     
 
-@app.route("/buyouts/analytics")
-def analytics():
-    return render_template("analytics.html")
+# @app.route("/buyouts/analytics")
+# def analytics():
+#     return render_template("index.html")
 
-@app.route("/buyouts/faqs")
-def faqs():
-    return render_template("faqs.html")
+# @app.route("/buyouts/faqs")
+# def faqs():
+#     return render_template("index.html")
 
 
-@app.route("/buyouts/alerts")
-def alerts():
-    return render_template("alerts.html")
+# @app.route("/buyouts/alerts")
+# def alerts():
+#     return render_template("index.html")
 
 
 
@@ -83,9 +83,9 @@ def alerts():
     #return render_templates ("")
 
 
-@app.route("/buyouts/about")
-def about():
-    return render_template("about.html")
+#@app.route("/buyouts/about")
+# def about():
+#     return render_template("index.html")
 
 
 
@@ -98,7 +98,13 @@ def about():
 @app.route("/api/neighborhood/<neighborhood>")
 def api(neighborhood):
     print("neighborhood route")
-    results = session.query(home_table.Neighborhood,home_table.Address, home_table.Price, home_table.Days_on_Market, home_table.Agent).all()
+    query = session.query(home_table.Neighborhood,home_table.Address, home_table.Price, home_table.Days_on_Market, home_table.Agent)
+    
+    if neighborhood == True:
+        results = query.all()
+    else:
+        results = query.filter_by(Address = neighborhood)
+
     return jsonify(results)
    
 
@@ -117,11 +123,11 @@ def api(neighborhood):
 
 #need an API route for analytics 
 
-@app.route("/api")
-def dummy():
-    return jsonify({
-        "test": "success"
-    })
+# @app.route("/api")
+# def dummy():
+#     return jsonify({
+#         "test": "success"
+#     })
 
 if __name__ == "__main__":
     app.run()
