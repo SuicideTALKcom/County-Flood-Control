@@ -3,7 +3,7 @@
 ### Example App Deployed to Heroku 
 ### https://county-flood-control.herokuapp.com/
 
-![Bacteria by filterforge.com](Images/reservoirs.jpg)
+![hcfcd.org](Images/reservoirs.jpg)
 
 ### Copyright
 
