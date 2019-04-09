@@ -3,7 +3,7 @@
 ### App Deployed to Heroku 
 ### https://county-flood-control.herokuapp.com/
 
-![hcfcd.org](Images/reservoirs.jpg)
+![hcfcd.org](static/img/reservoirs.jpg)
 
 ### Copyright
 
