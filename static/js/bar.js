@@ -40,7 +40,7 @@
             if (!homesObject[home.Neighborhood]) homesObject[home.Neighborhood] = []
             homesObject[home.Neighborhood].push(home)
         })
-        console.log(homesObject, typeof homesObject, homesObject.values());
+        console.log(homesObject, typeof homesObject);
         numberHomes = homesObject.values().map((hood)=> hood.length);
         neighborhoodNames = homeObject.keys();
     
