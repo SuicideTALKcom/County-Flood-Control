@@ -25,7 +25,7 @@
     //     console.log(datahomes);
     // });
 
-    d3.json("/api/neighborhood",function(error,data){
+    d3.json("/api/neighborhood").then(function(data){
         // data.forEach(function(d){
         //     d.Neighborhood = d.Neighborhood;
         //     d.Agent = d.Agent;
@@ -40,15 +40,16 @@
             if (!homesObject[home.Neighborhood]) homesObject[home.Neighborhood] = []
             homesObject[home.Neighborhood].push(home)
         })
-    
-        numberHomes = homesObject.values().map((hood)=> hood.length);
-        neighborhoodNames = homeObject.key();
+        console.log(homesObject, typeof homesObject);
+        numberHomes = Object.values(homesObject).map((hood)=> hood.length);
+        neighborhoodNames = Object.keys(homesObject);
     
         hbar(neightborhoodNames, numberHomes)
     })
     
     function hbar(namesArray, homeNumberArray){
-    new Chart(document.getElementById("hbar-chart"), {
+        console.log(namesArray, homeNumberArray)
+    return new Chart(document.getElementById("hbar-chart"), {
         type: 'horizontalBar',
         data: {
             labels: namesArray,
@@ -77,8 +78,8 @@
     //     chart.destroy();
     
     // return(clear);
-    
-    new Chart(document.getElementById("bar-chart"), {
+    function barchart(){
+    return new Chart(document.getElementById("bar-chart"), {
         type: 'bar',
         data: {
             labels: ["Lismore Lake Estates", "Northwest Park Place", "Lakewood Oaks Estates", "Riata West", "Saddle Ridge Estates"],
@@ -98,7 +99,7 @@
             }
         }
     });
-    
+}
     
     // // Our labels along the x-axis
     // var neighborhoods = ["1 day", "10 days", "30 days", "60 days", "90+ days"];
@@ -109,8 +110,8 @@
     // var Lakewood = [3, 3, 1, 4, 8,];
     // var Riata = [10, 0, 0, 0, 4];
     // var Saddle = [7, 8, 1, 0, 3];
-    
-    new Chart(document.getElementById("linechart"), {
+    function linechart(){
+    return new Chart(document.getElementById("linechart"), {
         type: 'line',
         data: {
             labels: ["1 day", "10 days", "30 days", "60 days", "90+ days"],
@@ -148,8 +149,9 @@
             ]
         }
     });
-    
-    
+}
+ linechart()
+ barchart()   
     
     
     
