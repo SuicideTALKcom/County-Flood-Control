@@ -66,10 +66,7 @@
             title: {
                 display: true,
                 text: 'This is dummy data'
-            }
-        },
-
-        options: {
+            },
             scales: {
                 xAxes: [{
                     ticks: {
@@ -77,7 +74,7 @@
                     }
                 }]
             }
-        }
+        },
     });
     }
     
