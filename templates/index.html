@@ -128,7 +128,7 @@
 		</header><!-- #header end -->
 
 		<!-- Slider
-		============================================= -->
+		============================================= -->  
 		<section id="slider" class="slider-element revslider-wrap full-screen clearfix">
 
 			<div id="welcome_wrapper" class="rev_slider_wrapper fullscreen-container" data-alias="reveal-add-on39" data-source="gallery" style="background:#ffffff;padding:0px;">
@@ -137,7 +137,7 @@
 					<ul>	<!-- SLIDE  -->
 						<li class="dark" data-index="rs-243" data-transition="fadethroughdark" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off"  data-easein="default" data-easeout="default" data-masterspeed="default"  data-thumb="include/rs-plugin/demos/assets/images/buyout.jpg"  data-rotate="0"  data-saveperformance="off"  data-title="Slide" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
 							<!-- MAIN IMAGE -->
-							<img src="include/rs-plugin/demos/assets/images/dummy.png"  alt=""  data-lazyload="include/rs-plugin/demos/assets/images/buyout.jpg" data-bgposition="center center" data-kenburns="on" data-duration="4000" data-ease="Power3.easeInOut" data-scalestart="150" data-scaleend="100" data-rotatestart="0" data-rotateend="0" data-blurstart="0" data-blurend="0" data-offsetstart="0 0" data-offsetend="0 0" data-bgparallax="4" class="rev-slidebg" data-no-retina>
+							<img src="{{ url_for('static', filename='include/rs-plugin/demos/assets/images/dummy.png') }}"  alt=""  data-lazyload="include/rs-plugin/demos/assets/images/buyout.jpg" data-bgposition="center center" data-kenburns="on" data-duration="4000" data-ease="Power3.easeInOut" data-scalestart="150" data-scaleend="100" data-rotatestart="0" data-rotateend="0" data-blurstart="0" data-blurend="0" data-offsetstart="0 0" data-offsetend="0 0" data-bgparallax="4" class="rev-slidebg" data-no-retina>
 							<!-- LAYERS -->
 
 							<!-- LAYER NR. 1 -->
@@ -164,10 +164,10 @@
 
 							<!-- LAYER NR. 2 -->
 							<div class="tp-caption  "
-								 id="slide-243-layer-1"
-								 data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
-								 data-y="['middle','middle','middle','middle']" data-voffset="['-90','-90','-120','-140']"
-											data-fontsize="['80','80','70','60']"
+								id="slide-243-layer-1"
+								data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
+								data-y="['middle','middle','middle','middle']" data-voffset="['-90','-90','-120','-140']"
+								data-fontsize="['80','80','70','60']"
 								data-lineheight="['80','80','70','60']"
 								data-letterspacing="['-5','-5','-2','-3']"
 								data-width="['800','none','360','260']"
@@ -188,9 +188,9 @@
 
 							<!-- LAYER NR. 3 -->
 							<div class="tp-caption  "
-								 id="slide-243-layer-2"
-								 data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
-								 data-y="['middle','middle','middle','middle']" data-voffset="['20','20','20','0']"
+								id="slide-243-layer-2"
+								data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
+								data-y="['middle','middle','middle','middle']" data-voffset="['20','20','20','0']"
 								data-fontsize="['20','20','20','17']"
 								data-lineheight="['30','30','25','22']"
 								data-color="['rgba(255,255,255,0.75)','rgba(255,255,255,0.65)','rgba(255,255,255,0.65)','rgba(255,255,255,0.65)']"
@@ -212,10 +212,10 @@
 
 							<!-- LAYER NR. 4 -->
 							<a class="tp-caption rev-btn   tc-btnshadow tp-rs-menulink"
-					 			href="search.html" target="_self"
+					 			href="search" target="_self"
 					 			id="slide-243-layer-12"
-								 data-x="['center','center','center','center']" data-hoffset="['-150','-150','0','0']"
-								 data-y="['middle','middle','middle','middle']" data-voffset="['150','140','130','100']"
+								data-x="['center','center','center','center']" data-hoffset="['-150','-150','0','0']"
+								data-y="['middle','middle','middle','middle']" data-voffset="['150','140','130','100']"
 								data-lineheight="['60','60','50','50']"
 								data-width="['280','280','200','none']"
 								data-height="none"
@@ -319,29 +319,28 @@
 	<script src="{{ url_for('static', filename='js/plugins.js') }}"></script>
 	<script src="{{ url_for('static', filename='js/bar.js') }}"></script>
 
-
 	<!-- Footer Scripts
 	============================================= -->
 	<script src="{{ url_for('static', filename='js/functions.js') }}"></script>
 
 <!-- SLIDER REVOLUTION 5.x SCRIPTS  -->
-<script src="include/rs-plugin/js/jquery.themepunch.tools.min.js"></script>
-<script src="include/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
+<script src="{{ url_for('static', filename='include/rs-plugin/js/jquery.themepunch.tools.min.js') }}"></script>
+<script src="{{ url_for('static', filename='include/rs-plugin/js/jquery.themepunch.revolution.min.js') }}"></script>
 <!-- SLIDER REVOLUTION ADDONS  -->
-<script src="include/rs-plugin/js/addons/revolution.addon.revealer.min.js"></script>
-<script src="include/rs-plugin/js/addons/revolution.addon.particles.min.js"></script>
+<script src="{{ url_for('static', filename='include/rs-plugin//js/addons/revolution.addon.revealer.min.js') }}"></script>
+<script src="{{ url_for('static', filename='include/rs-plugin/js/addons/revolution.addon.particles.min.js') }}"></script>
 <!-- SLIDER REVOLUTION EXTENSIONS  -->
-<script src="include/rs-plugin/js/extensions/revolution.extension.actions.min.js"></script>
-<script src="include/rs-plugin/js/extensions/revolution.extension.carousel.min.js"></script>
-<script src="include/rs-plugin/js/extensions/revolution.extension.kenburn.min.js"></script>
-<script src="include/rs-plugin/js/extensions/revolution.extension.layeranimation.min.js"></script>
-<script src="include/rs-plugin/js/extensions/revolution.extension.migration.min.js"></script>
-<script src="include/rs-plugin/js/extensions/revolution.extension.navigation.min.js"></script>
-<script src="include/rs-plugin/js/extensions/revolution.extension.parallax.min.js"></script>
-<script src="include/rs-plugin/js/extensions/revolution.extension.slideanims.min.js"></script>
-<script src="include/rs-plugin/js/extensions/revolution.extension.video.min.js"></script>
+<script src="{{ url_for('static', filename='include/rs-plugin/js/extensions/revolution.extension.actions.min.js') }}"></script>
+<script src="{{ url_for('static', filename='include/rs-plugin/js/extensions/revolution.extension.carousel.min.js') }}"></script>
+<script src="{{ url_for('static', filename='include/rs-plugin/js/extensions/revolution.extension.kenburn.min.js') }}"></script>
+<script src="{{ url_for('static', filename='include/rs-plugin/js/extensions/revolution.extension.layeranimation.min.js') }}"></script>
+<script src="{{ url_for('static', filename='include/rs-plugin/js/extensions/revolution.extension.migration.min.js') }}"></script>
+<script src="{{ url_for('static', filename='include/rs-plugin/js/extensions/revolution.extension.navigation.min.js') }}"></script>
+<script src="{{ url_for('static', filename='include/rs-plugin/js/extensions/revolution.extension.parallax.min.js') }}"></script>
+<script src="{{ url_for('static', filename='include/rs-plugin/js/extensions/revolution.extension.slideanims.min.js') }}"></script>
+<script src="{{ url_for('static', filename='include/rs-plugin/js/extensions/revolution.extension.video.min.js') }}"></script>
 
-<!-- ADD-ONS JS FILES -->
+<!-- ADD-ONS JS FILES -->   
 <script>
 	var revapi109,
 	tpj=jQuery;
