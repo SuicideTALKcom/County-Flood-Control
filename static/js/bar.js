@@ -44,7 +44,7 @@
         numberHomes = homesObject.values().map((hood)=> hood.length);
         neighborhoodNames = homeObject.key();
     
-        return hbar(neightborhoodNames, numberHomes)
+        var newchart =  hbar(neightborhoodNames, numberHomes)
     })
     
     function hbar(namesArray, homeNumberArray){
