@@ -7,38 +7,40 @@
 </head>
 
 <body>
-    <!-- <div class="wrapper">
-        <h1>Number of Homes on the Market</h1>
-        <h2>Number of Homes on the Market by Neighborhood</h2>
-        <canvas id="hbar-chart" width="800" height="450"></canvas>
-        <canvas id="bar-chart" width="800" height="450"></canvas>
-      </div> -->
-
-    <script>
-        var x = 1
-
-        window.onclick = myFunction;
-        function myFunction() {
-            if (x = 1) {
-                var chart1 = document.getElementById("chart");
-                var chart2 = document.getElementById("bar-chart");
-                var chart3 = document.getElementById("linechart");
-                chart1.removeChild(chart2);
-                x = 2
-            } else {
-                chart1.removeChild(chart3);
-            }
-        }
-    </script>
-
-
-    <div id="chart">
+    <div class="wrapper">
         <h1>Number of Homes on the Market</h1>
         <h2>Number of Homes on the Market by Neighborhood</h2>
         <canvas id="hbar-chart" width="800" height="450"></canvas>
         <canvas id="bar-chart" width="800" height="450"></canvas>
         <canvas id="linechart" width="800" height="450"></canvas>
-    </div>
+      </div>
+
+    <!-- <script>
+        var x = 0
+        window.onclick = myFunction; 
+    </script>
+ 
+    <script>
+        function myFunction() {
+            var chart1 = document.getElementById("chart");
+            var chart2 = document.getElementById("bar-chart");
+            var chart3 = document.getElementById("linechart");
+            chart1.removeChild(chart2);
+            x++;
+            if (x == 1) {
+                chart1.removeChild(chart3);
+            }
+        };
+    </script> -->
+
+
+    <!-- <div id="chart">
+        <h1>Number of Homes on the Market</h1>
+        <h2>Number of Homes on the Market by Neighborhood</h2>
+        <canvas id="hbar-chart" width="800" height="450"></canvas>
+        <canvas id="bar-chart" width="800" height="450"></canvas>
+        <canvas id="linechart" width="800" height="450"></canvas>
+    </div> -->
 
 
 
