@@ -25,7 +25,7 @@
     //     console.log(datahomes);
     // });
 
-    d3.json("/api/neighborhood",function(error,data){
+    d3.json("/api/neighborhood").then(function(data){
         // data.forEach(function(d){
         //     d.Neighborhood = d.Neighborhood;
         //     d.Agent = d.Agent;
@@ -44,10 +44,11 @@
         numberHomes = homesObject.values().map((hood)=> hood.length);
         neighborhoodNames = homeObject.keys();
     
-        var newchart =  hbar(neightborhoodNames, numberHomes)
+        hbar(neightborhoodNames, numberHomes)
     })
     
     function hbar(namesArray, homeNumberArray){
+        console.log(namesArray, homeNumberArray)
     return new Chart(document.getElementById("hbar-chart"), {
         type: 'horizontalBar',
         data: {
