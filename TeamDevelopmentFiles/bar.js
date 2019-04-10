@@ -13,8 +13,8 @@
 // });
 
 
-d3.json('/api/neighborhood', defaults={'neighborhood':True})
-    .then(function (datahomes) {
+// d3.json('/api/neighborhood', defaults={'neighborhood':True})
+//     .then(function (datahomes) {
         // var neighborhood = datahomes.Neighbhorhood
         // var address = datahomes.Address
         // var price = datahomes.Price
@@ -22,10 +22,18 @@ d3.json('/api/neighborhood', defaults={'neighborhood':True})
         // var agent = datahomes.Agent
 
 
-        console.log(datahomes);
-    });
+    //     console.log(datahomes);
+    // });
 
-
+d3.json("/api/neighborhood",function(error,data){
+    data.forEach(function(d){
+        d.Neighborhood = d.Neighborhood;
+        d.Agent = d.Agent;
+        d.Price = d.Price;
+        d.Days_on_Market= d.Days_on_Market;
+        d.Address = d.Address;
+    })
+})
 
 
 new Chart(document.getElementById("hbar-chart"), {

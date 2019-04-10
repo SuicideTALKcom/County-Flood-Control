@@ -248,11 +248,11 @@ def api(neighborhood):
 
     # pprint(json.loads(new_home))
 
-    
-
-
     return jsonify(json.loads(new_home))
    
+@app.route("/bar")
+def chart_page():
+    return render_template("index.html")
 
 #change from array of arrays into an array of objects
 #query for a specific neighborhood instead of all rows 
