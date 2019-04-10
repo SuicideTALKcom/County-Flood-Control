@@ -3,7 +3,9 @@
 <head>
     <title>Number of Homes</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.3.0/Chart.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/style.css">
+
+    <script src="https://d3js.org/d3.v5.min.js"></script>
 </head>
 
 <body>
@@ -14,7 +16,7 @@
         <canvas id="bar-chart" width="800" height="450"></canvas>
       </div> -->
 
-    <script>
+    <!-- <script>
         var x = 1
         window.onclick = myFunction;
         function myFunction() {
@@ -28,7 +30,7 @@
                 chart1.removeChild(chart3);
             }
         }
-    </script>
+    </script> -->
 
 
     <div id="chart">
@@ -43,7 +45,7 @@
 
     <!-- <a onclick="renderBar()"></a> -->
 
-    <script src="bar.js"></script>
+    <script src="{{ url_for('static', filename='js/bar.js') }}" ></script>
     <!-- <script src="bar.js"></script>
       <script src="line.js"></script> -->
 </body>
