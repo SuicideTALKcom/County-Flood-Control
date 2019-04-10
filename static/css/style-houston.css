@@ -1,0 +1,33 @@
+/* body {
+  padding: 0;
+  margin: 0;
+}
+
+#map,
+body,
+html {
+  height: 100%;
+} */
+
+
+body {
+    padding: 0;
+    margin: 0;
+  }
+
+  #map-container {
+    position: relative;
+    height: 800px;
+    width: 1100px;
+  }
+
+  .h1 {
+    left: 25%;
+  }
+
+  #map {
+    left: 25%;
+      /* position: relative; */
+    height: inherit;
+    width: inherit;
+  }
