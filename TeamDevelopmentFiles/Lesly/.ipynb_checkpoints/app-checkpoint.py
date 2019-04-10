@@ -1,5 +1,6 @@
+
 #################################################
- # Database Setup
+# Database Setup
 ################################################## Import Dependencies
 import os
 import time 
@@ -9,7 +10,7 @@ import numpy as np
 import sqlalchemy
 from sqlalchemy.ext.automap import automap_base
 from sqlalchemy.orm import Session
-from sqlalchemy import create_engine, func, inspect
+from sqlalchemy import create_engine, func
 #import pymysql
 
 from flask import Flask, jsonify, render_template
@@ -22,19 +23,19 @@ from flask import Flask, jsonify, render_template
 # Database Setup
 #################################################
 
-if (os.environ.get("JAWSDB_URL")):
-    engine = create_engine(os.environ.get("JAWSDB_URL"))
-else:
-    engine = create_engine("mysql+pymysql://root:banana@localhost/homes_db")
+engine = create_engine("mysql+pymysql://root:banana@localhost/homes_db")
 
 # reflect an existing database into a new model
 Base = automap_base()
 # reflect the tables
 Base.prepare(engine, reflect=True)
-insp = inspect(engine)
-print(insp.get_table_names())
+
+print(dir(Base.classes))
+print(Base.classes.keys())
+print(Base.classes.items())
+
 # Save reference to the table
-home = Base.classes.homes
+home_table = Base.classes.home
 
 # Create our session (link) from Python to the DB
 session = Session(engine)
@@ -59,32 +60,32 @@ def index():
 
 @app.route("/buyouts/search")
 def search():
-    return render_template("search.html")
+    return render_template("index.html")
     
 
 @app.route("/buyouts/analytics")
 def analytics():
-    return render_template("analytics.html")
+    return render_template("index.html")
 
 @app.route("/buyouts/faqs")
 def faqs():
-    return render_template("faqs.html")
+    return render_template("index.html")
 
 
 @app.route("/buyouts/alerts")
 def alerts():
-    return render_template("alerts.html")
+    return render_template("index.html")
 
 
 
-@app.route("/buyouts/charts")
-def charts():
-    return render_template ("charts.html")
+#@app.route("/buyouts/charts")
+#def charts():
+    #return render_templates ("")
 
 
-@app.route("/buyouts/about")
+#@app.route("/buyouts/about")
 def about():
-    return render_template("about.html")
+    return render_template("index.html")
 
 
 
@@ -97,26 +98,9 @@ def about():
 @app.route("/api/neighborhood/<neighborhood>")
 def api(neighborhood):
     print("neighborhood route")
-    query = session.query(home.Neighborhood,home.Address, home.Price, home.Days_on_Market, home.Agent)
-    
-    if neighborhood == True:
-        results = query.all()
-    else:
-        results = query.filter_by(Address = neighborhood)
-
-    new_home = pd.DataFrame(results).to_json(orient = 'records')
-    
-    # from pprint import pprint
-    import json
-
-    # pprint(json.loads(new_home))
-
-    return jsonify(json.loads(new_home))
+    results = session.query(home_table.Neighborhood,home_table.Address, home_table.Price, home_table.Days_on_Market, home_table.Agent).all()
+    return jsonify(results)
    
-# @app.route("/chart")
-# def chart():
-
-#     return render_template("chart.html")
 
 #change from array of arrays into an array of objects
 #query for a specific neighborhood instead of all rows 
@@ -133,11 +117,11 @@ def api(neighborhood):
 
 #need an API route for analytics 
 
-# @app.route("/api")
-# def dummy():
-#     return jsonify({
-#         "test": "success"
-#     })
+@app.route("/api")
+def dummy():
+    return jsonify({
+        "test": "success"
+    })
 
 if __name__ == "__main__":
-    app.run()   
+    app.run()
