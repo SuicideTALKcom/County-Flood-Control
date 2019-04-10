@@ -147,7 +147,7 @@ from sqlalchemy.orm import Session
 from sqlalchemy import create_engine, func
 #import pymysql
 
-from flask import Flask, jsonify, render_template
+from flask import Flask, jsonify, render_template, make_response
 #from flask_sqlalchemy import SQLAlchemy
 
 
@@ -157,9 +157,9 @@ from flask import Flask, jsonify, render_template
 # Database Setup
 #################################################
 
-engine= create_engine("mysql+pymysql://root:banana@localhost/homes_db")
+# engine= create_engine("mysql+pymysql://root:banana@localhost/homes_db")
 
-# engine = os.environ.get("JAWSDB_URL") or create_engine("mysql+pymysql://root:banana@localhost/homes_db")
+engine = os.environ.get("JAWSDB_URL") or create_engine("mysql+pymysql://root:banana@localhost/homes_db")
 
 # reflect an existing database into a new model
 Base = automap_base()
@@ -241,7 +241,17 @@ def api(neighborhood):
     else:
         results = query.filter_by(Address = neighborhood)
 
-    return jsonify(results)
+    new_home = pd.DataFrame(results).to_json(orient = 'records')
+    
+    # from pprint import pprint
+    import json
+
+    # pprint(json.loads(new_home))
+
+    
+
+
+    return jsonify(json.loads(new_home))
    
 
 #change from array of arrays into an array of objects
