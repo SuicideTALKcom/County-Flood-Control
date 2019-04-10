@@ -26,25 +26,37 @@
     // });
 
 d3.json("/api/neighborhood",function(error,data){
-    data.forEach(function(d){
-        d.Neighborhood = d.Neighborhood;
-        d.Agent = d.Agent;
-        d.Price = d.Price;
-        d.Days_on_Market= d.Days_on_Market;
-        d.Address = d.Address;
+    // data.forEach(function(d){
+    //     d.Neighborhood = d.Neighborhood;
+    //     d.Agent = d.Agent;
+    //     d.Price = d.Price;
+    //     d.Days_on_Market= d.Days_on_Market;
+    //     d.Address = d.Address;
+    // })
+
+    let homesObject = {}
+
+    data.forEach((home)=>{
+        if (!homesObject[home.Neighborhood]) homesObject[home.Neighborhood] = []
+        homesObject[home.Neighborhood].push(home)
     })
+
+    numberHomes = homesObject.values().map((hood)=> hood.length);
+    neighborhoodNames = homeObject.key();
+
+    hbar(neightborhoodNames, numberHomes)
 })
 
-
+function hbar(namesArray, homeNumberArray){
 new Chart(document.getElementById("hbar-chart"), {
     type: 'horizontalBar',
     data: {
-        labels: ["Lismore Lake Estates", "Northwest Park Place", "Lakewood Oaks Estates", "Riata West", "Saddle Ridge Estates"],
+        labels: namesArray,
         datasets: [
             {
                 label: "Number of Homes for Sale",
-                backgroundColor: ["#3e95cd", "#8e5ea2", "#3cba9f", "#e8c3b9", "#c45850"],
-                data: [5, 8, 8, 10, 7]
+                // backgroundColor: ["#3e95cd", "#8e5ea2", "#3cba9f", "#e8c3b9", "#c45850"],
+                data: homeNumberArray
             }
         ]
     },
@@ -56,7 +68,7 @@ new Chart(document.getElementById("hbar-chart"), {
         }
     }
 });
-
+}
 
 // clearBox("hbar-chart")
 

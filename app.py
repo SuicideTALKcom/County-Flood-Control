@@ -60,32 +60,32 @@ def index():
 
 @app.route("/buyouts/search")
 def search():
-    return render_template("index.html")
+    return render_template("search.html")
     
 
 @app.route("/buyouts/analytics")
 def analytics():
-    return render_template("index.html")
+    return render_template("analytics.html")
 
 @app.route("/buyouts/faqs")
 def faqs():
-    return render_template("index.html")
+    return render_template("faqs.html")
 
 
 @app.route("/buyouts/alerts")
 def alerts():
-    return render_template("index.html")
+    return render_template("alerts.html")
 
 
 
 @app.route("/buyouts/charts")
 def charts():
-    return render_template ("index.html")
+    return render_template ("charts.html")
 
 
 @app.route("/buyouts/about")
 def about():
-    return render_template("index.html")
+    return render_template("about.html")
 
 
 
@@ -114,9 +114,10 @@ def api(neighborhood):
 
     return jsonify(json.loads(new_home))
    
-@app.route("/bar")
-def chart_page():
-    return render_template("index.html")
+# @app.route("/chart")
+# def chart():
+
+#     return render_template("chart.html")
 
 #change from array of arrays into an array of objects
 #query for a specific neighborhood instead of all rows 
