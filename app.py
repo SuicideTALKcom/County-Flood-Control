@@ -9,7 +9,7 @@ import numpy as np
 import sqlalchemy
 from sqlalchemy.ext.automap import automap_base
 from sqlalchemy.orm import Session
-from sqlalchemy import create_engine, func
+from sqlalchemy import create_engine, func, inspect
 #import pymysql
 
 from flask import Flask, jsonify, render_template
@@ -22,8 +22,6 @@ from flask import Flask, jsonify, render_template
 # Database Setup
 #################################################
 
-# engine= create_engine("mysql+pymysql://root:banana@localhost/homes_db")
-
 if (os.environ.get("JAWSDB_URL")):
     engine = create_engine(os.environ.get("JAWSDB_URL"))
 else:
@@ -33,9 +31,10 @@ else:
 Base = automap_base()
 # reflect the tables
 Base.prepare(engine, reflect=True)
-
+insp = inspect(engine)
+print(insp.get_table_names())
 # Save reference to the table
-home = Base.classes.home
+home = Base.classes.homes
 
 # Create our session (link) from Python to the DB
 session = Session(engine)
