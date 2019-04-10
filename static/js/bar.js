@@ -102,7 +102,7 @@
             legend: { display: false },
             title: {
                 display: true,
-                text: 'Total Buyout Amount of Available listing per Neighbohood'
+                text: 'Total Buyout Amount per Neighbohood of Available Listings'
             },
             layout: {
                 padding: {
