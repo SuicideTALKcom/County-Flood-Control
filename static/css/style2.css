@@ -4,7 +4,7 @@ body {
   }
   
   .wrapper {
-    max-width: 800px;
+    max-width: 500px;
     margin: 50px auto;
   }
   
@@ -16,7 +16,7 @@ body {
   
   h2 {
     font-weight: 200;
-    font-size: 0.9em;
+    font-size: 2em;
     margin: 0 0 50px;
     color: #999;
   }
