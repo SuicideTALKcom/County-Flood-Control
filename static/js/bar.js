@@ -44,7 +44,7 @@
         numberHomes = Object.values(homesObject).map((hood)=> hood.length);
         neighborhoodNames = Object.keys(homesObject);
     
-        hbar(neightborhoodNames, numberHomes)
+        hbar(neighborhoodNames, numberHomes)
     })
     
     function hbar(namesArray, homeNumberArray){
