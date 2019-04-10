@@ -41,8 +41,8 @@
             homesObject[home.Neighborhood].push(home)
         })
         console.log(homesObject, typeof homesObject);
-        numberHomes = Object.values(homeObject).map((hood)=> hood.length);
-        neighborhoodNames = Object.keys(homeObject);
+        numberHomes = Object.values(homesObject).map((hood)=> hood.length);
+        neighborhoodNames = Object.keys(homesObject);
     
         hbar(neightborhoodNames, numberHomes)
     })
