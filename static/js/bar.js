@@ -65,7 +65,7 @@
             legend: { display: false },
             title: {
                 display: true,
-                text: 'This is dummy data'
+                // text: 'Total Number of Homes for Sale by Neighbohood'
             },
             scales: {
                 xAxes: [{
@@ -102,7 +102,15 @@
             legend: { display: false },
             title: {
                 display: true,
-                text: 'This is dummy data'
+                // text: 'Total Buyout Amount per Neighbohood of Available Listings'
+            },
+            layout: {
+                padding: {
+                    left: 50,
+                    right: 0,
+                    top: 0,
+                    bottom: 0
+                }
             }
         }
     });

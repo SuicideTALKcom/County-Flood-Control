@@ -4,7 +4,9 @@
 <head>
     <title>Number of Homes</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.3.0/Chart.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles2.css') }}">
+    <!-- <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles2.css') }}"> -->
+    <link rel="stylesheet" type="text/css" href="../static/css/style2.css">
+    
     <script src="https://d3js.org/d3.v5.min.js"></script>
 </head>
 
@@ -33,12 +35,23 @@
     </script> -->
 
 
-    <div id="chart">
-        <h1>Number of Homes on the Market</h1>
-        <h2>Number of Homes on the Market by Neighborhood</h2>
-        <canvas id="hbar-chart" width="800" height="450"></canvas>
-        <canvas id="bar-chart" width="800" height="450"></canvas>
-        <canvas id="linechart" width="800" height="450"></canvas>
+    <div id="wrapper">
+        <h1>Analytics Dashboard</h1>
+
+        <h2>Total Number of Homes for Sale by Neighbohood</h2>
+        <canvas id="hbar-chart" width="500" height="250"></canvas>
+
+        <hr>
+        <hr>
+
+        <h2>Total Buyout Amount per Neighbohood of Available Listings</h2>
+        <canvas id="bar-chart" width="500" height="250"></canvas>
+        
+        <hr>
+        <hr>
+
+        <h2>Number of Homes based on Days on the Market</h2>
+        <canvas id="linechart" width="500" height="250"></canvas>
     </div>
 
 
