@@ -149,7 +149,8 @@
         }
     });
 }
-    
+ linechart()
+ barchart()   
     
     
     
