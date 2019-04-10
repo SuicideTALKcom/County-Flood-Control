@@ -34,7 +34,7 @@ Base.prepare(engine, reflect=True)
 insp = inspect(engine)
 print(insp.get_table_names())
 # Save reference to the table
-home = Base.classes.home
+home = Base.classes.homes
 
 # Create our session (link) from Python to the DB
 session = Session(engine)
