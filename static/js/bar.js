@@ -25,7 +25,7 @@
     //     console.log(datahomes);
     // });
 
-    d3.json("api/neighborhood",function(error,data){
+    d3.json("/api/neighborhood",function(error,data){
         // data.forEach(function(d){
         //     d.Neighborhood = d.Neighborhood;
         //     d.Agent = d.Agent;
