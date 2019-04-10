@@ -243,10 +243,10 @@ def api(neighborhood):
 
     new_home = pd.DataFrame(results).to_json(orient = 'records')
     
-    from pprint import pprint
+    # from pprint import pprint
     import json
 
-    pprint(json.loads(new_home))
+    # pprint(json.loads(new_home))
 
     
 
