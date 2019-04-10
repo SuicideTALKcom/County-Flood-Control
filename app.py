@@ -22,8 +22,6 @@ from flask import Flask, jsonify, render_template
 # Database Setup
 #################################################
 
-# engine= create_engine("mysql+pymysql://root:banana@localhost/homes_db")
-
 if (os.environ.get("JAWSDB_URL")):
     engine = create_engine(os.environ.get("JAWSDB_URL"))
 else:
