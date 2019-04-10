@@ -42,7 +42,7 @@
         })
     
         numberHomes = homesObject.values().map((hood)=> hood.length);
-        neighborhoodNames = homeObject.key();
+        neighborhoodNames = homeObject.keys();
     
         var newchart =  hbar(neightborhoodNames, numberHomes)
     })
