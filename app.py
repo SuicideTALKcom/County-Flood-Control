@@ -57,32 +57,32 @@ def index():
     return render_template("index.html")
 
 
-@app.route("/buyouts/search")
+@app.route("/search")
 def search():
     return render_template("search.html")
     
 
-@app.route("/buyouts/analytics")
+@app.route("/analytics")
 def analytics():
     return render_template("analytics.html")
 
-@app.route("/buyouts/faqs")
+@app.route("/faqs")
 def faqs():
     return render_template("faqs.html")
 
 
-@app.route("/buyouts/alerts")
+@app.route("/alerts")
 def alerts():
     return render_template("alerts.html")
 
 
 
-@app.route("/buyouts/charts")
+@app.route("/charts")
 def charts():
     return render_template ("charts.html")
 
 
-@app.route("/buyouts/about")
+@app.route("/about")
 def about():
     return render_template("about.html")
 
