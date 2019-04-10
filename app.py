@@ -31,7 +31,7 @@ else:
 Base = automap_base()
 # reflect the tables
 Base.prepare(engine, reflect=True)
-
+print(Base.classes)
 # Save reference to the table
 home = Base.classes.home
 
