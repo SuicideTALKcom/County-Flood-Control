@@ -124,34 +124,34 @@
     return new Chart(document.getElementById("linechart"), {
         type: 'line',
         data: {
-            labels: ["1 day", "10 days", "30 days", "60 days", "90+ days"],
+            labels: ["1+ day", "10+ days", "30+ days", "60+ days", "90+ days"],
             datasets: [
                 {
-                    data: [1, 5, 6, 10, 0],
+                    data: [0, 0, 2, 0, 1],
                     label: "Lismore Lake Estates",
                     borderColor: "#3e95cd",
                     fill: false
                 },
                 {
-                    data: [3, 3, 1, 4, 8,],
+                    data: [2, 1, 1, 0, 0],
                     label: "Northwest Park Place",
                     borderColor: "#8e5ea2",
                     fill: false
                 },
                 {
-                    data: [3, 3, 1, 4, 8,],
+                    data: [1, 2, 1, 0, 2],
                     label: "Lakewood Oaks Estates",
                     borderColor: "#3cba9f",
                     fill: false
                 },
                 {
-                    data: [10, 0, 0, 0, 4],
+                    data: [3, 3, 0, 1, 1],
                     label: "Riata West",
                     borderColor: "#e8c3b9",
                     fill: false
                 },
                 {
-                    data: [7, 8, 1, 0, 3],
+                    data: [0, 2, 0, 0, 3],
                     label: "Saddle Ridge Estates",
                     borderColor: "#c45850",
                     fill: false
