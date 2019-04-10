@@ -1,4 +1,3 @@
-
 // function clearBox(elementID){
 //     document.getElementById("hbar-chart").innerHTML = "";
 // }
@@ -6,6 +5,29 @@
 
 // function renderBar(){
 // clearBox()
+
+// d3.csv("data.csv", function(error, data) {
+// 	data.forEach(function(d) {
+// 		d.date = parseDate(d.date);
+// 		d.close = +d.close;
+// });
+
+
+d3.json('/api/neighborhood', defaults={'neighborhood':True})
+    .then(function (datahomes) {
+        // var neighborhood = datahomes.Neighbhorhood
+        // var address = datahomes.Address
+        // var price = datahomes.Price
+        // var days = datahomes.Days_on_Market
+        // var agent = datahomes.Agent
+
+
+        console.log(datahomes);
+    });
+
+
+
+
 new Chart(document.getElementById("hbar-chart"), {
     type: 'horizontalBar',
     data: {
