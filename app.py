@@ -12,7 +12,7 @@ from sqlalchemy.orm import Session
 from sqlalchemy import create_engine, func
 #import pymysql
 
-from flask import Flask, jsonify, render_template, make_response
+from flask import Flask, jsonify, render_template
 #from flask_sqlalchemy import SQLAlchemy
 
 
@@ -24,16 +24,15 @@ from flask import Flask, jsonify, render_template, make_response
 
 # engine= create_engine("mysql+pymysql://root:banana@localhost/homes_db")
 
-engine = create_engine(os.environ.get("JAWSDB_URL")) or create_engine("mysql+pymysql://root:banana@localhost/homes_db")
+if (os.environ.get("JAWSDB_URL")):
+    engine = create_engine(os.environ.get("JAWSDB_URL"))
+else:
+    engine = create_engine("mysql+pymysql://root:banana@localhost/homes_db")
 
 # reflect an existing database into a new model
 Base = automap_base()
 # reflect the tables
 Base.prepare(engine, reflect=True)
-
-print(dir(Base.classes))
-print(Base.classes.keys())
-print(Base.classes.items())
 
 # Save reference to the table
 home = Base.classes.home
