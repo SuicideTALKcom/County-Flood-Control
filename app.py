@@ -59,7 +59,7 @@ def index():
 
 @app.route("/search")
 def search():
-    return render_template("search.html")
+    return render_template("houston.html")
     
 
 @app.route("/analytics")
