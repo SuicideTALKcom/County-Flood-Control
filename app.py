@@ -60,9 +60,9 @@ def index():
 def county():
     return render_template("county.html")
 
-@app.route("/neighborhood")
-def neighborhood():
-    return render_template("neighborhood.html")
+@app.route("/neighborhoods")
+def neighborhoods():
+    return render_template("neighborhoods.html")
 
 @app.route("/analytics")
 def analytics():
