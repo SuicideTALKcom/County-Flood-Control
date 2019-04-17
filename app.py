@@ -74,10 +74,10 @@ def faqs():
 @app.route("/alerts")
 def alerts():
     return render_template("alerts.html")
-    
+
 
 @app.route("/contact")
-def alerts():
+def contact():
     return render_template("contact.html")
 
 
