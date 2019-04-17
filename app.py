@@ -74,7 +74,11 @@ def faqs():
 @app.route("/alerts")
 def alerts():
     return render_template("alerts.html")
+    
 
+@app.route("/contact")
+def alerts():
+    return render_template("contact.html")
 
 
 @app.route("/charts")
