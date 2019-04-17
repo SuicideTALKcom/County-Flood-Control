@@ -64,7 +64,7 @@ def search():
 
 @app.route("/analytics")
 def analytics():
-    return render_template("charts.html")
+    return render_template("analytics.html")
 
 @app.route("/faqs")
 def faqs():
