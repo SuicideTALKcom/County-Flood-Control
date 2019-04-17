@@ -60,6 +60,11 @@ def index():
 @app.route("/search")
 def search():
     return render_template("search.html")
+
+
+@app.route("/contact")
+def search():
+    return render_template("contact.html")
     
 
 @app.route("/analytics")
