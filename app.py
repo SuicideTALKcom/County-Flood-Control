@@ -56,11 +56,13 @@ def index():
     """Return the homepage."""
     return render_template("index.html")
 
+@app.route("/county")
+def county():
+    return render_template("county.html")
 
-@app.route("/search")
-def search():
-    return render_template("search.html")
-    
+@app.route("/neighborhood")
+def neighborhood():
+    return render_template("neighborhood.html")
 
 @app.route("/analytics")
 def analytics():
@@ -70,26 +72,21 @@ def analytics():
 def faqs():
     return render_template("faqs.html")
 
-
 @app.route("/alerts")
 def alerts():
     return render_template("alerts.html")
-
 
 @app.route("/contact")
 def contact():
     return render_template("contact.html")
 
-
 @app.route("/charts")
 def charts():
     return render_template ("charts.html")
 
-
 @app.route("/about")
 def about():
     return render_template("about.html")
-
 
 
 #API routes below here 
