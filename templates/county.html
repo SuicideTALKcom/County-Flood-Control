@@ -31,6 +31,9 @@
 	<!-- Search CSS -->
 	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style-houston.css') }}">
 	
+	<!-- Bootstrap Data Table Plugin -->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bs-datatable.css') }}">
+	
 	<!-- Document Title
 	============================================= -->
 	<title>Harris County Listings</title>
@@ -668,6 +671,17 @@
       
 	<!-- HOUSTON MAP JS  -->
 	<script src="{{ url_for('static', filename='js/houstonmap.js') }}"></script>
+	
+	<!-- Bootstrap Data Table Plugin -->
+	<script src="{{ url_for('static', filename='js/bs-datatable.js') }}"></script>
+
+	<script>
+
+		$(document).ready(function() {
+			$('#datatable1').dataTable();
+		});
+
+	</script>
 
 </body>
 </html>
