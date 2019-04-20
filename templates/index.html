@@ -25,11 +25,11 @@
 
 	<!-- ADD-ONS CSS FILES -->
 	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='include/rs-plugin/css/revolution.addon.revealer.css') }}">
-	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='include/rs-plugin/css/addons/revolution.addon.revealer.preloaders.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='include/rs-plugin/css/revolution.addon.revealer.preloaders.css') }}">
 		
 	<!-- Document Title
 	============================================= -->
-	<title>Home Buyout Program</title>
+	<title>Property Buyout Program</title>
 
 	<style>
 
@@ -131,7 +131,7 @@
 				<!-- START SLIDER 5.4.6 fullscreen mode -->
 				<div id="welcome" class="rev_slider fullscreenbanner" style="display:none;" data-version="5.4.6">
 					<ul>	<!-- SLIDE  -->
-						<li class="dark" data-index="rs-243" data-transition="fadethroughdark" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off"  data-easein="default" data-easeout="default" data-masterspeed="default"  data-thumb="include/rs-plugin/demos/assets/images/purpleway.jpg"  data-rotate="0"  data-saveperformance="off"  data-title="Slide" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
+						<li class="dark" data-index="rs-243" data-transition="fadethroughdark" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off"  data-easein="default" data-easeout="default" data-masterspeed="default"  data-thumb="{{ url_for('static', filename='images/buyout-blueB.jpg') }}"  data-rotate="0"  data-saveperformance="off"  data-title="Slide" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
 							<!-- MAIN IMAGE -->
 							<img src="{{ url_for('static', filename='images/dummy.png') }}"  alt=""  data-lazyload="{{ url_for('static', filename='images/buyout-blueB.jpg') }}" data-bgposition="center center" data-kenburns="on" data-duration="4000" data-ease="Power3.easeInOut" data-scalestart="150" data-scaleend="100" data-rotatestart="0" data-rotateend="0" data-blurstart="0" data-blurend="0" data-offsetstart="0 0" data-offsetend="0 0" data-bgparallax="4" class="rev-slidebg" data-no-retina>
 							<!-- LAYERS -->
@@ -552,7 +552,7 @@
 			}else{
 				revapi109 = tpj("#welcome").show().revolution({
 					sliderType:"standard",
-					jsFileLocation:"/include/rs-plugin/js/",
+					jsFileLocation:"{{ url_for('static', filename='include/rs-plugin/js/') }}",
 					sliderLayout:"fullscreen",
 					dottedOverlay:"none",
 					delay:9000,
