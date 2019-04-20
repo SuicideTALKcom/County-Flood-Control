@@ -3,6 +3,6 @@
 ### App Deployed to Heroku 
 ### https://county-flood-control.herokuapp.com/
 
-![hcfcd.org](static/img/reservoirs.jpg)
+![hcfcd.org](static/images/reservoirs.jpg)
 
 Houston Emergency Coders © 2019 All Rights Reserved
