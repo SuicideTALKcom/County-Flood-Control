@@ -84,6 +84,10 @@ def contact():
 def charts():
     return render_template ("charts.html")
 
+@app.route("/tableau")
+def charts():
+    return render_template ("tableau.html")
+
 @app.route("/about")
 def about():
     return render_template("about.html")
