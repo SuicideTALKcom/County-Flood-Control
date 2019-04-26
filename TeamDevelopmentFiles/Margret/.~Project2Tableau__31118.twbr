@@ -1,0 +1,1468 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20191.19.0321.1733                               -->
+<workbook source-build='2019.1.2 (20191.19.0321.1733)' source-platform='mac' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <AutoCreateAndUpdateDSDPhoneLayouts />
+    <DashboardGridOverlay />
+    <IntuitiveSorting />
+    <IntuitiveSorting_SP2 />
+    <SheetIdentifierTracking />
+    <WindowsPersistSimpleIdentifiers />
+    <ZoneBackgroundTransparency />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource caption='homes3' inline='true' name='federated.0g51i7v0sekfvi143373504zlnly' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='homes3' name='textscan.1vqvjuw1muwpf811zw65v0ogh416'>
+            <connection class='textscan' directory='Data/Margret' filename='homes3.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <relation connection='textscan.1vqvjuw1muwpf811zw65v0ogh416' name='homes3.csv' table='[homes3#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+            <column datatype='string' name='Address' ordinal='0' />
+            <column datatype='real' name='Price' ordinal='1' />
+            <column datatype='integer' name='Days on Market' ordinal='2' />
+            <column datatype='string' name='Agent' ordinal='3' />
+            <column datatype='string' name='Office' ordinal='4' />
+            <column datatype='string' name='Neighborhood' ordinal='5' />
+          </columns>
+        </relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[homes3.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Address</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Address]</local-name>
+            <parent-name>[homes3.csv]</parent-name>
+            <remote-alias>Address</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Price</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Price]</local-name>
+            <parent-name>[homes3.csv]</parent-name>
+            <remote-alias>Price</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Days on Market</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Days on Market]</local-name>
+            <parent-name>[homes3.csv]</parent-name>
+            <remote-alias>Days on Market</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Agent</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Agent]</local-name>
+            <parent-name>[homes3.csv]</parent-name>
+            <remote-alias>Agent</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Office</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Office]</local-name>
+            <parent-name>[homes3.csv]</parent-name>
+            <remote-alias>Office</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Neighborhood</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Neighborhood]</local-name>
+            <parent-name>[homes3.csv]</parent-name>
+            <remote-alias>Neighborhood</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <column aggregation='CountD' datatype='string' name='[Address (copy)]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='[Address]' />
+      </column>
+      <column aggregation='CountD' datatype='string' default-role='measure' default-type='quantitative' name='[Address]' role='dimension' type='nominal' />
+      <column datatype='string' name='[Neighborhood]' role='dimension' type='nominal' />
+      <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
+        <calculation class='tableau' formula='1' />
+      </column>
+      <column-instance column='[Neighborhood]' derivation='None' name='[none:Neighborhood:nk]' pivot='key' type='nominal' />
+      <group caption='Action (Address (copy),Neighborhood)' hidden='true' name='[Action (Address (copy),Neighborhood)]' name-style='unqualified' user:auto-column='sheet_link'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[Address (copy)]' />
+          <groupfilter function='level-members' level='[Neighborhood]' />
+        </groupfilter>
+      </group>
+      <group caption='Action (Neighborhood)' hidden='true' name='[Action (Neighborhood)]' name-style='unqualified' user:auto-column='sheet_link'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[Neighborhood]' />
+        </groupfilter>
+      </group>
+      <layout dim-ordering='alphabetic' dim-percentage='0.521569' measure-ordering='alphabetic' measure-percentage='0.478431' show-structure='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[none:Neighborhood:nk]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>&quot;lakewood oaks estates&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;Saddle Ridge Estates&quot;</bucket>
+            </map>
+            <map to='#76b7b2'>
+              <bucket>&quot;Riata West&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;NorthWest Park place&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;lismore lake estates&quot;</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+    </datasource>
+  </datasources>
+  <actions>
+    <action caption='Filter1' name='[Action1]'>
+      <activation auto-clear='true' type='on-select' />
+      <source dashboard='Dashboard 1' type='sheet'>
+        <exclude-sheet name='Lakewood#' />
+        <exclude-sheet name='Lismore#' />
+        <exclude-sheet name='North#' />
+        <exclude-sheet name='Riata#' />
+        <exclude-sheet name='Saddle#' />
+      </source>
+      <command command='tsc:tsl-filter'>
+        <param name='exclude' value='Lakewood#,Lismore#,North#,Riata#,Saddle#' />
+        <param name='special-fields' value='all' />
+        <param name='target' value='Dashboard 1' />
+      </command>
+    </action>
+  </actions>
+  <worksheets>
+    <worksheet name='AllNeigh#'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='homes3' name='federated.0g51i7v0sekfvi143373504zlnly' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0g51i7v0sekfvi143373504zlnly'>
+            <column aggregation='CountD' datatype='string' default-role='measure' default-type='quantitative' name='[Address]' role='dimension' type='nominal' />
+            <column datatype='string' name='[Neighborhood]' role='dimension' type='nominal' />
+            <column-instance column='[Address]' derivation='CountD' name='[ctd:Address:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Neighborhood]' derivation='None' name='[none:Neighborhood:nk]' pivot='key' type='nominal' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <text column='[federated.0g51i7v0sekfvi143373504zlnly].[ctd:Address:qk]' />
+              <text column='[federated.0g51i7v0sekfvi143373504zlnly].[none:Neighborhood:nk]' />
+            </encodings>
+            <customized-label>
+              <formatted-text>
+                <run bold='true' fontalignment='0' fontsize='26'>&lt;[federated.0g51i7v0sekfvi143373504zlnly].[ctd:Address:qk]&gt;</run>
+                <run fontalignment='0'>&#10;&lt;[federated.0g51i7v0sekfvi143373504zlnly].[none:Neighborhood:nk]&gt;</run>
+                <run>Æ&#10;</run>
+              </formatted-text>
+            </customized-label>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{0DAEE271-6884-4F7C-A880-C953CBD2DF77}' />
+    </worksheet>
+    <worksheet name='Lakewood#'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='homes3' name='federated.0g51i7v0sekfvi143373504zlnly' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0g51i7v0sekfvi143373504zlnly'>
+            <column aggregation='CountD' datatype='string' default-role='measure' default-type='quantitative' name='[Address]' role='dimension' type='nominal' />
+            <column datatype='string' name='[Neighborhood]' role='dimension' type='nominal' />
+            <column-instance column='[Address]' derivation='CountD' name='[ctd:Address:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Neighborhood]' derivation='None' name='[none:Neighborhood:nk]' pivot='key' type='nominal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0g51i7v0sekfvi143373504zlnly].[none:Neighborhood:nk]'>
+            <groupfilter function='member' level='[none:Neighborhood:nk]' member='&quot;lakewood oaks estates&quot;' user:ui-domain='relevant' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.0g51i7v0sekfvi143373504zlnly].[none:Neighborhood:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='width' value='79' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <text column='[federated.0g51i7v0sekfvi143373504zlnly].[ctd:Address:qk]' />
+            </encodings>
+            <customized-label>
+              <formatted-text>
+                <run bold='true' fontalignment='0' fontcolor='#074080' fontname='Avenir' fontsize='48'>&lt;[federated.0g51i7v0sekfvi143373504zlnly].[ctd:Address:qk]&gt;</run>
+                <run fontalignment='0'>Æ&#10;</run>
+                <run bold='true' fontalignment='0' fontcolor='#75a1c7' fontname='Avenir' fontsize='8'>Lakewood</run>
+                <run fontalignment='0'>Æ&#10;</run>
+                <run bold='true' fontalignment='0' fontcolor='#75a1c7' fontname='Avenir' fontsize='8'>Estates</run>
+              </formatted-text>
+            </customized-label>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+              <style-rule element='pane'>
+                <format attr='minwidth' value='-1' />
+                <format attr='maxwidth' value='-1' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{535D67D6-8AB4-4045-992D-99EF6FC0B6D1}' />
+    </worksheet>
+    <worksheet name='Lismore#'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='homes3' name='federated.0g51i7v0sekfvi143373504zlnly' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0g51i7v0sekfvi143373504zlnly'>
+            <column aggregation='CountD' datatype='string' default-role='measure' default-type='quantitative' name='[Address]' role='dimension' type='nominal' />
+            <column datatype='string' name='[Neighborhood]' role='dimension' type='nominal' />
+            <column-instance column='[Address]' derivation='CountD' name='[ctd:Address:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Neighborhood]' derivation='None' name='[none:Neighborhood:nk]' pivot='key' type='nominal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0g51i7v0sekfvi143373504zlnly].[none:Neighborhood:nk]'>
+            <groupfilter function='member' level='[none:Neighborhood:nk]' member='&quot;lismore lake estates&quot;' user:ui-domain='relevant' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.0g51i7v0sekfvi143373504zlnly].[none:Neighborhood:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <text column='[federated.0g51i7v0sekfvi143373504zlnly].[ctd:Address:qk]' />
+            </encodings>
+            <customized-label>
+              <formatted-text>
+                <run bold='true' fontalignment='0' fontcolor='#074080' fontname='Avenir' fontsize='48'>&lt;[federated.0g51i7v0sekfvi143373504zlnly].[ctd:Address:qk]&gt;</run>
+                <run fontalignment='0'>Æ&#10;</run>
+                <run bold='true' fontalignment='0' fontcolor='#75a1c7' fontname='Avenir' fontsize='8'>Lismore</run>
+                <run fontalignment='0'>Æ&#10;</run>
+                <run bold='true' fontalignment='0' fontcolor='#75a1c7' fontname='Avenir' fontsize='8'>Lake </run>
+                <run fontalignment='0'>Æ&#10;</run>
+                <run bold='true' fontalignment='0' fontcolor='#75a1c7' fontname='Avenir' fontsize='8'>Estates</run>
+              </formatted-text>
+            </customized-label>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{CFDB1E02-65C7-4243-8B1D-053D378FD732}' />
+    </worksheet>
+    <worksheet name='Neighborhood'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='homes3' name='federated.0g51i7v0sekfvi143373504zlnly' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0g51i7v0sekfvi143373504zlnly'>
+            <column aggregation='CountD' datatype='string' name='[Address (copy)]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='[Address]' />
+            </column>
+            <column aggregation='CountD' datatype='string' default-role='measure' default-type='quantitative' name='[Address]' role='dimension' type='nominal' />
+            <column datatype='integer' name='[Days on Market]' role='measure' type='quantitative' />
+            <column datatype='string' name='[Neighborhood]' role='dimension' type='nominal' />
+            <column-instance column='[Days on Market]' derivation='Attribute' name='[attr:Days on Market:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Address (copy)]' derivation='None' name='[none:Address (copy):nk]' pivot='key' type='nominal' />
+            <column-instance column='[Neighborhood]' derivation='None' name='[none:Neighborhood:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Days on Market]' derivation='Sum' name='[sum:Days on Market:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0g51i7v0sekfvi143373504zlnly].[Action (Neighborhood)]'>
+            <groupfilter function='level-members' level='[Neighborhood]' user:ui-action-filter='[Action1]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.0g51i7v0sekfvi143373504zlnly].[none:Neighborhood:nk]'>
+            <groupfilter function='level-members' level='[none:Neighborhood:nk]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <shelf-sorts>
+            <shelf-sort-v2 dimension-to-sort='[federated.0g51i7v0sekfvi143373504zlnly].[none:Address (copy):nk]' direction='ASC' is-on-innermost-dimension='true' measure-to-sort-by='[federated.0g51i7v0sekfvi143373504zlnly].[sum:Days on Market:qk]' shelf='rows' />
+          </shelf-sorts>
+          <slices>
+            <column>[federated.0g51i7v0sekfvi143373504zlnly].[none:Neighborhood:nk]</column>
+            <column>[federated.0g51i7v0sekfvi143373504zlnly].[Action (Neighborhood)]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='display' class='0' field='[federated.0g51i7v0sekfvi143373504zlnly].[attr:Days on Market:qk]' scope='cols' value='false' />
+          </style-rule>
+          <style-rule element='worksheet'>
+            <format attr='display-field-labels' scope='rows' value='false' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.0g51i7v0sekfvi143373504zlnly].[none:Neighborhood:nk]' />
+              <text column='[federated.0g51i7v0sekfvi143373504zlnly].[attr:Days on Market:qk]' />
+            </encodings>
+            <customized-label>
+              <formatted-text>
+                <run>&lt;</run>
+                <run>[federated.0g51i7v0sekfvi143373504zlnly].[attr:Days on Market:qk]</run>
+                <run>&gt; days</run>
+              </formatted-text>
+            </customized-label>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0g51i7v0sekfvi143373504zlnly].[none:Address (copy):nk]</rows>
+        <cols>[federated.0g51i7v0sekfvi143373504zlnly].[attr:Days on Market:qk]</cols>
+      </table>
+      <simple-id uuid='{3D0D2773-ECDE-4893-864C-BF59FCFED8EA}' />
+    </worksheet>
+    <worksheet name='No.Homes'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='homes3' name='federated.0g51i7v0sekfvi143373504zlnly' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0g51i7v0sekfvi143373504zlnly'>
+            <column aggregation='CountD' datatype='string' default-role='measure' default-type='quantitative' name='[Address]' role='dimension' type='nominal' />
+            <column datatype='string' name='[Neighborhood]' role='dimension' type='nominal' />
+            <column-instance column='[Address]' derivation='CountD' name='[ctd:Address:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Neighborhood]' derivation='None' name='[none:Neighborhood:nk]' pivot='key' type='nominal' />
+          </datasource-dependencies>
+          <shelf-sorts>
+            <shelf-sort-v2 dimension-to-sort='[federated.0g51i7v0sekfvi143373504zlnly].[none:Neighborhood:nk]' direction='DESC' is-on-innermost-dimension='true' measure-to-sort-by='[federated.0g51i7v0sekfvi143373504zlnly].[ctd:Address:qk]' shelf='rows' />
+          </shelf-sorts>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='display' class='0' field='[federated.0g51i7v0sekfvi143373504zlnly].[ctd:Address:qk]' scope='cols' value='false' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane id='1' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.0g51i7v0sekfvi143373504zlnly].[none:Neighborhood:nk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='false' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0g51i7v0sekfvi143373504zlnly].[none:Neighborhood:nk]</rows>
+        <cols>[federated.0g51i7v0sekfvi143373504zlnly].[ctd:Address:qk]</cols>
+      </table>
+      <simple-id uuid='{D94C3E28-191A-4BA6-B8E2-32AFF52C3AD4}' />
+    </worksheet>
+    <worksheet lock-quick-filters='true' name='North#'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='homes3' name='federated.0g51i7v0sekfvi143373504zlnly' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0g51i7v0sekfvi143373504zlnly'>
+            <column aggregation='CountD' datatype='string' default-role='measure' default-type='quantitative' name='[Address]' role='dimension' type='nominal' />
+            <column datatype='string' name='[Neighborhood]' role='dimension' type='nominal' />
+            <column-instance column='[Address]' derivation='CountD' name='[ctd:Address:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Neighborhood]' derivation='None' name='[none:Neighborhood:nk]' pivot='key' type='nominal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0g51i7v0sekfvi143373504zlnly].[none:Neighborhood:nk]'>
+            <groupfilter function='member' level='[none:Neighborhood:nk]' member='&quot;NorthWest Park place&quot;' user:ui-domain='relevant' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.0g51i7v0sekfvi143373504zlnly].[none:Neighborhood:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='width' value='79' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <text column='[federated.0g51i7v0sekfvi143373504zlnly].[ctd:Address:qk]' />
+            </encodings>
+            <customized-label>
+              <formatted-text>
+                <run bold='true' fontalignment='0' fontcolor='#074080' fontname='Avenir' fontsize='48'>&lt;[federated.0g51i7v0sekfvi143373504zlnly].[ctd:Address:qk]&gt;</run>
+                <run fontalignment='0'>Æ&#10;</run>
+                <run bold='true' fontalignment='0' fontcolor='#75a1c7' fontname='Avenir' fontsize='8'>Northwest</run>
+                <run fontalignment='0'>Æ&#10;</run>
+                <run bold='true' fontalignment='0' fontcolor='#75a1c7' fontname='Avenir' fontsize='8'>Park</run>
+                <run fontalignment='0'>Æ&#10;</run>
+                <run bold='true' fontalignment='0' fontcolor='#75a1c7' fontname='Avenir' fontsize='8'>Place</run>
+              </formatted-text>
+            </customized-label>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+              <style-rule element='pane'>
+                <format attr='minwidth' value='-1' />
+                <format attr='maxwidth' value='-1' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{1C4F4016-1AE1-4A52-B242-6806AB1F0D93}' />
+    </worksheet>
+    <worksheet name='PriceHouse'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='homes3' name='federated.0g51i7v0sekfvi143373504zlnly' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0g51i7v0sekfvi143373504zlnly'>
+            <column aggregation='CountD' datatype='string' name='[Address (copy)]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='[Address]' />
+            </column>
+            <column aggregation='CountD' datatype='string' default-role='measure' default-type='quantitative' name='[Address]' role='dimension' type='nominal' />
+            <column datatype='string' name='[Neighborhood]' role='dimension' type='nominal' />
+            <column datatype='real' name='[Price]' role='measure' type='quantitative' />
+            <column-instance column='[Address (copy)]' derivation='None' name='[none:Address (copy):nk]' pivot='key' type='nominal' />
+            <column-instance column='[Neighborhood]' derivation='None' name='[none:Neighborhood:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Price]' derivation='Sum' name='[sum:Price:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0g51i7v0sekfvi143373504zlnly].[Action (Neighborhood)]'>
+            <groupfilter function='level-members' level='[Neighborhood]' user:ui-action-filter='[Action1]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.0g51i7v0sekfvi143373504zlnly].[none:Neighborhood:nk]'>
+            <groupfilter function='level-members' level='[none:Neighborhood:nk]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.0g51i7v0sekfvi143373504zlnly].[none:Neighborhood:nk]</column>
+            <column>[federated.0g51i7v0sekfvi143373504zlnly].[Action (Neighborhood)]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='display' class='0' field='[federated.0g51i7v0sekfvi143373504zlnly].[sum:Price:qk]' scope='rows' value='false' />
+          </style-rule>
+          <style-rule element='worksheet'>
+            <format attr='display-field-labels' scope='cols' value='false' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.0g51i7v0sekfvi143373504zlnly].[none:Neighborhood:nk]' />
+              <text column='[federated.0g51i7v0sekfvi143373504zlnly].[sum:Price:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='cell'>
+                <format attr='text-orientation' value='0' />
+              </style-rule>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='false' />
+                <format attr='mark-labels-mode' value='range' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0g51i7v0sekfvi143373504zlnly].[sum:Price:qk]</rows>
+        <cols>[federated.0g51i7v0sekfvi143373504zlnly].[none:Address (copy):nk]</cols>
+      </table>
+      <simple-id uuid='{89105C21-FBE1-448F-AD74-F1467692C79E}' />
+    </worksheet>
+    <worksheet name='Prices'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='homes3' name='federated.0g51i7v0sekfvi143373504zlnly' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0g51i7v0sekfvi143373504zlnly'>
+            <column aggregation='CountD' datatype='string' name='[Address (copy)]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='[Address]' />
+            </column>
+            <column aggregation='CountD' datatype='string' default-role='measure' default-type='quantitative' name='[Address]' role='dimension' type='nominal' />
+            <column datatype='integer' name='[Days on Market]' role='measure' type='quantitative' />
+            <column datatype='string' name='[Neighborhood]' role='dimension' type='nominal' />
+            <column datatype='real' name='[Price]' role='measure' type='quantitative' />
+            <column-instance column='[Address (copy)]' derivation='None' name='[none:Address (copy):nk]' pivot='key' type='nominal' />
+            <column-instance column='[Neighborhood]' derivation='None' name='[none:Neighborhood:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Days on Market]' derivation='Sum' name='[sum:Days on Market:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Price]' derivation='Sum' name='[sum:Price:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='quantitative' column='[federated.0g51i7v0sekfvi143373504zlnly].[sum:Days on Market:qk]' included-values='in-range'>
+            <min>1</min>
+            <max>212</max>
+          </filter>
+          <slices>
+            <column>[federated.0g51i7v0sekfvi143373504zlnly].[sum:Days on Market:qk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <text column='[federated.0g51i7v0sekfvi143373504zlnly].[sum:Price:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>([federated.0g51i7v0sekfvi143373504zlnly].[none:Neighborhood:nk] / [federated.0g51i7v0sekfvi143373504zlnly].[none:Address (copy):nk])</rows>
+        <cols>[federated.0g51i7v0sekfvi143373504zlnly].[sum:Price:qk]</cols>
+      </table>
+      <simple-id uuid='{1014C83A-11EA-4355-AE2E-4CAF6646A2F0}' />
+    </worksheet>
+    <worksheet lock-quick-filters='true' name='Riata#'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='homes3' name='federated.0g51i7v0sekfvi143373504zlnly' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0g51i7v0sekfvi143373504zlnly'>
+            <column aggregation='CountD' datatype='string' default-role='measure' default-type='quantitative' name='[Address]' role='dimension' type='nominal' />
+            <column datatype='string' name='[Neighborhood]' role='dimension' type='nominal' />
+            <column-instance column='[Address]' derivation='CountD' name='[ctd:Address:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Neighborhood]' derivation='None' name='[none:Neighborhood:nk]' pivot='key' type='nominal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0g51i7v0sekfvi143373504zlnly].[none:Neighborhood:nk]'>
+            <groupfilter function='member' level='[none:Neighborhood:nk]' member='&quot;Riata West&quot;' user:ui-domain='relevant' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.0g51i7v0sekfvi143373504zlnly].[none:Neighborhood:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <text column='[federated.0g51i7v0sekfvi143373504zlnly].[ctd:Address:qk]' />
+            </encodings>
+            <customized-label>
+              <formatted-text>
+                <run bold='true' fontalignment='0' fontcolor='#074080' fontname='Avenir' fontsize='48'>&lt;[federated.0g51i7v0sekfvi143373504zlnly].[ctd:Address:qk]&gt;</run>
+                <run fontalignment='0'>Æ&#10;</run>
+                <run bold='true' fontalignment='0' fontcolor='#75a1c7' fontname='Avenir' fontsize='8'>Riata</run>
+                <run fontalignment='0'>Æ&#10;</run>
+                <run bold='true' fontalignment='0' fontcolor='#75a1c7' fontname='Avenir' fontsize='8'>West</run>
+              </formatted-text>
+            </customized-label>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{015032BB-960D-4EFA-83FD-F1ED41DBE1BD}' />
+    </worksheet>
+    <worksheet lock-quick-filters='true' name='Saddle#'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='homes3' name='federated.0g51i7v0sekfvi143373504zlnly' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0g51i7v0sekfvi143373504zlnly'>
+            <column aggregation='CountD' datatype='string' default-role='measure' default-type='quantitative' name='[Address]' role='dimension' type='nominal' />
+            <column datatype='string' name='[Neighborhood]' role='dimension' type='nominal' />
+            <column-instance column='[Address]' derivation='CountD' name='[ctd:Address:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Neighborhood]' derivation='None' name='[none:Neighborhood:nk]' pivot='key' type='nominal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0g51i7v0sekfvi143373504zlnly].[none:Neighborhood:nk]'>
+            <groupfilter function='member' level='[none:Neighborhood:nk]' member='&quot;Saddle Ridge Estates&quot;' user:ui-domain='relevant' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.0g51i7v0sekfvi143373504zlnly].[none:Neighborhood:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <text column='[federated.0g51i7v0sekfvi143373504zlnly].[ctd:Address:qk]' />
+            </encodings>
+            <customized-label>
+              <formatted-text>
+                <run bold='true' fontalignment='0' fontcolor='#074080' fontname='Avenir' fontsize='48'>&lt;[federated.0g51i7v0sekfvi143373504zlnly].[ctd:Address:qk]&gt;</run>
+                <run fontalignment='0'>Æ&#10;</run>
+                <run bold='true' fontalignment='0' fontcolor='#75a1c7' fontname='Avenir' fontsize='8'>Saddle</run>
+                <run fontalignment='0'>Æ&#10;</run>
+                <run bold='true' fontalignment='0' fontcolor='#75a1c7' fontname='Avenir' fontsize='8'>Ridge</run>
+                <run fontalignment='0'>Æ&#10;</run>
+                <run bold='true' fontalignment='0' fontcolor='#75a1c7' fontname='Avenir' fontsize='8'>Estates</run>
+              </formatted-text>
+            </customized-label>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{5F430918-B37E-42C0-8331-1BA406246D2E}' />
+    </worksheet>
+    <worksheet name='Total$$'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='homes3' name='federated.0g51i7v0sekfvi143373504zlnly' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0g51i7v0sekfvi143373504zlnly'>
+            <column datatype='string' name='[Neighborhood]' role='dimension' type='nominal' />
+            <column datatype='real' name='[Price]' role='measure' type='quantitative' />
+            <column-instance column='[Neighborhood]' derivation='None' name='[none:Neighborhood:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Price]' derivation='Sum' name='[sum:Price:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0g51i7v0sekfvi143373504zlnly].[Action (Neighborhood)]'>
+            <groupfilter function='level-members' level='[Neighborhood]' user:ui-action-filter='[Action1]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <shelf-sorts>
+            <shelf-sort-v2 dimension-to-sort='[federated.0g51i7v0sekfvi143373504zlnly].[none:Neighborhood:nk]' direction='ASC' is-on-innermost-dimension='true' measure-to-sort-by='[federated.0g51i7v0sekfvi143373504zlnly].[sum:Price:qk]' shelf='columns' />
+          </shelf-sorts>
+          <slices>
+            <column>[federated.0g51i7v0sekfvi143373504zlnly].[Action (Neighborhood)]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='display' class='0' field='[federated.0g51i7v0sekfvi143373504zlnly].[sum:Price:qk]' scope='rows' value='false' />
+          </style-rule>
+          <style-rule element='worksheet'>
+            <format attr='display-field-labels' scope='cols' value='false' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.0g51i7v0sekfvi143373504zlnly].[none:Neighborhood:nk]' />
+              <text column='[federated.0g51i7v0sekfvi143373504zlnly].[sum:Price:qk]' />
+            </encodings>
+            <customized-label>
+              <formatted-text>
+                <run>$&lt;</run>
+                <run>[federated.0g51i7v0sekfvi143373504zlnly].[sum:Price:qk]</run>
+                <run>&gt;</run>
+              </formatted-text>
+            </customized-label>
+            <style>
+              <style-rule element='cell'>
+                <format attr='text-orientation' value='0' />
+              </style-rule>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0g51i7v0sekfvi143373504zlnly].[sum:Price:qk]</rows>
+        <cols>[federated.0g51i7v0sekfvi143373504zlnly].[none:Neighborhood:nk]</cols>
+      </table>
+      <simple-id uuid='{6281FEE3-2DBC-4CCB-951D-F1F295E93EA3}' />
+    </worksheet>
+  </worksheets>
+  <dashboards>
+    <dashboard name='Dashboard 1'>
+      <style />
+      <size maxheight='1300' maxwidth='1000' minheight='1300' minwidth='1000' sizing-mode='fixed' />
+      <datasources>
+        <datasource caption='homes3' name='federated.0g51i7v0sekfvi143373504zlnly' />
+      </datasources>
+      <datasource-dependencies datasource='federated.0g51i7v0sekfvi143373504zlnly'>
+        <column datatype='string' name='[Neighborhood]' role='dimension' type='nominal' />
+        <column-instance column='[Neighborhood]' derivation='None' name='[none:Neighborhood:nk]' pivot='key' type='nominal' />
+      </datasource-dependencies>
+      <zones>
+        <zone h='40769' id='9' name='Neighborhood' show-title='false' w='47200' x='47400' y='58538' />
+        <zone h='10462' id='3' name='No.Homes' show-title='false' w='36200' x='3300' y='54231' />
+        <zone h='11267' id='10' type='text' w='33200' x='2900' y='2533'>
+          <formatted-text>
+            <run bold='true' fontcolor='#074080' fontname='Avenir' fontsize='36'>What&apos;s on the </run>
+            <run>Æ&#10;</run>
+            <run bold='true' fontcolor='#074080' fontname='Avenir' fontsize='36'>market today?</run>
+          </formatted-text>
+        </zone>
+        <zone h='100923' id='11' type='empty' w='6900' x='38500' y='462'>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='33' />
+            <format attr='background-color' value='#074080' />
+          </zone-style>
+        </zone>
+        <zone h='2615' id='12' type='empty' w='50700' x='45700' y='5308'>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='16' />
+            <format attr='background-color' value='#074080' />
+          </zone-style>
+        </zone>
+        <zone forceUpdate='true' h='2692' id='13' type='text' w='42000' x='47200' y='3077'>
+          <formatted-text>
+            <run bold='true' fontcolor='#074080' fontname='Avenir' fontsize='18'>Home Buyout Program</run>
+          </formatted-text>
+        </zone>
+        <zone h='10154' id='14' name='Lakewood#' show-title='false' w='8000' x='48000' y='7769' />
+        <zone h='12538' id='15' name='Lismore#' show-title='false' w='6900' x='59800' y='7769' />
+        <zone h='10615' id='16' type='empty' w='2000' x='55600' y='8154'>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='9' />
+            <format attr='background-color' value='#074080' />
+          </zone-style>
+        </zone>
+        <zone h='12077' id='17' name='North#' show-title='false' w='8200' x='69900' y='7769' />
+        <zone h='10692' id='18' type='empty' w='2200' x='66900' y='8000'>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='10' />
+            <format attr='background-color' value='#074080' />
+          </zone-style>
+        </zone>
+        <zone h='12846' id='19' name='Riata#' show-title='false' w='6200' x='79600' y='7769' />
+        <zone h='13846' id='20' name='Saddle#' show-title='false' w='8200' x='88900' y='7769' />
+        <zone h='10462' id='21' type='empty' w='2000' x='76900' y='8154'>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='9' />
+            <format attr='background-color' value='#074080' />
+          </zone-style>
+        </zone>
+        <zone h='10538' id='22' type='empty' w='2000' x='86100' y='8231'>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='9' />
+            <format attr='background-color' value='#074080' />
+          </zone-style>
+        </zone>
+        <zone h='21538' id='23' is-centered='0' is-scaled='1' param='Image/Screen Shot 2019-04-25 at 10.31.52 PM.png' type='bitmap' w='34200' x='3900' y='26308' />
+        <zone h='3846' id='24' type='empty' w='51500' x='45100' y='26385'>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='24' />
+            <format attr='background-color' value='#074080' />
+          </zone-style>
+        </zone>
+        <zone forceUpdate='true' h='5077' id='25' type='text' w='46800' x='48400' y='18769'>
+          <formatted-text>
+            <run fontcolor='#074080' fontname='Avenir' fontsize='11'>The number of homes current available for sale by neighborhood. This is a live extract of data from the last scrape from har.com.</run>
+          </formatted-text>
+        </zone>
+        <zone forceUpdate='true' h='3308' id='26' type='text' w='46000' x='47300' y='24846'>
+          <formatted-text>
+            <run bold='true' fontcolor='#074080' fontname='Avenir' fontsize='13'>Home Sale Price Amount</run>
+          </formatted-text>
+        </zone>
+        <zone forceUpdate='true' h='11077' id='27' type='text' w='36600' x='3400' y='14077'>
+          <formatted-text>
+            <run fontcolor='#074080' fontname='Avenir' fontsize='11'>A glimpse of the Houston market with a focus on neighborhoods that are included in the HCFCD buyout program. All data refreshes per task scheduler programmed in the back-end. This displays the homes on sale along with other metrics that can be helpful to the user. </run>
+          </formatted-text>
+        </zone>
+        <zone h='3692' id='28' type='empty' w='38200' x='1700' y='50692'>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='23' />
+            <format attr='background-color' value='#074080' />
+          </zone-style>
+        </zone>
+        <zone forceUpdate='true' h='2923' id='29' type='text' w='24800' x='3900' y='49462'>
+          <formatted-text>
+            <run bold='true' fontcolor='#074080' fontname='Avenir' fontsize='13'>Overview of Neigborhoods</run>
+          </formatted-text>
+        </zone>
+        <zone h='3385' id='30' type='empty' w='50500' x='45400' y='56000'>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='21' />
+            <format attr='background-color' value='#074080' />
+          </zone-style>
+        </zone>
+        <zone forceUpdate='true' h='2308' id='31' type='text' w='18100' x='47600' y='55231'>
+          <formatted-text>
+            <run bold='true' fontcolor='#074080' fontname='Avenir' fontsize='13'>Days on the Market</run>
+          </formatted-text>
+        </zone>
+        <zone h='28462' id='32' name='Total$$' show-title='false' w='34900' x='3100' y='70308' />
+        <zone h='5385' id='33' type='empty' w='40800' x='400' y='67308'>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='34' />
+            <format attr='background-color' value='#074080' />
+          </zone-style>
+        </zone>
+        <zone forceUpdate='true' h='4308' id='36' type='text' w='41500' x='3400' y='66154'>
+          <formatted-text>
+            <run bold='true' fontcolor='#074080' fontname='Avenir' fontsize='13'>Total Buyout Amount per Neighborhood</run>
+          </formatted-text>
+        </zone>
+        <zone h='24231' id='39' name='PriceHouse' show-title='false' w='45800' x='47800' y='30462' />
+        <zone h='4308' id='40' mode='checkdropdown' name='PriceHouse' param='[federated.0g51i7v0sekfvi143373504zlnly].[none:Neighborhood:nk]' type='filter' w='16800' x='51000' y='29846' />
+      </zones>
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <size maxheight='2300' minheight='2300' sizing-mode='vscroll' />
+          <zones>
+            <zone h='100000' id='37' type='layout-basic' w='100000' x='0' y='0'>
+              <zone h='98770' id='38' param='vert' type='layout-flow' w='98400' x='800' y='615'>
+                <zone h='11267' id='10' type='text' w='33200' x='2900' y='2533'>
+                  <formatted-text>
+                    <run bold='true' fontcolor='#074080' fontname='Avenir' fontsize='36'>What&apos;s on the </run>
+                    <run>Æ&#10;</run>
+                    <run bold='true' fontcolor='#074080' fontname='Avenir' fontsize='36'>market today?</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone forceUpdate='true' h='2692' id='13' type='text' w='42000' x='47200' y='3077'>
+                  <formatted-text>
+                    <run bold='true' fontcolor='#074080' fontname='Avenir' fontsize='18'>Home Buyout Program</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='132' h='10154' id='14' is-fixed='true' name='Lakewood#' show-title='false' w='8000' x='48000' y='7769'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='163' h='12538' id='15' is-fixed='true' name='Lismore#' show-title='false' w='6900' x='59800' y='7769'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='157' h='12077' id='17' is-fixed='true' name='North#' show-title='false' w='8200' x='69900' y='7769'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='167' h='12846' id='19' is-fixed='true' name='Riata#' show-title='false' w='6200' x='79600' y='7769'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='180' h='13846' id='20' is-fixed='true' name='Saddle#' show-title='false' w='8200' x='88900' y='7769'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone forceUpdate='true' h='11077' id='27' type='text' w='36600' x='3400' y='14077'>
+                  <formatted-text>
+                    <run fontcolor='#074080' fontname='Avenir' fontsize='11'>A glimpse of the Houston market with a focus on neighborhoods that are included in the HCFCD buyout program. All data refreshes per task scheduler programmed in the back-end. This displays the homes on sale along with other metrics that can be helpful to the user. </run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone forceUpdate='true' h='5077' id='25' type='text' w='46800' x='48400' y='18769'>
+                  <formatted-text>
+                    <run fontcolor='#074080' fontname='Avenir' fontsize='11'>The number of homes current available for sale by neighborhood. This is a live extract of data from the last scrape from har.com.</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone forceUpdate='true' h='3308' id='26' type='text' w='46000' x='47300' y='24846'>
+                  <formatted-text>
+                    <run bold='true' fontcolor='#074080' fontname='Avenir' fontsize='13'>Home Sale Price Amount</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='21538' id='23' is-centered='0' is-fixed='true' is-scaled='1' param='Image/Screen Shot 2019-04-25 at 10.31.52 PM.png' type='bitmap' w='34200' x='3900' y='26308'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone forceUpdate='true' h='2923' id='29' type='text' w='24800' x='3900' y='49462'>
+                  <formatted-text>
+                    <run bold='true' fontcolor='#074080' fontname='Avenir' fontsize='13'>Overview of Neigborhoods</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='136' h='10462' id='3' is-fixed='true' name='No.Homes' show-title='false' w='36200' x='3300' y='54231'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone forceUpdate='true' h='2308' id='31' type='text' w='18100' x='47600' y='55231'>
+                  <formatted-text>
+                    <run bold='true' fontcolor='#074080' fontname='Avenir' fontsize='13'>Days on the Market</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='40769' id='9' is-fixed='true' name='Neighborhood' show-title='false' w='47200' x='47400' y='58538'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone forceUpdate='true' h='4308' id='36' type='text' w='41500' x='3400' y='66154'>
+                  <formatted-text>
+                    <run bold='true' fontcolor='#074080' fontname='Avenir' fontsize='13'>Total Buyout Amount per Neighborhood</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='28462' id='32' is-fixed='true' name='Total$$' show-title='false' w='34900' x='3100' y='70308'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{749D561E-8049-4B29-94E6-B53ADFB07369}' />
+    </dashboard>
+  </dashboards>
+  <windows source-height='30'>
+    <window class='worksheet' name='No.Homes'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='1' param='[federated.0g51i7v0sekfvi143373504zlnly].[none:Neighborhood:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{7913EAC5-7387-4CA5-982E-D7F3805DD862}' />
+    </window>
+    <window class='worksheet' name='Neighborhood'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.0g51i7v0sekfvi143373504zlnly].[none:Neighborhood:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{7E41C5C3-E0D3-4C98-8829-9F8F1148C69E}' />
+    </window>
+    <window class='worksheet' name='Prices'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{34DB7CD4-103C-4081-8FDF-91E62B806DE8}' />
+    </window>
+    <window class='worksheet' name='Total$$'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.0g51i7v0sekfvi143373504zlnly].[none:Neighborhood:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{31B125D2-4DED-4F44-8A5A-AEA30CD1B01E}' />
+    </window>
+    <window class='worksheet' name='PriceHouse'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card mode='checkdropdown' param='[federated.0g51i7v0sekfvi143373504zlnly].[none:Neighborhood:nk]' type='filter' />
+            <card pane-specification-id='0' param='[federated.0g51i7v0sekfvi143373504zlnly].[none:Neighborhood:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{C4E278E0-DA14-4070-B3E3-8C10AB47FB82}' />
+    </window>
+    <window class='worksheet' name='Lakewood#'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{DC3666E6-B3C6-4AAB-ADD8-0B6F244E59D7}' />
+    </window>
+    <window class='worksheet' name='Lismore#'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{B1C55B09-42CE-46DC-88CC-9FBB5E40FD37}' />
+    </window>
+    <window class='worksheet' name='North#'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{082DBDC9-6626-4292-92F3-C183EAE7FB91}' />
+    </window>
+    <window class='worksheet' name='AllNeigh#'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{9F8169C6-D9CC-4EFD-BB68-44BAA91A93F8}' />
+    </window>
+    <window class='worksheet' name='Riata#'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{3DBF15CE-C9D8-4AD6-819D-7F73E8306B56}' />
+    </window>
+    <window class='worksheet' name='Saddle#'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{7393E192-344F-4B21-99A8-9E5E5F2EFBE1}' />
+    </window>
+    <window class='dashboard' maximized='true' name='Dashboard 1'>
+      <viewpoints>
+        <viewpoint name='Lakewood#' />
+        <viewpoint name='Lismore#' />
+        <viewpoint name='Neighborhood' />
+        <viewpoint name='No.Homes' />
+        <viewpoint name='North#' />
+        <viewpoint name='PriceHouse'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Riata#' />
+        <viewpoint name='Saddle#' />
+        <viewpoint name='Total$$'>
+          <zoom type='entire-view' />
+        </viewpoint>
+      </viewpoints>
+      <active id='26' />
+      <grid grid-overlay-mode='on' />
+      <simple-id uuid='{2D4F07FE-125B-417E-9D20-29CFD65DFBAD}' />
+    </window>
+  </windows>
+</workbook>
