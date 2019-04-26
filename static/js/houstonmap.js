@@ -1,7 +1,7 @@
 // Creating map object
 var map = L.map("map", {
   center: [29.961274, -95.632013],
-  zoom: 8.5
+  zoom: 11.5
 });
 
 //For next project, create table that holds the coordinates instead of storing in this JS file 
