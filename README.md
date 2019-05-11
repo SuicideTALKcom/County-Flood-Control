@@ -5,4 +5,4 @@
 
 ![hcfcd.org](static/images/reservoirs.jpg)
 
-Houston Emergency Coders ©2019 All Rights Reserved
+Houston Emergency Coders © 2019 All Rights Reserved
