@@ -68,9 +68,13 @@ def neighborhoods():
 def analytics():
     return render_template("analytics.html")
 
-@app.route("/predictive")
-def predictive():
-    return render_template("predictive.html")
+@app.route("/dashboard")
+def dashboard():
+    return render_template("dashboard.html")
+
+@app.route("/story")
+def story():
+    return render_template("story.html")
 
 @app.route("/faqs")
 def faqs():
