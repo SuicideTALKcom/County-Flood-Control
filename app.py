@@ -68,6 +68,10 @@ def neighborhoods():
 def analytics():
     return render_template("analytics.html")
 
+@app.route("/predictive")
+def predictive():
+    return render_template("predictive.html")
+
 @app.route("/faqs")
 def faqs():
     return render_template("faqs.html")
