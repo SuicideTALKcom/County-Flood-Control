@@ -72,13 +72,9 @@ def analytics():
 def dashboard():
     return render_template("dashboard.html")
 
-@app.route("/predictive")
-def predictive():
-    return render_template("predictive.html")
-
-@app.route("/story")
-def story():
-    return render_template("story.html")
+@app.route("/forecasting")
+def forecasting():
+    return render_template("forecasting.html")
 
 @app.route("/faqs")
 def faqs():
