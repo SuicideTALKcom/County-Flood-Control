@@ -76,6 +76,10 @@ def dashboard():
 def forecasting():
     return render_template("forecasting.html")
 
+@app.route("/analytics-single-page")
+def analytics-single-page():
+    return render_template("analytics-single-page.html")
+
 @app.route("/faqs")
 def faqs():
     return render_template("faqs.html")
