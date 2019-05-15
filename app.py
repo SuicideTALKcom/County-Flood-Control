@@ -76,6 +76,10 @@ def dashboard():
 def forecasting():
     return render_template("forecasting.html")
 
+@app.route("/canvas")
+def canvas():
+    return render_template("canvas.html")
+
 @app.route("/atest")
 def atest():
     return render_template("atest.html")

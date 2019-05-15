@@ -1152,16 +1152,7 @@ body.stretched #header.full-header .container {
 	margin-left: 2px;
 }
 
-
-
 #primary-menu > ul > li:first-child { margin-left: 0; }
-
-#primary-menu ul li.button-in-menu > a {
-    padding-top: 30px;
-    padding-bottom: 30px;
-}
-
-
 
 #primary-menu ul li > a {
 	display: block;
@@ -2123,15 +2114,6 @@ body.top-search-open #top-account { opacity: 0; }
 	padding-top: 19px;
 	padding-bottom: 19px;
 }
-
-
-
-#header.sticky-header:not(.static-sticky) #primary-menu > ul > li.button-in-menu > a {
-    padding-top: 5px;
-    padding-bottom: 5px;
-}
-
-
 
 #header.sticky-header:not(.static-sticky).sticky-style-2,
 #header.sticky-header:not(.static-sticky).sticky-style-3 { height: 161px; }
