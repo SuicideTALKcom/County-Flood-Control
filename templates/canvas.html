@@ -44,11 +44,11 @@
 
 					<div id="primary-menu-trigger"><i class="icon-reorder"></i></div>
 
-					<!-- Logo
-					============================================= -->
 					<div id="logo">
-						<a href="index.html" class="standard-logo" data-dark-logo="images/logo-dark.png"><img src="images/logo.png" alt="Canvas Logo"></a>
-						<a href="index.html" class="retina-logo" data-dark-logo="images/logo-dark@2x.png"><img src="images/logo@2x.png" alt="Canvas Logo"></a>
+						<a href="/" class="standard-logo"><img src="{{ url_for('static', filename='images/logo.png') }}"
+								alt="Logo"></a>
+						<a href="/" class="retina-logo"><img src="{{ url_for('static', filename='images/logo@2x.png') }}"
+								alt="Logo"></a>
 					</div><!-- #logo end -->
 
 					<!-- Primary Navigation
@@ -697,7 +697,7 @@
 
 				<div class="swiper-container swiper-parent">
 					<div class="swiper-wrapper">
-						<div class="swiper-slide dark" style="background-image: url({{ url_for('static', filename='images/page-header-test.jpg') }});>
+						<div class="swiper-slide dark" style="background-image: url({{ url_for('static', filename='images/buyout.jpg') }});>
 							<div class="container clearfix">
 								<div class="slider-caption slider-caption-center">
 									<h2 data-animate="fadeInUp">Welcome to Canvas</h2>
