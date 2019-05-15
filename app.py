@@ -80,6 +80,10 @@ def forecasting():
 def atest():
     return render_template("atest.html")
 
+@app.route("/support")
+def support():
+    return render_template("support.html")
+
 @app.route("/faqs")
 def faqs():
     return render_template("faqs.html")
