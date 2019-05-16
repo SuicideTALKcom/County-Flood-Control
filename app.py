@@ -11,7 +11,8 @@ from sqlalchemy.ext.automap import automap_base
 from sqlalchemy.orm import Session
 from sqlalchemy import create_engine, func, inspect
 #import pymysql
-
+from Lesly_scrape import main
+import threading
 from flask import Flask, jsonify, render_template
 #from flask_sqlalchemy import SQLAlchemy
 
@@ -72,13 +73,21 @@ def analytics():
 def dashboard():
     return render_template("dashboard.html")
 
-@app.route("/predictive")
-def predictive():
-    return render_template("predictive.html")
+@app.route("/forecasting")
+def forecasting():
+    return render_template("forecasting.html")
 
-@app.route("/story")
-def story():
-    return render_template("story.html")
+@app.route("/canvas")
+def canvas():
+    return render_template("canvas.html")
+
+@app.route("/atest")
+def atest():
+    return render_template("atest.html")
+
+@app.route("/support")
+def support():
+    return render_template("support.html")
 
 @app.route("/faqs")
 def faqs():
@@ -157,4 +166,8 @@ def api(neighborhood):
 #     })
 
 if __name__ == "__main__":
-    app.run()   
+    app.debug = False
+    threading.Thread(target=app.run).start()
+    while True:
+        main()
+   
