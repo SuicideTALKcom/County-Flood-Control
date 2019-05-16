@@ -6,16 +6,13 @@ import matplotlib
 import numpy as np 
 import time
 from datetime import datetime
-from scrape import har_homes
 
-def homes_comparison():
+def homes_comparison(homes):
     #create a connection to the sql database 
     engine = create_engine("mysql+pymysql://root:banana@localhost/homes_db", echo=False)
 
-    #call the function and add the results to a variable
-    house_list = har_homes()
     #put the results of the function into a dataframe
-    homesdf = pd.DataFrame(house_list)
+    homesdf = pd.DataFrame(homes)
 
     homesdf['datetime'] = str(datetime.today())
 
