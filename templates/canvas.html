@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html dir="ltr" lang="en-US">
-
 <head>
 
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
@@ -28,7 +27,7 @@
 
 </head>
 
-<body class="stretched">
+<body class="stretched sticky-responsive-pagemenu">
 
 	<!-- Document Wrapper
 	============================================= -->
@@ -36,7 +35,7 @@
 
 		<!-- Header
 		============================================= -->
-		<header id="header" class="split-menu clearfix">
+		<header id="header" class="no-sticky page-section split-menu">
 
 			<div id="header-wrap">
 
@@ -44,8 +43,6 @@
 
 					<div id="primary-menu-trigger"><i class="icon-reorder"></i></div>
 
-					<!-- Logo
-					============================================= -->
 					<div id="logo">
 						<a href="/" class="standard-logo"><img src="{{ url_for('static', filename='images/logo.png') }}"
 								alt="Logo"></a>
@@ -53,7 +50,7 @@
 								alt="Logo"></a>
 					</div><!-- #logo end -->
 
-				<!-- Primary Navigation
+					<!-- Primary Navigation
 					============================================= -->
 					<nav id="primary-menu" class="style">
 						
@@ -65,7 +62,7 @@
 						</ul>
 
 						<ul>
-							<li><a href="#"><div>Analytics</div></a></li>
+							<li><a href="analytics"><div>Analytics</div></a></li>
 							<li><a href="alerts"><div>Alerts</div></a></li>
 							<li><a href="contact"><div>Contact</div></a></li>
 							<li><a href="about"><div>About</div></a></li>
@@ -77,8 +74,8 @@
 
 			</div>
 
-		</header><!-- #header end -->                 
-
+		</header><!-- #header end -->
+		
 		<!-- Page Title
 		============================================= -->
 		<section id="page-title" class="page-title-parallax page-title-dark" style="background-image: url({{ url_for('static', filename='images/page-header-test.jpg') }}); padding: 120px 0;" data-bottom-top="background-position:0px 300px;" data-top-bottom="background-position:0px -300px;">
@@ -89,7 +86,7 @@
 			</div>
 
 		</section><!-- #page-title end -->
-		
+
 		<!-- Page Sub Menu
 		============================================= -->
 		<div id="page-menu">
@@ -102,9 +99,8 @@
 
 					<nav class="one-page-menu">
 						<ul>
-							<li><a href="dashboard"><div>DASHBOARD</div></a></li>
-							<li><a href="predictive"><div>PREDICTIVE</div></a></li>
-							<li><a href="story"><div>STORY</div></a></li>
+							<li><a href="#" data-href="#section-dashboard"><div>Dashboard</div></a></li>
+							<li><a href="#" data-href="#section-forecasting"><div>Forecasting</div></a></li>
 						</ul>
 					</nav>
 
@@ -120,21 +116,45 @@
 		============================================= -->
 		<section id="content">
 
-			<!--<div class="content-wrap">
+			<div class="content-wrap">
 
-				<div class="container clearfix"> -->
-			
-			<div id="section-dashboard" class="page-section"></div>
-						
-			<div class="heading-block topmargin noborder">
-				<h2 class="center">STORY</h2>
-			</div>
-					
-				<p align="center"><iframe src="//county-flood-control.herokuapp.com/tableau" width=1050 height=1400 style="text-align: center"></iframe></p>
+				<section id="section-dashboard" class="page-section notopmargin">
+
+					<div class="container clearfix">
+
+						<div class="heading-block center">
 				
-				<!-- </div>
+							<h2>DASHBOARD</h2>
+							
+							<p align="center"><iframe src="//county-flood-control.herokuapp.com/tableau" width="1050" height="1400" style="text-align: center"></iframe></p>
+				
+						</div>
 
-			</div> -->
+						<div class="clear"></div>
+
+					</div>
+
+				</section>
+
+				<section id="section-forecasting" class="page-section notopmargin">
+
+					<div class="container clearfix">
+
+						<div class="heading-block center">
+				
+							<h2>FORECASTING</h2>
+							
+							<p align="center"><iframe src="//county-flood-control.herokuapp.com/tableau" width="1050" height="1400" style="text-align: center"></iframe></p>
+				
+						</div>
+
+						<div class="clear"></div>
+
+					</div>
+
+				</section>
+
+			</div>
 
 		</section><!-- #content end -->
 
@@ -149,8 +169,7 @@
 				<div class="container clearfix">
 
 					<div class="col_full nobottommargin center">
-
-						Copyright &copy; &nbsp;2019 &nbsp;Houston &nbsp;Emergency &nbsp;Coders
+						Copyright &copy; &nbsp;2019 &nbsp;Emergency &nbsp;Coders
 					</div>
 
 				</div>
