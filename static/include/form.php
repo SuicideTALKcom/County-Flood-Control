@@ -4,13 +4,21 @@
 	PHPMailer Initialization Files
 ---------------------------------------------------*/
 
+/*
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
 require 'phpmailer/src/Exception.php';
 require 'phpmailer/src/PHPMailer.php';
 require 'phpmailer/src/SMTP.php';
+*/
 
+use PHPMailer\PHPMailer\PHPMailer; {{ url_for('static', filename='PHPMailer\PHPMailer\PHPMailer') }}
+use PHPMailer\PHPMailer\Exception; {{ url_for('static', filename='PHPMailer\PHPMailer\Exception') }}
+
+require 'phpmailer/src/Exception.php'; {{ url_for('static', filename='include/phpmailer/src/Exception.php') }}
+require 'phpmailer/src/PHPMailer.php'; {{ url_for('static', filename='include/phpmailer/src/PHPMailer.php') }}
+require 'phpmailer/src/SMTP.php'; {{ url_for('static', filename='include/phpmailer/src/SMTP.php') }}
 
 /*-------------------------------------------------
 	Receiver's Email
@@ -134,7 +142,7 @@ if( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 	}
 
 	$template	= !empty( $submits['template'] ) ? $submits['template'] : 'html';
-	$html_title	= !empty( $submits['html_title'] ) ? $submits['html_title'] : 'Form Response';
+	$html_title	= !empty( $submits['html_title'] ) ? $submits['html_title'] : 'HCFCD Contact Form';
 	$forcerecap	= ( !empty( $submits['force_recaptcha'] ) && $submits['force_recaptcha'] != 'false' ) ? true : false;
 	$replyto	= !empty( $submits['replyto'] ) ? explode( ',', $submits['replyto'] ) : false;
 
@@ -161,7 +169,7 @@ if( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 		}
 	}
 
-	$ar_footer	= !empty( $submits['ar_footer'] ) ? $submits['ar_footer'] : 'Copyrights &copy; ' . date('Y') . ' <strong>SemiColonWeb</strong>. All Rights Reserved.';
+	$ar_footer	= !empty( $submits['ar_footer'] ) ? $submits['ar_footer'] : 'Copyrights &copy; ' . date('Y') . ' <strong>Emergency Coders</strong>. All Rights Reserved.';
 
 	$mail->Subject = !empty( $submits['subject'] ) ? $submits['subject'] : 'Form Response from your Website';
 	$mail->SetFrom( $fromemail['email'] , $fromemail['name'] );
