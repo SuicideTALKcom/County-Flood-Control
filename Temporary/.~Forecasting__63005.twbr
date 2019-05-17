@@ -1,0 +1,968 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20191.19.0417.1429                               -->
+<workbook source-build='2019.1.3 (20191.19.0417.1429)' source-platform='mac' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <AutoCreateAndUpdateDSDPhoneLayouts />
+    <DashboardGridOverlay />
+    <SheetIdentifierTracking />
+    <WindowsPersistSimpleIdentifiers />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource caption='forecast_data' inline='true' name='federated.0y1g3v31sxu9dk13a7ore1611n8b' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='forecast_data' name='textscan.1k444pk0pk0y6113bceeu0d7k514'>
+            <connection class='textscan' directory='Data/Temporary' filename='forecast_data.csv' password='' server='' />
+          </named-connection>
+          <named-connection caption='Sagemont_Bammel' name='textscan.1o9fp9j0jmmu7y18b4r3q0qhds6q'>
+            <connection class='textscan' directory='Data/Temporary' filename='Sagemont_Bammel.csv' password='' server='' />
+          </named-connection>
+          <named-connection caption='HarrisCountyRainfall' name='textscan.13xbef719c422e1fbknb30nl8vxv'>
+            <connection class='textscan' directory='Data/Temporary' filename='HarrisCountyRainfall.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <relation connection='textscan.13xbef719c422e1fbknb30nl8vxv' name='HarrisCountyRainfall.csv' table='[HarrisCountyRainfall#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+            <column datatype='datetime' name='Date' ordinal='0' />
+            <column datatype='real' name='Sagemont' ordinal='1' />
+            <column datatype='real' name='Bammel' ordinal='2' />
+            <column datatype='real' name='Highland' ordinal='3' />
+            <column datatype='real' name='Braeburn' ordinal='4' />
+            <column datatype='string' name='Event' ordinal='5' />
+          </columns>
+        </relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[HarrisCountyRainfall.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Date</remote-name>
+            <remote-type>135</remote-type>
+            <local-name>[Date]</local-name>
+            <parent-name>[HarrisCountyRainfall.csv]</parent-name>
+            <remote-alias>Date</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>datetime</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Sagemont</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Sagemont]</local-name>
+            <parent-name>[HarrisCountyRainfall.csv]</parent-name>
+            <remote-alias>Sagemont</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Bammel</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Bammel]</local-name>
+            <parent-name>[HarrisCountyRainfall.csv]</parent-name>
+            <remote-alias>Bammel</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Highland</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Highland]</local-name>
+            <parent-name>[HarrisCountyRainfall.csv]</parent-name>
+            <remote-alias>Highland</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Braeburn</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Braeburn]</local-name>
+            <parent-name>[HarrisCountyRainfall.csv]</parent-name>
+            <remote-alias>Braeburn</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Event</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Event]</local-name>
+            <parent-name>[HarrisCountyRainfall.csv]</parent-name>
+            <remote-alias>Event</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column datatype='real' name='[Bammel]' role='measure' type='quantitative' />
+      <column datatype='real' name='[Braeburn]' role='measure' type='quantitative' />
+      <column datatype='real' name='[Highland]' role='measure' type='quantitative' />
+      <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
+        <calculation class='tableau' formula='1' />
+      </column>
+      <column datatype='real' name='[Sagemont]' role='measure' type='quantitative' />
+      <column-instance column='[Bammel]' derivation='Avg' name='[avg:Bammel:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Bammel]' derivation='Count' name='[cnt:Bammel:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Bammel]' derivation='CountD' name='[ctd:Bammel:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Bammel]' derivation='Sum' name='[sum:Bammel:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Braeburn]' derivation='Sum' name='[sum:Braeburn:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Highland]' derivation='Sum' name='[sum:Highland:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Sagemont]' derivation='Sum' name='[sum:Sagemont:qk]' pivot='key' type='quantitative' />
+      <folder name='Gauges' role='measures'>
+        <folder-item name='[Bammel]' type='field' />
+        <folder-item name='[Braeburn]' type='field' />
+        <folder-item name='[Highland]' type='field' />
+        <folder-item name='[Sagemont]' type='field' />
+      </folder>
+      <layout dim-ordering='alphabetic' dim-percentage='0.205882' measure-ordering='alphabetic' measure-percentage='0.794118' show-structure='true' user-set-layout='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[:Measure Names]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.0y1g3v31sxu9dk13a7ore1611n8b].[avg:Bammel:qk]&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.0y1g3v31sxu9dk13a7ore1611n8b].[cnt:Bammel:qk]&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.0y1g3v31sxu9dk13a7ore1611n8b].[ctd:Bammel:qk]&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.0y1g3v31sxu9dk13a7ore1611n8b].[sum:Bammel:qk]&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;[federated.0y1g3v31sxu9dk13a7ore1611n8b]&quot;</bucket>
+            </map>
+            <map to='#76b7b2'>
+              <bucket>&quot;[federated.0y1g3v31sxu9dk13a7ore1611n8b].[sum:Sagemont:qk]:1&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;[federated.0y1g3v31sxu9dk13a7ore1611n8b].[sum:Highland:qk]&quot;</bucket>
+            </map>
+            <map to='#edc948'>
+              <bucket>&quot;[federated.0y1g3v31sxu9dk13a7ore1611n8b].[sum:Braeburn:qk]&quot;</bucket>
+            </map>
+            <map to='#edc948'>
+              <bucket>&quot;[federated.0y1g3v31sxu9dk13a7ore1611n8b].[sum:Sagemont:qk]&quot;</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='Bammel'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='forecast_data' name='federated.0y1g3v31sxu9dk13a7ore1611n8b' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0y1g3v31sxu9dk13a7ore1611n8b'>
+            <column datatype='real' name='[Bammel]' role='measure' type='quantitative' />
+            <column datatype='datetime' name='[Date]' role='dimension' type='ordinal' />
+            <column datatype='string' name='[Event]' role='dimension' type='nominal' />
+            <column-instance column='[Event]' derivation='Attribute' name='[attr:Event:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Bammel]' derivation='Sum' name='[sum:Bammel:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Date]' derivation='Week-Trunc' name='[twk:Date:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='title' class='0' field='[federated.0y1g3v31sxu9dk13a7ore1611n8b].[sum:Bammel:qk]' scope='rows' value='Bammel' />
+            <encoding attr='space' class='0' field='[federated.0y1g3v31sxu9dk13a7ore1611n8b].[sum:Bammel:qk]' field-type='quantitative' max='45.0' min='-1.9142709038802608' range-type='fixed' scope='rows' type='space' />
+            <format attr='title' class='0' field='[federated.0y1g3v31sxu9dk13a7ore1611n8b].[twk:Date:qk]' scope='cols' value='' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane id='1' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <encodings>
+              <tooltip column='[federated.0y1g3v31sxu9dk13a7ore1611n8b].[attr:Event:nk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='size' value='1.3733149766921997' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0y1g3v31sxu9dk13a7ore1611n8b].[sum:Bammel:qk]</rows>
+        <cols>[federated.0y1g3v31sxu9dk13a7ore1611n8b].[twk:Date:qk]</cols>
+      </table>
+      <simple-id uuid='{B3CF17EA-55AF-48EE-9C1C-557474A0C041}' />
+    </worksheet>
+    <worksheet name='Braeburn'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='forecast_data' name='federated.0y1g3v31sxu9dk13a7ore1611n8b' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0y1g3v31sxu9dk13a7ore1611n8b'>
+            <column datatype='real' name='[Braeburn]' role='measure' type='quantitative' />
+            <column datatype='datetime' name='[Date]' role='dimension' type='ordinal' />
+            <column datatype='string' name='[Event]' role='dimension' type='nominal' />
+            <column-instance column='[Event]' derivation='Attribute' name='[attr:Event:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Braeburn]' derivation='Sum' name='[sum:Braeburn:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Date]' derivation='Month-Trunc' name='[tmn:Date:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='title' class='0' field='[federated.0y1g3v31sxu9dk13a7ore1611n8b].[tmn:Date:qk]' scope='cols' value='' />
+            <encoding attr='space' class='0' field='[federated.0y1g3v31sxu9dk13a7ore1611n8b].[sum:Braeburn:qk]' field-type='quantitative' max='45.0' min='-2.1642652656108767' range-type='fixed' scope='rows' type='space' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane id='1' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <encodings>
+              <tooltip column='[federated.0y1g3v31sxu9dk13a7ore1611n8b].[attr:Event:nk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='size' value='1.3733149766921997' />
+                <format attr='mark-color' value='#f28e2b' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0y1g3v31sxu9dk13a7ore1611n8b].[sum:Braeburn:qk]</rows>
+        <cols>[federated.0y1g3v31sxu9dk13a7ore1611n8b].[tmn:Date:qk]</cols>
+      </table>
+      <simple-id uuid='{1ECA3E9D-7681-4E38-8AE6-0DA5CF9BD948}' />
+    </worksheet>
+    <worksheet name='Comparison'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='forecast_data' name='federated.0y1g3v31sxu9dk13a7ore1611n8b' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0y1g3v31sxu9dk13a7ore1611n8b'>
+            <column datatype='real' name='[Bammel]' role='measure' type='quantitative' />
+            <column datatype='datetime' name='[Date]' role='dimension' type='ordinal' />
+            <column datatype='string' name='[Event]' role='dimension' type='nominal' />
+            <column datatype='real' name='[Sagemont]' role='measure' type='quantitative' />
+            <column-instance column='[Event]' derivation='Attribute' name='[attr:Event:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Bammel]' derivation='Sum' name='[sum:Bammel:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Sagemont]' derivation='Sum' name='[sum:Sagemont:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Date]' derivation='Week-Trunc' name='[twk:Date:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' field='[federated.0y1g3v31sxu9dk13a7ore1611n8b].[sum:Bammel:qk]' field-type='quantitative' fold='true' scope='rows' synchronized='true' type='space' />
+            <format attr='display' class='0' field='[federated.0y1g3v31sxu9dk13a7ore1611n8b].[sum:Bammel:qk]' scope='rows' value='false' />
+            <format attr='title' class='0' field='[federated.0y1g3v31sxu9dk13a7ore1611n8b].[sum:Sagemont:qk]' scope='rows' value='Gauge' />
+            <format attr='title' class='0' field='[federated.0y1g3v31sxu9dk13a7ore1611n8b].[twk:Date:qk]' scope='cols' value='' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane id='1' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.0y1g3v31sxu9dk13a7ore1611n8b].[:Measure Names]' />
+              <tooltip column='[federated.0y1g3v31sxu9dk13a7ore1611n8b].[attr:Event:nk]' />
+            </encodings>
+          </pane>
+          <pane id='2' selection-relaxation-option='selection-relaxation-allow' y-axis-name='[federated.0y1g3v31sxu9dk13a7ore1611n8b].[sum:Bammel:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <encodings>
+              <color column='[federated.0y1g3v31sxu9dk13a7ore1611n8b].[:Measure Names]' />
+              <tooltip column='[federated.0y1g3v31sxu9dk13a7ore1611n8b].[attr:Event:nk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='size' value='0.40580111742019653' />
+              </style-rule>
+            </style>
+          </pane>
+          <pane id='3' selection-relaxation-option='selection-relaxation-allow' y-axis-name='[federated.0y1g3v31sxu9dk13a7ore1611n8b].[sum:Sagemont:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <encodings>
+              <color column='[federated.0y1g3v31sxu9dk13a7ore1611n8b].[:Measure Names]' />
+              <tooltip column='[federated.0y1g3v31sxu9dk13a7ore1611n8b].[attr:Event:nk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='size' value='1.5932043790817261' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>([federated.0y1g3v31sxu9dk13a7ore1611n8b].[sum:Sagemont:qk] + [federated.0y1g3v31sxu9dk13a7ore1611n8b].[sum:Bammel:qk])</rows>
+        <cols>[federated.0y1g3v31sxu9dk13a7ore1611n8b].[twk:Date:qk]</cols>
+      </table>
+      <simple-id uuid='{C60AAB81-B1E4-4F6A-AF5E-7B0AA8CACE96}' />
+    </worksheet>
+    <worksheet name='Highland'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='forecast_data' name='federated.0y1g3v31sxu9dk13a7ore1611n8b' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0y1g3v31sxu9dk13a7ore1611n8b'>
+            <column datatype='datetime' name='[Date]' role='dimension' type='ordinal' />
+            <column datatype='string' name='[Event]' role='dimension' type='nominal' />
+            <column datatype='real' name='[Highland]' role='measure' type='quantitative' />
+            <column-instance column='[Event]' derivation='Attribute' name='[attr:Event:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Highland]' derivation='Sum' name='[sum:Highland:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Date]' derivation='Month-Trunc' name='[tmn:Date:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='title' class='0' field='[federated.0y1g3v31sxu9dk13a7ore1611n8b].[tmn:Date:qk]' scope='cols' value='' />
+            <encoding attr='space' class='0' field='[federated.0y1g3v31sxu9dk13a7ore1611n8b].[sum:Highland:qk]' field-type='quantitative' max='45.0' min='-1.652805580360257' range-type='fixed' scope='rows' type='space' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane id='3' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <encodings>
+              <tooltip column='[federated.0y1g3v31sxu9dk13a7ore1611n8b].[attr:Event:nk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='size' value='1.6591712236404419' />
+                <format attr='mark-color' value='#e15759' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0y1g3v31sxu9dk13a7ore1611n8b].[sum:Highland:qk]</rows>
+        <cols>[federated.0y1g3v31sxu9dk13a7ore1611n8b].[tmn:Date:qk]</cols>
+      </table>
+      <simple-id uuid='{D9EDC34B-2291-402C-8ED1-FD29F22A85A8}' />
+    </worksheet>
+    <worksheet name='Sagemont'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='forecast_data' name='federated.0y1g3v31sxu9dk13a7ore1611n8b' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0y1g3v31sxu9dk13a7ore1611n8b'>
+            <column datatype='datetime' name='[Date]' role='dimension' type='ordinal' />
+            <column datatype='string' name='[Event]' role='dimension' type='nominal' />
+            <column datatype='real' name='[Sagemont]' role='measure' type='quantitative' />
+            <column-instance column='[Event]' derivation='Attribute' name='[attr:Event:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Sagemont]' derivation='Sum' name='[sum:Sagemont:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Date]' derivation='Month-Trunc' name='[tmn:Date:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='title' class='0' field='[federated.0y1g3v31sxu9dk13a7ore1611n8b].[tmn:Date:qk]' scope='cols' value='' />
+            <encoding attr='space' class='0' field='[federated.0y1g3v31sxu9dk13a7ore1611n8b].[sum:Sagemont:qk]' field-type='quantitative' max='45.0' min='-2.3051834311468875' range-type='fixed' scope='rows' type='space' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane id='3' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <encodings>
+              <tooltip column='[federated.0y1g3v31sxu9dk13a7ore1611n8b].[attr:Event:nk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='size' value='1.6591712236404419' />
+                <format attr='mark-color' value='#f1ce63' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0y1g3v31sxu9dk13a7ore1611n8b].[sum:Sagemont:qk]</rows>
+        <cols>[federated.0y1g3v31sxu9dk13a7ore1611n8b].[tmn:Date:qk]</cols>
+      </table>
+      <simple-id uuid='{3AC43ED7-81A6-49F7-839B-5C25CA0C9773}' />
+    </worksheet>
+    <worksheet name='Sheet 2'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='forecast_data' name='federated.0y1g3v31sxu9dk13a7ore1611n8b' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0y1g3v31sxu9dk13a7ore1611n8b'>
+            <column datatype='real' name='[Bammel]' role='measure' type='quantitative' />
+            <column datatype='datetime' name='[Date]' role='dimension' type='ordinal' />
+            <column datatype='real' name='[Highland]' role='measure' type='quantitative' />
+            <column-instance column='[Bammel]' derivation='Sum' name='[sum:Bammel:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Highland]' derivation='Sum' name='[sum:Highland:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Date]' derivation='Month-Trunc' name='[tmn:Date:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='display' class='0' field='[federated.0y1g3v31sxu9dk13a7ore1611n8b].[sum:Highland:qk]' scope='rows' value='false' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+          </pane>
+          <pane id='1' selection-relaxation-option='selection-relaxation-allow' y-axis-name='[federated.0y1g3v31sxu9dk13a7ore1611n8b].[sum:Bammel:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+          </pane>
+          <pane id='2' selection-relaxation-option='selection-relaxation-allow' y-axis-name='[federated.0y1g3v31sxu9dk13a7ore1611n8b].[sum:Highland:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+          </pane>
+        </panes>
+        <rows>([federated.0y1g3v31sxu9dk13a7ore1611n8b].[sum:Bammel:qk] + [federated.0y1g3v31sxu9dk13a7ore1611n8b].[sum:Highland:qk])</rows>
+        <cols>[federated.0y1g3v31sxu9dk13a7ore1611n8b].[tmn:Date:qk]</cols>
+      </table>
+      <simple-id uuid='{9C2DEA93-9779-4ED5-8592-852472BD8D02}' />
+    </worksheet>
+    <worksheet name='Sheet 6'>
+      <table>
+        <view>
+          <datasources />
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{A3A28A3D-CC14-442E-9296-26070704A998}' />
+    </worksheet>
+  </worksheets>
+  <dashboards>
+    <dashboard name='BammelForecast'>
+      <style />
+      <size maxheight='800' maxwidth='1000' minheight='800' minwidth='1000' />
+      <zones>
+        <zone h='58000' id='3' is-centered='0' is-scaled='1' param='Image/Bammel_forecast.png' type='bitmap' w='84600' x='5400' y='500' />
+      </zones>
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <size maxheight='700' minheight='700' sizing-mode='vscroll' />
+          <zones>
+            <zone h='100000' id='4' type='layout-basic' w='100000' x='0' y='0'>
+              <zone h='98000' id='5' param='vert' type='layout-flow' w='98400' x='800' y='1000'>
+                <zone fixed-size='280' h='58875' id='3' is-centered='0' is-fixed='true' is-scaled='1' param='Image/Bammel_forecast.png' type='bitmap' w='87600' x='5800' y='9000'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{97C54EDF-3D8C-4D62-8708-A9CA832C39A4}' />
+    </dashboard>
+    <dashboard name='ComparisonDash'>
+      <style />
+      <size maxheight='800' maxwidth='1000' minheight='800' minwidth='1000' />
+      <zones>
+        <zone h='70625' id='3' name='Comparison' show-title='false' w='89100' x='6600' y='6125' />
+        <zone h='8875' id='4' name='Comparison' pane-specification-id='3' param='[federated.0y1g3v31sxu9dk13a7ore1611n8b].[:Measure Names]' type='color' w='13300' x='16600' y='12000' />
+      </zones>
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <size maxheight='700' minheight='700' sizing-mode='vscroll' />
+          <zones>
+            <zone h='100000' id='5' type='layout-basic' w='100000' x='0' y='0'>
+              <zone h='98000' id='6' param='vert' type='layout-flow' w='98400' x='800' y='1000'>
+                <zone fixed-size='280' h='70625' id='3' is-fixed='true' name='Comparison' show-title='false' w='89100' x='6600' y='6125'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='8875' id='4' name='Comparison' pane-specification-id='3' param='[federated.0y1g3v31sxu9dk13a7ore1611n8b].[:Measure Names]' type='color' w='13300' x='16600' y='12000'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{B982FC3A-6E84-4DC2-B341-63CFB164C4FF}' />
+    </dashboard>
+    <dashboard name='Decomposed'>
+      <style />
+      <size maxheight='700' maxwidth='1000' minheight='700' minwidth='1000' sizing-mode='fixed' />
+      <zones>
+        <zone h='63625' id='3' is-scaled='1' param='Image/Bammel_decomposed.png' type='bitmap' w='90900' x='6100' y='1000' />
+        <zone h='16429' id='6' type='text' w='84500' x='10400' y='66143'>
+          <formatted-text>
+            <run fontsize='12'>The decomposition above separated our historical data into the different components and will use the seasonal component to create a forecast shown later in the story. </run>
+            <run>Æ&#10;</run>
+          </formatted-text>
+        </zone>
+      </zones>
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <size maxheight='700' minheight='700' sizing-mode='vscroll' />
+          <zones>
+            <zone h='100000' id='4' type='layout-basic' w='100000' x='0' y='0'>
+              <zone h='98000' id='5' param='vert' type='layout-flow' w='98400' x='800' y='1000'>
+                <zone fixed-size='280' h='63625' id='3' is-fixed='true' is-scaled='1' param='Image/Bammel_decomposed.png' type='bitmap' w='90900' x='6100' y='6500'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{E2891AF7-5682-4678-BB6A-DCFAB5325E2B}' />
+    </dashboard>
+    <dashboard name='Forecasting'>
+      <style />
+      <size maxheight='800' maxwidth='1000' minheight='800' minwidth='1000' />
+      <zones>
+        <zone h='64125' id='3' param='Image/Bammel_onestepforecast.png' type='bitmap' w='91600' x='3300' y='4125' />
+        <zone forceUpdate='true' h='16250' id='6' type='text' w='75800' x='13700' y='68375'>
+          <formatted-text>
+            <run fontsize='12'>The graph above displays the forecast for the gauge nearest to the Bammel Forest neighborhood located in the North West region of Houston. The forecast in orange show similar highs and lows to the observed data in 2018. We will use this predictive model to foreceast into three years to identify the neighborhood that will require priority versus others when severe flooding may occur. </run>
+          </formatted-text>
+        </zone>
+      </zones>
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <size maxheight='700' minheight='700' sizing-mode='vscroll' />
+          <zones>
+            <zone h='100000' id='4' type='layout-basic' w='100000' x='0' y='0'>
+              <zone h='98000' id='5' param='vert' type='layout-flow' w='98400' x='800' y='1000'>
+                <zone fixed-size='280' h='64125' id='3' is-fixed='true' param='Image/Bammel_onestepforecast.png' type='bitmap' w='91600' x='3300' y='4125'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{C29E036B-67F0-450C-983F-80D1DD541D25}' />
+    </dashboard>
+    <dashboard name='Gauges'>
+      <style />
+      <size maxheight='700' maxwidth='900' minheight='700' minwidth='900' sizing-mode='fixed' />
+      <zones>
+        <zone h='36000' id='3' name='Bammel' show-title='false' w='94444' x='3333' y='4125' />
+        <zone h='36875' id='6' name='Sagemont' show-title='false' w='93667' x='3778' y='43625' />
+      </zones>
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <size maxheight='700' minheight='700' sizing-mode='vscroll' />
+          <zones>
+            <zone h='100000' id='7' type='layout-basic' w='100000' x='0' y='0'>
+              <zone h='98000' id='8' param='vert' type='layout-flow' w='98222' x='889' y='1000'>
+                <zone fixed-size='179' h='22375' id='3' is-fixed='true' name='Bammel' show-title='false' w='95222' x='3333' y='4125'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='204' h='25500' id='6' is-fixed='true' name='Sagemont' show-title='false' w='93667' x='3889' y='32375'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{E569AFC6-7ED4-45CC-BE04-F2BEF5714816}' />
+    </dashboard>
+    <dashboard name='The Story' type='storyboard'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontsize='16'>Harris County Flood Gauges</run>
+            <run>Æ&#10;</run>
+            <run bold='true' fontsize='11' underline='true'>Bammel Forest (NW) &amp; Sagemont (SE)</run>
+            <run>Æ&#10;</run>
+            <run fontsize='9' italic='true'>Retrieved from Harris County Flood Warning System, </run>
+            <run auto-url='true' fontcolor='#0000ff' fontname='Benton Sans Book' fontsize='9' hyperlink='tabdoc:load-url url=&amp;quot;https://www.harriscountyfws.org/&amp;quot;' italic='true' underline='true'>https://www.harriscountyfws.org/</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <style />
+      <size maxheight='964' maxwidth='1016' minheight='964' minwidth='1016' />
+      <zones>
+        <zone h='100000' id='2' type='layout-basic' w='100000' x='0' y='0'>
+          <zone h='98340' id='1' param='vert' removable='false' type='layout-flow' w='98426' x='787' y='830'>
+            <zone h='6950' id='3' type='title' w='98426' x='787' y='830' />
+            <zone h='10477' id='4' is-fixed='true' paired-zone-id='5' removable='false' type='flipboard-nav' w='98426' x='787' y='7780' />
+            <zone h='80913' id='5' paired-zone-id='4' removable='false' type='flipboard' w='98426' x='787' y='18257'>
+              <flipboard active-id='1' nav-type='caption' show-nav-arrows='true'>
+                <story-points>
+                  <story-point caption='Look into Bammel and Sagemont Gauges' captured-sheet='Gauges' id='1' />
+                  <story-point caption='Bammel vs. Sagemont' captured-sheet='ComparisonDash' id='5' />
+                  <story-point caption='One-Step Forward' captured-sheet='Forecasting' id='2' />
+                  <story-point caption='Decomposition' captured-sheet='Decomposed' id='3' />
+                  <story-point caption='Bammel Forecast' captured-sheet='BammelForecast' id='4' />
+                </story-points>
+              </flipboard>
+            </zone>
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='8' />
+          </zone-style>
+        </zone>
+      </zones>
+      <simple-id uuid='{D984F990-99A5-45A6-A2DE-AC5B46157777}' />
+    </dashboard>
+  </dashboards>
+  <windows source-height='30'>
+    <window class='worksheet' name='Bammel'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <default-map-tool-selection tool='2' />
+      </viewpoint>
+      <simple-id uuid='{2A147EC1-1EAB-46B4-8CCE-1976355B14DF}' />
+    </window>
+    <window class='worksheet' name='Highland'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <default-map-tool-selection tool='2' />
+      </viewpoint>
+      <simple-id uuid='{C4BE66A5-4E72-43B3-8C9F-005063E00DA5}' />
+    </window>
+    <window class='worksheet' name='Braeburn'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <default-map-tool-selection tool='2' />
+      </viewpoint>
+      <simple-id uuid='{CB4F1BE6-CA68-43BA-9A92-4311F2F585C9}' />
+    </window>
+    <window class='worksheet' name='Sagemont'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <default-map-tool-selection tool='2' />
+      </viewpoint>
+      <simple-id uuid='{605EF525-C9DD-447C-9CA3-CB20FE985C3D}' />
+    </window>
+    <window class='worksheet' maximized='true' name='Comparison'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='3' param='[federated.0y1g3v31sxu9dk13a7ore1611n8b].[:Measure Names]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+      </viewpoint>
+      <simple-id uuid='{B8BEFEE0-5566-4DAB-BEB0-5F60D2303A98}' />
+    </window>
+    <window class='worksheet' name='Sheet 2'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <default-map-tool-selection tool='2' />
+      </viewpoint>
+      <simple-id uuid='{CBB14061-9706-48BF-8D23-35F640293CFE}' />
+    </window>
+    <window class='dashboard' name='Gauges'>
+      <viewpoints>
+        <viewpoint name='Bammel'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Sagemont'>
+          <zoom type='entire-view' />
+        </viewpoint>
+      </viewpoints>
+      <active id='-1' />
+      <simple-id uuid='{90667633-126F-4D4F-A182-93C212182DE6}' />
+    </window>
+    <window class='dashboard' name='Forecasting'>
+      <viewpoints />
+      <active id='-1' />
+      <simple-id uuid='{1E929F39-DB31-4CAA-9B1A-A0EBEF48A499}' />
+    </window>
+    <window class='dashboard' name='Decomposed'>
+      <viewpoints />
+      <active id='-1' />
+      <simple-id uuid='{E57B075F-70E0-424C-96F4-0D0DA6FC8715}' />
+    </window>
+    <window class='dashboard' name='ComparisonDash'>
+      <viewpoints>
+        <viewpoint name='Comparison'>
+          <zoom type='entire-view' />
+        </viewpoint>
+      </viewpoints>
+      <active id='-1' />
+      <simple-id uuid='{2428B819-B48B-4D0E-B012-8567F2229411}' />
+    </window>
+    <window class='dashboard' name='BammelForecast'>
+      <viewpoints />
+      <active id='-1' />
+      <simple-id uuid='{EEEF8CD2-555F-423B-84BE-20A3F24BFE65}' />
+    </window>
+    <window class='dashboard' name='The Story'>
+      <viewpoints />
+      <active id='-1' />
+      <grid grid-overlay-mode='on' />
+      <simple-id uuid='{B47226E7-5065-4120-80B0-EE2B735B4502}' />
+    </window>
+    <window class='worksheet' name='Sheet 6'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{36C59075-7CF8-4A88-9C88-05572012042B}' />
+    </window>
+  </windows>
+</workbook>
