@@ -61,7 +61,13 @@ def har_homes():
         try:
             all_info = soup.find('div', class_= 'mpi_info') 
             price = soup.find('div', class_= 'mpi_img')
-            home_info['address']= all_info.findAll('span', class_= 'bold')[0].text
+            full_address = all_info.findAll('a', class_= 'address')[0].text
+            split_address = full_address.split(',')
+            home_info['address']= split_address[0].strip()
+            home_info['city']= split_address[1].strip()
+            state_zip = split_address[2].split(' ')
+            home_info['state'] = state_zip[1].strip()
+            home_info['zip'] = state_zip[2].strip()
             home_info['days']= all_info.findAll('span', class_= 'bold')[1].text
             home_info['agent'] = all_info.findAll('a', class_='bold')[0].text
             home_info['office'] = all_info.findAll('a', class_= 'bold')[1].text
@@ -80,7 +86,7 @@ def threader(job_func):
     job_thread = threading.Thread(target=job_func)
     job_thread.start()
 
-schedule.every(120).seconds.do(threader, har_homes)
+schedule.every(120).seconds.do(threader, compare)
 
 def main():    
     schedule.run_pending()
