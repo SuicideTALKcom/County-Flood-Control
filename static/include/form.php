@@ -70,8 +70,8 @@ if( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 	---------------------------------------------------*/
 
 	$message = array(
-		'success'			=> 'We have <strong>successfully</strong> received your Message and will get Back to you as soon as possible.',
-		'error'				=> 'Email <strong>could not</strong> be sent due to some Unexpected Error. Please Try Again later.',
+		'success'			=> 'You have <strong>successfully</strong> sent your message.  We will get back to you soon.',
+		'error'				=> 'Your Email <strong>could not</strong> be sent due to an Unexpected Error. Please try again later.',
 		'error_bot'			=> 'Bot Detected! Form could not be processed! Please Try Again!',
 		'error_unexpected'	=> 'An <strong>unexpected error</strong> occured. Please Try Again later.',
 		'recaptcha_invalid'	=> 'Captcha not Validated! Please Try Again!',
