@@ -2,7 +2,6 @@
 from sqlalchemy import create_engine
 import pymysql
 import pandas as pd
-import matplotlib 
 import numpy as np 
 import time
 from datetime import datetime
