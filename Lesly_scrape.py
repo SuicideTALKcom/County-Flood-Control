@@ -72,6 +72,7 @@ def har_homes():
             home_info['agent'] = all_info.findAll('a', class_='bold')[0].text
             home_info['office'] = all_info.findAll('a', class_= 'bold')[1].text
             home_info['price']= price.find('div','price').text.replace(',','').replace('$','').strip()
+            home_info['datetime']= str(datetime.today())
             all_homes.append(home_info)
         except:
             print("No results given for " + url)

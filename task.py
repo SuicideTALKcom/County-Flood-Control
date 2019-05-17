@@ -5,15 +5,14 @@ import pandas as pd
 import numpy as np 
 import time
 from datetime import datetime
+from config import connection 
 
 def homes_comparison(homes):
     #create a connection to the sql database 
-    engine = create_engine("mysql+pymysql://root:banana@localhost/homes_db", echo=False)
+    engine = create_engine(connection, echo=False)
 
     #put the results of the function into a dataframe
     homesdf = pd.DataFrame(homes)
-
-    homesdf['datetime'] = str(datetime.today())
 
     #loop thorugh each new df scrape and compare it against the sql database
     for i, house in homesdf.iterrows():

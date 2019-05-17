@@ -5,7 +5,7 @@ import os
 import time 
 import pandas as pd
 import numpy as np
-
+from config import connection 
 import sqlalchemy
 from sqlalchemy.ext.automap import automap_base
 from sqlalchemy.orm import Session
@@ -15,6 +15,7 @@ from Lesly_scrape import main
 import threading
 from flask import Flask, jsonify, render_template
 import json
+
 #from flask_sqlalchemy import SQLAlchemy
 
 
@@ -27,7 +28,7 @@ import json
 if (os.environ.get("JAWSDB_URL")):
     engine = create_engine(os.environ.get("JAWSDB_URL"))
 else:
-    engine = create_engine("mysql+pymysql://root:banana@localhost/homes_db")
+    engine = create_engine(connection)
 
 # reflect an existing database into a new model
 Base = automap_base()
@@ -124,7 +125,7 @@ def about():
 @app.route("/api/neighborhood/<neighborhood>")
 def api(neighborhood):
     print("neighborhood route")
-    query = session.query(home.Neighborhood,home.Address, home.Price, home.Days_on_Market, home.Agent)
+    query = session.query(home.neighborhood,home.address, home.price, home.days, home.agent, home.city, home.state, home.zip)
     
     if neighborhood == True:
         results = query.all()
