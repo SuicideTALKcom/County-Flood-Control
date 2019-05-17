@@ -14,6 +14,7 @@ from sqlalchemy import create_engine, func, inspect
 from Lesly_scrape import main
 import threading
 from flask import Flask, jsonify, render_template
+import json
 #from flask_sqlalchemy import SQLAlchemy
 
 
@@ -133,37 +134,12 @@ def api(neighborhood):
     new_home = pd.DataFrame(results).to_json(orient = 'records')
     
     # from pprint import pprint
-    import json
+
 
     # pprint(json.loads(new_home))
 
     return jsonify(json.loads(new_home))
    
-# @app.route("/chart")
-# def chart():
-
-#     return render_template("chart.html")
-
-#change from array of arrays into an array of objects
-#query for a specific neighborhood instead of all rows 
-
-
-
-
-#Neighborhood Name
-#Address
-#Price
-#Days on Market
-#Agent    
-    
-
-#need an API route for analytics 
-
-# @app.route("/api")
-# def dummy():
-#     return jsonify({
-#         "test": "success"
-#     })
 
 if __name__ == "__main__":
     app.debug = False

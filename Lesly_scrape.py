@@ -79,19 +79,19 @@ def har_homes():
             
     return all_homes
 
-def compare ():
+def compare():
     homes_comparison(har_homes())
+    # print("banana")
 
 def threader(job_func):
     job_thread = threading.Thread(target=job_func)
     job_thread.start()
 
-schedule.every(120).seconds.do(threader, compare)
+schedule.every(180).seconds.do(threader, compare)
 
 def main():    
     schedule.run_pending()
     time.sleep(1)
 
 
- 
 
