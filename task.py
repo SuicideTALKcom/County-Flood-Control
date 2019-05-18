@@ -24,7 +24,7 @@ def homes_comparison(homes):
         if retrieved_data.empty:
             homesdf.iloc[i].to_sql('lmib79r99ct0zdgq', if_exists = 'append', schema= 'online', con=engine)
 
-    cur.execute(f"INSERT INTO lmib79r99ct0zdgq")
+    cur.execute(f"INSERT INTO lmib79r99ct0zdgq VALUES homesdf")
     
 
     conn.commit()
