@@ -24,7 +24,7 @@
 	
 	<!-- Document Title
 	============================================= -->
-	<title>Contact</title>
+	<title>Analytics</title>
 
 </head>
 
@@ -67,7 +67,7 @@
 						<ul>
 							<li><a href="analytics"><div>Analytics</div></a></li>
 							<li><a href="alerts"><div>Alerts</div></a></li>
-							<li><a href="#"><div>Contact</div></a></li>
+							<li><a href="contact"><div>Contact</div></a></li>
 							<li><a href="about"><div>About</div></a></li>
 						</ul>
 
@@ -84,97 +84,65 @@
 		<section id="page-title" class="page-title-parallax page-title-dark" style="background-image: url({{ url_for('static', filename='images/page-header-test.jpg') }}); padding: 120px 0;" data-bottom-top="background-position:0px 300px;" data-top-bottom="background-position:0px -300px;">
 
 			<div class="container clearfix">
-				<h1 data-animate="fadeInUp" data-delay="400">Contact</h1>
+				<h1 data-animate="fadeInUp" data-delay="400">Analytics</h1>
 				<span data-animate="fadeInUp" data-delay="300"></span>
 			</div>
 
 		</section><!-- #page-title end -->
+		
+		<!-- Page Sub Menu
+		============================================= -->
+		<div id="page-menu">
+
+			<div id="page-menu-wrap">
+
+				<div class="container clearfix">
+
+					<div class="menu-title"><span>DATA&nbsp;</span>&nbsp;ANALYTICS</div>
+
+					<nav class="one-page-menu">
+						<ul>
+							<li><a href="dashboard"><div>DASHBOARD</div></a></li>
+							<li><a href="forecasting"><div>FORECASTING</div></a></li>
+							<!--
+							<li><a href="story"><div>STORY</div></a></li>
+							-->
+						</ul>
+					</nav>
+
+					<div id="page-submenu-trigger"><i class="icon-reorder"></i></div>
+
+				</div>
+
+			</div>
+
+		</div><!-- #page-menu end -->
 
 		<!-- Content
 		============================================= -->
 		<section id="content">
 
-			<div class="content-wrap">
+			<!--<div class="content-wrap">
 
-				<div class="container clearfix">
-
-						<!-- Contact Form
-						============================================= -->
-						<h3>Contact Us</h3>
-
-						<div class="form-widget">
-
-							<div class="form-result"></div>
-
-							<form class="nobottommargin" id="template-contactform" name="template-contactform" action="include/form.php" method="post">
-
-								<div class="form-process"></div>
-
-								<div class="col_one_third">
-									<label for="template-contactform-name">Name <small>*</small></label>
-									<input type="text" id="template-contactform-name" name="template-contactform-name" value="" class="sm-form-control required" />
-								</div>
-
-								<div class="col_one_third">
-									<label for="template-contactform-email">Email <small>*</small></label>
-									<input type="email" id="template-contactform-email" name="template-contactform-email" value="" class="required email sm-form-control" />
-								</div>
-
-								<div class="col_one_third col_last">
-									<label for="template-contactform-phone">Phone</label>
-									<input type="text" id="template-contactform-phone" name="template-contactform-phone" value="" class="sm-form-control" />
-								</div>
-
-								<div class="clear"></div>
-
-								<div class="col_two_third">
-									<label for="template-contactform-subject">Subject <small>*</small></label>
-									<input type="text" id="template-contactform-subject" name="subject" value="" class="required sm-form-control" />
-								</div>
-
-								<div class="col_one_third col_last">
-									<label for="template-contactform-service">Services</label>
-									<select id="template-contactform-service" name="template-contactform-service" class="sm-form-control">
-										<option value="">-- Select One --</option>
-										<option value="other">Other</option>
-										<option value="meeting">Meeting</option>
-										<option value="question">Question</option>
-										<option value="consulting">Consulting</option>
-										<option value="feature">Feature Request</option>
-									</select>
-								</div>
-
-								<div class="clear"></div>
-
-								<div class="col_full">
-									<label for="template-contactform-message">Message <small>*</small></label>
-									<textarea class="required sm-form-control" id="template-contactform-message" name="template-contactform-message" rows="6" cols="30"></textarea>
-								</div>
-
-								<div class="col_full hidden">
-									<input type="text" id="template-contactform-botcheck" name="template-contactform-botcheck" value="" class="sm-form-control" />
-								</div>
-
-								<div class="col_full">
-									<button class="button button-3d nomargin" type="submit" id="template-contactform-submit" name="template-contactform-submit" value="submit">Send &nbsp;Message</button>
-								</div>
-
-								<input type="hidden" name="prefix" value="template-contactform-">
-
-							</form>
-							
-						</div>
-
-				</div>
-
+				<div class="container clearfix"> -->
+			
+			<div id="section-forecasting" class="page-section"></div>
+						
+			<div class="heading-block topmargin noborder">
+				<h2 class="center">FORECASTING</h2>
 			</div>
+					
+				<p align="center"><iframe src="//county-flood-control.herokuapp.com/tableau" width=1050 height=1400 style="text-align: center"></iframe></p>
+				
+				<!-- </div>
+
+			</div> -->
 
 		</section><!-- #content end -->
 
 		<!-- Footer
 		============================================= -->
 		<footer id="footer" class="dark">
-
 
 			<!-- Copyrights
 			============================================= -->
@@ -184,7 +152,8 @@
 
 					<div class="col_full nobottommargin center">
 
-						Copyright &copy; &nbsp;2019 &nbsp;Houston &nbsp;Emergency &nbsp;Coders
+						Copyright &copy; &nbsp;2019 &nbsp;Emergency &nbsp;Coders
+						
 					</div>
 
 				</div>
