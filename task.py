@@ -22,7 +22,7 @@ def homes_comparison(homes):
         #grab the address from the web scrape and  
         #compare if the address exists against the address column in the sql database
         if retrieved_data.empty:
-            homesdf.iloc[i].to_sql('lmib79r99ct0zdgq', if_exists = 'append', schema= 'online', con=engine)
+            homesdf.iloc[i].to_sql('lmib79r99ct0zdgq', if_exists = 'append', schema= 'online', con=con)
 
     cur.execute(f"INSERT INTO lmib79r99ct0zdgq VALUES homesdf")
     
