@@ -10,7 +10,7 @@ import sqlalchemy
 from sqlalchemy.ext.automap import automap_base
 from sqlalchemy.orm import Session
 from sqlalchemy import create_engine, func, inspect
-#import pymysql
+import pymysql
 from Lesly_scrape import main
 import threading
 from flask import Flask, jsonify, render_template
