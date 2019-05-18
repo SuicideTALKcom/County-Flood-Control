@@ -6,6 +6,7 @@ from bs4 import BeautifulSoup
 from pprint import pprint
 from urllib import parse
 import re 
+from datetime import datetime
 import schedule
 import threading 
 from task import homes_comparison
