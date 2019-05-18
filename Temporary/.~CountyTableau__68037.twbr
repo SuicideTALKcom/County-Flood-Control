@@ -10,7 +10,7 @@
     <WindowsPersistSimpleIdentifiers />
     <ZoneBackgroundTransparency />
   </document-format-change-manifest>
-  <repository-location id='CountyTableau' path='/workbooks' revision='1.0' />
+  <repository-location id='CountyTableau' path='/workbooks' revision='1.1' />
   <preferences>
     <preference name='ui.encoding.shelf.height' value='24' />
     <preference name='ui.shelf.height' value='26' />
@@ -458,10 +458,10 @@
   <actions>
     <action caption='Filter 1 (generated)' name='[Action1]'>
       <activation auto-clear='true' type='on-select' />
-      <source dashboard='CountryDash' type='sheet' worksheet='CountyList' />
+      <source dashboard='CountyDash' type='sheet' worksheet='CountyList' />
       <command command='tsc:tsl-filter'>
         <param name='special-fields' value='all' />
-        <param name='target' value='CountryDash' />
+        <param name='target' value='CountyDash' />
       </command>
     </action>
     <action caption='Filter 1 (generated) 1' name='[Action2]'>
@@ -617,7 +617,7 @@
             </encodings>
             <style>
               <style-rule element='mark'>
-                <format attr='size' value='1.8790607452392578' />
+                <format attr='size' value='2.4640884399414062' />
                 <format attr='shape' value=':custom/home.png' />
               </style-rule>
             </style>
@@ -803,7 +803,7 @@
     </worksheet>
   </worksheets>
   <dashboards>
-    <dashboard name='CountryDash'>
+    <dashboard name='CountyDash'>
       <style />
       <size maxheight='1400' maxwidth='1200' minheight='1400' minwidth='1200' sizing-mode='fixed' />
       <zones>
@@ -961,7 +961,7 @@
     </dashboard>
   </dashboards>
   <windows source-height='30'>
-    <window class='worksheet' maximized='true' name='CountyMap'>
+    <window class='worksheet' name='CountyMap'>
       <cards>
         <edge name='left'>
           <strip size='160'>
@@ -1012,7 +1012,7 @@
       </cards>
       <simple-id uuid='{FB836237-3E0E-4ADB-887F-9335998CA7CC}' />
     </window>
-    <window class='dashboard' name='CountryDash'>
+    <window class='dashboard' name='CountyDash'>
       <viewpoints>
         <viewpoint name='CountyList'>
           <zoom type='entire-view' />
@@ -1072,7 +1072,7 @@
       </cards>
       <simple-id uuid='{41B5993B-F1BC-462D-9C37-484C66BF941F}' />
     </window>
-    <window class='dashboard' name='NeighborhoodDash'>
+    <window class='dashboard' maximized='true' name='NeighborhoodDash'>
       <viewpoints>
         <viewpoint name='CountyList'>
           <zoom type='entire-view' />
