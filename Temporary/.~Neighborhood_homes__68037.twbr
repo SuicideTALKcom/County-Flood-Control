@@ -216,6 +216,12 @@
           <groupfilter function='level-members' level='[price]' />
         </groupfilter>
       </group>
+      <group caption='Action (Address,Neighborhood)' hidden='true' name='[Action (Address,Neighborhood)]' name-style='unqualified' user:auto-column='sheet_link'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[address]' />
+          <groupfilter function='level-members' level='[neighborhood]' />
+        </groupfilter>
+      </group>
       <extract count='-1' enabled='true' units='records'>
         <connection access_mode='readonly' authentication='auth-none' author-locale='en_US' class='hyper' dbname='Data/Datasources/scraped_hommes.hyper' default-settings='yes' schema='Extract' sslmode='' tablename='Extract' update-time='05/18/2019 07:03:30 AM' username='tableau_internal_user'>
           <relation name='Extract' table='[Extract].[Extract]' type='table' />
@@ -467,21 +473,201 @@
         <param name='target' value='CountyDash' />
       </command>
     </action>
+    <action caption='Filter 2 (generated)' name='[Action2]'>
+      <activation auto-clear='true' type='on-select' />
+      <source dashboard='AnalyticsDash' type='sheet' worksheet='AnalyticsDays' />
+      <command command='tsc:tsl-filter'>
+        <param name='special-fields' value='all' />
+        <param name='target' value='AnalyticsDash' />
+      </command>
+    </action>
   </actions>
   <worksheets>
-    <worksheet name='AnalyticsDashboard'>
+    <worksheet name='AnalyticsContacts'>
       <table>
         <view>
-          <datasources />
+          <datasources>
+            <datasource caption='scraped_hommes' name='federated.0ze7y1n179jrf211fw0080nw6wrh' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0ze7y1n179jrf211fw0080nw6wrh'>
+            <column caption='Address' datatype='string' name='[address]' role='dimension' type='nominal' />
+            <column caption='Agent' datatype='string' name='[agent]' role='dimension' type='nominal' />
+            <column caption='Neighborhood' datatype='string' name='[neighborhood]' role='dimension' type='nominal' />
+            <column-instance column='[address]' derivation='None' name='[none:address:nk]' pivot='key' type='nominal' />
+            <column-instance column='[agent]' derivation='None' name='[none:agent:nk]' pivot='key' type='nominal' />
+            <column-instance column='[office]' derivation='None' name='[none:office:nk]' pivot='key' type='nominal' />
+            <column-instance column='[price]' derivation='None' name='[none:price:ok]' pivot='key' type='ordinal' />
+            <column caption='Office' datatype='string' name='[office]' role='dimension' type='nominal' />
+            <column aggregation='Sum' caption='Price' datatype='integer' name='[price]' role='dimension' type='ordinal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0ze7y1n179jrf211fw0080nw6wrh].[:Measure Names]'>
+            <groupfilter function='level-members' level='[:Measure Names]' />
+          </filter>
+          <filter class='categorical' column='[federated.0ze7y1n179jrf211fw0080nw6wrh].[Action (Address,Neighborhood)]'>
+            <groupfilter function='crossjoin' user:ui-action-filter='[Action2]' user:ui-enumeration='all' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[address]' />
+              <groupfilter function='level-members' level='[neighborhood]' />
+            </groupfilter>
+          </filter>
+          <slices>
+            <column>[federated.0ze7y1n179jrf211fw0080nw6wrh].[:Measure Names]</column>
+            <column>[federated.0ze7y1n179jrf211fw0080nw6wrh].[Action (Address,Neighborhood)]</column>
+          </slices>
           <aggregation value='true' />
         </view>
-        <style />
+        <style>
+          <style-rule element='cell'>
+            <format attr='width' field='[federated.0ze7y1n179jrf211fw0080nw6wrh].[:Measure Names]' value='5' />
+          </style-rule>
+          <style-rule element='header'>
+            <format attr='width' field='[federated.0ze7y1n179jrf211fw0080nw6wrh].[none:office:nk]' value='392' />
+            <format attr='width' field='[federated.0ze7y1n179jrf211fw0080nw6wrh].[none:agent:nk]' value='128' />
+            <format attr='width' field='[federated.0ze7y1n179jrf211fw0080nw6wrh].[none:address:nk]' value='108' />
+            <format attr='width' field='[federated.0ze7y1n179jrf211fw0080nw6wrh].[none:price:ok]' value='80' />
+          </style-rule>
+        </style>
         <panes>
           <pane selection-relaxation-option='selection-relaxation-allow'>
             <view>
               <breakdown value='auto' />
             </view>
             <mark class='Automatic' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='false' />
+              </style-rule>
+              <style-rule element='pane'>
+                <format attr='minwidth' value='-1' />
+                <format attr='maxwidth' value='-1' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>([federated.0ze7y1n179jrf211fw0080nw6wrh].[none:address:nk] / ([federated.0ze7y1n179jrf211fw0080nw6wrh].[none:price:ok] / ([federated.0ze7y1n179jrf211fw0080nw6wrh].[none:agent:nk] / [federated.0ze7y1n179jrf211fw0080nw6wrh].[none:office:nk])))</rows>
+        <cols>[federated.0ze7y1n179jrf211fw0080nw6wrh].[:Measure Names]</cols>
+      </table>
+      <simple-id uuid='{4A65B814-A498-4ED8-940B-DDC3C3137FBB}' />
+    </worksheet>
+    <worksheet name='AnalyticsDays'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='scraped_hommes' name='federated.0ze7y1n179jrf211fw0080nw6wrh' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0ze7y1n179jrf211fw0080nw6wrh'>
+            <column caption='Address' datatype='string' name='[address]' role='dimension' type='nominal' />
+            <column caption='Days' datatype='integer' name='[days]' role='measure' type='quantitative' />
+            <column caption='Neighborhood' datatype='string' name='[neighborhood]' role='dimension' type='nominal' />
+            <column-instance column='[address]' derivation='None' name='[none:address:nk]' pivot='key' type='nominal' />
+            <column-instance column='[neighborhood]' derivation='None' name='[none:neighborhood:nk]' pivot='key' type='nominal' />
+            <column-instance column='[days]' derivation='Sum' name='[sum:days:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <shelf-sorts>
+            <shelf-sort-v2 dimension-to-sort='[federated.0ze7y1n179jrf211fw0080nw6wrh].[none:neighborhood:nk]' direction='ASC' is-on-innermost-dimension='true' measure-to-sort-by='[federated.0ze7y1n179jrf211fw0080nw6wrh].[sum:days:qk]' shelf='rows' />
+          </shelf-sorts>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='display' class='0' field='[federated.0ze7y1n179jrf211fw0080nw6wrh].[sum:days:qk]' scope='cols' value='false' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.0ze7y1n179jrf211fw0080nw6wrh].[none:address:nk]' />
+              <text column='[federated.0ze7y1n179jrf211fw0080nw6wrh].[sum:days:qk]' />
+            </encodings>
+            <customized-label>
+              <formatted-text>
+                <run>&lt;</run>
+                <run>[federated.0ze7y1n179jrf211fw0080nw6wrh].[sum:days:qk]</run>
+                <run>&gt; Days </run>
+              </formatted-text>
+            </customized-label>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0ze7y1n179jrf211fw0080nw6wrh].[none:neighborhood:nk]</rows>
+        <cols>[federated.0ze7y1n179jrf211fw0080nw6wrh].[sum:days:qk]</cols>
+      </table>
+      <simple-id uuid='{2ADD8AD9-6378-4837-B825-3B1FD31461B4}' />
+    </worksheet>
+    <worksheet name='AnalyticsPage'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='scraped_hommes' name='federated.0ze7y1n179jrf211fw0080nw6wrh' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0ze7y1n179jrf211fw0080nw6wrh'>
+            <column caption='Address' datatype='string' name='[address]' role='dimension' type='nominal' />
+            <column caption='Days' datatype='integer' name='[days]' role='measure' type='quantitative' />
+            <column caption='Neighborhood' datatype='string' name='[neighborhood]' role='dimension' type='nominal' />
+            <column-instance column='[neighborhood]' derivation='None' name='[none:neighborhood:nk]' pivot='key' type='nominal' />
+            <column-instance column='[days]' derivation='Sum' name='[sum:days:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0ze7y1n179jrf211fw0080nw6wrh].[Action (Address,Neighborhood)]'>
+            <groupfilter function='crossjoin' user:ui-action-filter='[Action2]' user:ui-enumeration='all' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[address]' />
+              <groupfilter function='level-members' level='[neighborhood]' />
+            </groupfilter>
+          </filter>
+          <filter class='quantitative' column='[federated.0ze7y1n179jrf211fw0080nw6wrh].[sum:days:qk]' included-values='all' />
+          <slices>
+            <column>[federated.0ze7y1n179jrf211fw0080nw6wrh].[sum:days:qk]</column>
+            <column>[federated.0ze7y1n179jrf211fw0080nw6wrh].[Action (Address,Neighborhood)]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='mark'>
+            <encoding attr='size-bar' field='[federated.0ze7y1n179jrf211fw0080nw6wrh].[sum:days:qk]' field-type='quantitative' max-size='1' min-size='0.005' type='centersize' />
+            <encoding attr='color' field='[federated.0ze7y1n179jrf211fw0080nw6wrh].[sum:days:qk]' palette='blue_10_0' type='interpolated' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='on' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <size column='[federated.0ze7y1n179jrf211fw0080nw6wrh].[sum:days:qk]' />
+              <color column='[federated.0ze7y1n179jrf211fw0080nw6wrh].[sum:days:qk]' />
+              <text column='[federated.0ze7y1n179jrf211fw0080nw6wrh].[sum:days:qk]' />
+              <text column='[federated.0ze7y1n179jrf211fw0080nw6wrh].[none:neighborhood:nk]' />
+            </encodings>
+            <customized-label>
+              <formatted-text>
+                <run fontsize='14'>&lt;[federated.0ze7y1n179jrf211fw0080nw6wrh].[sum:days:qk]&gt;</run>
+                <run>Æ </run>
+                <run fontsize='10'>Days on the Market</run>
+                <run>&#10;Neighboorhood: &lt;[federated.0ze7y1n179jrf211fw0080nw6wrh].[none:neighborhood:nk]&gt;</run>
+              </formatted-text>
+            </customized-label>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-line-first' value='true' />
+                <format attr='mark-labels-line-last' value='true' />
+                <format attr='mark-labels-range-min' value='true' />
+                <format attr='mark-labels-range-max' value='true' />
+                <format attr='mark-labels-mode' value='all' />
+                <format attr='mark-labels-range-scope' value='pane' />
+                <format attr='mark-labels-range-field' value='' />
+              </style-rule>
+            </style>
           </pane>
         </panes>
         <rows />
@@ -732,19 +918,22 @@
             <column-instance column='[Calculation_4777685945976995840]' derivation='User' name='[usr:Calculation_4777685945976995840:qk]' pivot='key' type='quantitative' />
             <column caption='Zip' datatype='integer' default-format='*00000' name='[zip]' role='dimension' semantic-role='[ZipCode].[Name]' type='ordinal' />
           </datasource-dependencies>
+          <filter class='categorical' column='[federated.0ze7y1n179jrf211fw0080nw6wrh].[Action (Address,Neighborhood)]'>
+            <groupfilter function='crossjoin' user:ui-action-filter='[Action2]' user:ui-enumeration='all' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[address]' />
+              <groupfilter function='level-members' level='[neighborhood]' />
+            </groupfilter>
+          </filter>
           <filter class='categorical' column='[federated.0ze7y1n179jrf211fw0080nw6wrh].[none:neighborhood:nk]'>
             <groupfilter function='level-members' level='[none:neighborhood:nk]' user:ui-enumeration='all' user:ui-marker='enumerate' />
           </filter>
           <slices>
             <column>[federated.0ze7y1n179jrf211fw0080nw6wrh].[none:neighborhood:nk]</column>
+            <column>[federated.0ze7y1n179jrf211fw0080nw6wrh].[Action (Address,Neighborhood)]</column>
           </slices>
           <aggregation value='true' />
         </view>
         <style>
-          <style-rule element='axis'>
-            <encoding attr='space' class='0' field='[federated.0ze7y1n179jrf211fw0080nw6wrh].[Longitude (generated)]' field-type='quantitative' max='-10541931.829785185' min='-10686116.203139959' projection='EPSG:3857' range-type='fixed' scope='cols' type='space' />
-            <encoding attr='space' class='0' field='[federated.0ze7y1n179jrf211fw0080nw6wrh].[Latitude (generated)]' field-type='quantitative' max='3511303.0686562564' min='3443974.115741482' projection='EPSG:3857' range-type='fixed' scope='rows' type='space' />
-          </style-rule>
           <style-rule element='map-layer'>
             <format attr='enabled' id='tab_base' value='true' />
             <format attr='enabled' id='um_lcover' value='true' />
@@ -803,6 +992,93 @@
     </worksheet>
   </worksheets>
   <dashboards>
+    <dashboard name='AnalyticsDash'>
+      <style />
+      <size maxheight='1200' maxwidth='1000' minheight='1200' minwidth='1000' sizing-mode='fixed' />
+      <datasources>
+        <datasource caption='scraped_hommes' name='federated.0ze7y1n179jrf211fw0080nw6wrh' />
+      </datasources>
+      <datasource-dependencies datasource='federated.0ze7y1n179jrf211fw0080nw6wrh'>
+        <column caption='Days' datatype='integer' name='[days]' role='measure' type='quantitative' />
+        <column caption='Neighborhood' datatype='string' name='[neighborhood]' role='dimension' type='nominal' />
+        <column-instance column='[neighborhood]' derivation='None' name='[none:neighborhood:nk]' pivot='key' type='nominal' />
+        <column-instance column='[days]' derivation='Sum' name='[sum:days:qk]' pivot='key' type='quantitative' />
+      </datasource-dependencies>
+      <zones>
+        <zone h='99600' id='3' type='empty' w='5700' x='53000' y='400'>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='26' />
+            <format attr='background-color' value='#074080' />
+          </zone-style>
+        </zone>
+        <zone forceUpdate='true' h='12700' id='6' type='text' w='41700' x='4000' y='1700'>
+          <formatted-text>
+            <run bold='true' fontcolor='#074080' fontname='Tableau Bold' fontsize='36'>What&apos;s on the </run>
+            <run>Æ&#10;</run>
+            <run bold='true' fontcolor='#074080' fontname='Tableau Bold' fontsize='36'>market today?</run>
+          </formatted-text>
+        </zone>
+        <zone forceUpdate='true' h='9455' id='7' type='text' w='47800' x='3800' y='13000'>
+          <formatted-text>
+            <run fontcolor='#074080' fontname='Avenir' fontsize='11'>A glimpse into the Houston market with a focus on neighborhoods that are included in the HCFCD buyout program. All data refreshes per task scheduler programmed in the back-end. This displays the homes on sale along with other metrics that can be helpful to the user. </run>
+          </formatted-text>
+        </zone>
+        <zone h='22750' id='8' name='AnalyticsPage' show-title='false' w='38300' x='60400' y='12500' />
+        <zone h='4500' id='9' name='AnalyticsPage' param='[federated.0ze7y1n179jrf211fw0080nw6wrh].[sum:days:qk]' show-domain='false' show-null-ctrls='false' type='filter' w='25600' x='66800' y='7667' />
+        <zone h='22091' id='11' name='NeighborhoodMap' show-title='false' w='49000' x='3500' y='22455' />
+        <zone h='4400' id='12' mode='checkdropdown' name='NeighborhoodMap' param='[federated.0ze7y1n179jrf211fw0080nw6wrh].[none:neighborhood:nk]' type='filter' w='9800' x='42200' y='25500' />
+        <zone h='62000' id='13' name='AnalyticsDays' show-title='false' w='40600' x='59000' y='36500' />
+        <zone h='54250' id='14' name='AnalyticsContacts' show-title='false' w='50900' x='2600' y='50250' />
+        <zone h='2750' id='15' type='text' w='20300' x='2600' y='45250'>
+          <formatted-text>
+            <run fontcolor='#074080' fontsize='16'>Realtor Information</run>
+          </formatted-text>
+        </zone>
+        <zone h='4167' id='16' type='empty' w='53500' x='900' y='46667'>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='23' />
+            <format attr='background-color' value='#074080' />
+          </zone-style>
+        </zone>
+        <zone h='3500' id='17' type='empty' w='40000' x='58400' y='4833'>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='19' />
+            <format attr='background-color' value='#074080' />
+          </zone-style>
+        </zone>
+        <zone forceUpdate='true' h='2917' id='18' type='text' w='34900' x='60400' y='2833'>
+          <formatted-text>
+            <run fontcolor='#074080' fontsize='20'>Be the first to know...</run>
+          </formatted-text>
+        </zone>
+      </zones>
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <size maxheight='700' minheight='700' sizing-mode='vscroll' />
+          <zones>
+            <zone h='100000' id='1' type='layout-basic' w='100000' x='0' y='0'>
+              <zone h='84000' id='2' param='vert' type='layout-flow' w='84000' x='8000' y='8000' />
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{DD12CE45-CC62-43F5-8DF5-6B6844B78AD8}' />
+    </dashboard>
     <dashboard name='CountyDash'>
       <style />
       <size maxheight='1400' maxwidth='1200' minheight='1400' minwidth='1200' sizing-mode='fixed' />
@@ -1102,7 +1378,56 @@
       <active id='-1' />
       <simple-id uuid='{3B5EB587-CCED-4EFD-8BF4-2D0597280A8B}' />
     </window>
-    <window class='worksheet' maximized='true' name='AnalyticsDashboard'>
+    <window class='worksheet' name='AnalyticsPage'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card param='[federated.0ze7y1n179jrf211fw0080nw6wrh].[sum:days:qk]' show-domain='false' show-null-ctrls='false' type='filter' />
+            <card pane-specification-id='0' param='[federated.0ze7y1n179jrf211fw0080nw6wrh].[sum:days:qk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{8A8ABB58-D7BC-44F9-9D5E-70BA4D72315C}' />
+    </window>
+    <window class='worksheet' name='AnalyticsContacts'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{D04BE91D-FB69-49DE-B209-4304A5A5A225}' />
+    </window>
+    <window class='worksheet' maximized='true' name='AnalyticsDays'>
       <cards>
         <edge name='left'>
           <strip size='160'>
@@ -1123,7 +1448,23 @@
           </strip>
         </edge>
       </cards>
-      <simple-id uuid='{8A8ABB58-D7BC-44F9-9D5E-70BA4D72315C}' />
+      <simple-id uuid='{605BF88A-7837-4CC1-973E-E3651ED6B245}' />
+    </window>
+    <window class='dashboard' name='AnalyticsDash'>
+      <viewpoints>
+        <viewpoint name='AnalyticsContacts' />
+        <viewpoint name='AnalyticsDays'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='AnalyticsPage'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='NeighborhoodMap'>
+          <zoom type='entire-view' />
+        </viewpoint>
+      </viewpoints>
+      <active id='13' />
+      <simple-id uuid='{E3D56704-D053-4499-AB90-FC30CE322824}' />
     </window>
   </windows>
   <external>
