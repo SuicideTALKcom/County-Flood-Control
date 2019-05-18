@@ -94,10 +94,16 @@
 		============================================= -->
 		<section id="content">
 
-			<div class="content-wrap">
+			<!-- <div class="content-wrap"> -->
+			
+			<div id="section-alerts" class="page-section"></div>
+				
+				<div class="heading-block topmargin noborder">
+					<h2 class="center">Alert &nbsp;System</h2>
+				</div>
 
-				<div class="container clearfix">
-
+				<!-- <div class="container clearfix"> -->
+					
 						<!-- Alerts Contact Form
 						============================================= -->
 						<h3>Send Email Alert Notifications</h3>
@@ -106,7 +112,7 @@
 
 							<div class="form-result"></div>
 
-							<form class="nobottommargin" id="template-contactform" name="template-contactform" action="{{ url_for('static', filename='include/form.php') }}" method="post">
+							<form class="nobottommargin" id="template-contactform" name="template-contactform" action="action="{{ url_for('static', filename='include/form.php') }}" method="post">
 
 								<div class="form-process"></div>
 
@@ -147,15 +153,11 @@
 									<button class="button button-3d nomargin" type="submit" id="template-contactform-submit" name="template-contactform-submit" value="submit">Activate &nbsp;Alerts</button>
 								</div>
 
-								<input type="hidden" name="prefix" value="template-contactform-">
-
-							</form>
-							
-						</div>
+								<input type="hidden" name="prefix" value="template-contactform-" />
+						
+						</form>
 
 				</div>
-
-			</div>
 
 		</section><!-- #content end -->
 
