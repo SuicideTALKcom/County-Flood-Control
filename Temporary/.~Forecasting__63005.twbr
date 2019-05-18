@@ -1,13 +1,14 @@
 <?xml version='1.0' encoding='utf-8' ?>
 
 <!-- build 20191.19.0417.1429                               -->
-<workbook source-build='2019.1.3 (20191.19.0417.1429)' source-platform='mac' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+<workbook source-build='2019.1.3 (20191.19.0417.1429)' source-platform='mac' version='18.1' xml:base='https://public.tableau.com' xmlns:user='http://www.tableausoftware.com/xml/user'>
   <document-format-change-manifest>
     <AutoCreateAndUpdateDSDPhoneLayouts />
     <DashboardGridOverlay />
     <SheetIdentifierTracking />
     <WindowsPersistSimpleIdentifiers />
   </document-format-change-manifest>
+  <repository-location id='Forecasting_15581460982860' path='/workbooks' revision='1.0' />
   <preferences>
     <preference name='ui.encoding.shelf.height' value='24' />
     <preference name='ui.shelf.height' value='26' />
@@ -16,14 +17,8 @@
     <datasource caption='forecast_data' inline='true' name='federated.0y1g3v31sxu9dk13a7ore1611n8b' version='18.1'>
       <connection class='federated'>
         <named-connections>
-          <named-connection caption='forecast_data' name='textscan.1k444pk0pk0y6113bceeu0d7k514'>
-            <connection class='textscan' directory='Data/Temporary' filename='forecast_data.csv' password='' server='' />
-          </named-connection>
-          <named-connection caption='Sagemont_Bammel' name='textscan.1o9fp9j0jmmu7y18b4r3q0qhds6q'>
-            <connection class='textscan' directory='Data/Temporary' filename='Sagemont_Bammel.csv' password='' server='' />
-          </named-connection>
           <named-connection caption='HarrisCountyRainfall' name='textscan.13xbef719c422e1fbknb30nl8vxv'>
-            <connection class='textscan' directory='Data/Temporary' filename='HarrisCountyRainfall.csv' password='' server='' />
+            <connection class='textscan' directory='/Users/margretsaniel/Documents/County-Flood-Control/Temporary' filename='HarrisCountyRainfall.csv' password='' server='' workgroup-auth-mode='as-is' />
           </named-connection>
         </named-connections>
         <relation connection='textscan.13xbef719c422e1fbknb30nl8vxv' name='HarrisCountyRainfall.csv' table='[HarrisCountyRainfall#csv]' type='table'>
@@ -145,7 +140,93 @@
         <folder-item name='[Highland]' type='field' />
         <folder-item name='[Sagemont]' type='field' />
       </folder>
-      <layout dim-ordering='alphabetic' dim-percentage='0.205882' measure-ordering='alphabetic' measure-percentage='0.794118' show-structure='true' user-set-layout='true' />
+      <extract count='-1' enabled='true' units='records'>
+        <connection access_mode='readonly' authentication='auth-none' author-locale='en_US' class='hyper' dbname='Data/.~Book1__59952.twb Files/forecast_data.hyper' default-settings='yes' schema='Extract' sslmode='' tablename='Extract' update-time='' username='tableau_internal_user'>
+          <relation name='Extract' table='[Extract].[Extract]' type='table' />
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>Date</remote-name>
+              <remote-type>135</remote-type>
+              <local-name>[Date]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Date</remote-alias>
+              <ordinal>0</ordinal>
+              <family>HarrisCountyRainfall.csv</family>
+              <local-type>datetime</local-type>
+              <aggregation>Year</aggregation>
+              <approx-count>228</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Sagemont</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[Sagemont]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Sagemont</remote-alias>
+              <ordinal>1</ordinal>
+              <family>HarrisCountyRainfall.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>164</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Bammel</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[Bammel]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Bammel</remote-alias>
+              <ordinal>2</ordinal>
+              <family>HarrisCountyRainfall.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>161</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Highland</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[Highland]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Highland</remote-alias>
+              <ordinal>3</ordinal>
+              <family>HarrisCountyRainfall.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>146</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Braeburn</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[Braeburn]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Braeburn</remote-alias>
+              <ordinal>4</ordinal>
+              <family>HarrisCountyRainfall.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>165</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Event</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Event]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Event</remote-alias>
+              <ordinal>5</ordinal>
+              <family>HarrisCountyRainfall.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>4</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
+      <layout dim-ordering='alphabetic' dim-percentage='0.203922' measure-ordering='alphabetic' measure-percentage='0.796078' show-structure='true' user-set-layout='true' />
       <style>
         <style-rule element='mark'>
           <encoding attr='color' field='[:Measure Names]' type='palette'>
@@ -508,54 +589,56 @@
     </worksheet>
   </worksheets>
   <dashboards>
-    <dashboard name='BammelForecast'>
-      <style />
-      <size maxheight='800' maxwidth='1000' minheight='800' minwidth='1000' />
-      <zones>
-        <zone h='58000' id='3' is-centered='0' is-scaled='1' param='Image/Bammel_forecast.png' type='bitmap' w='84600' x='5400' y='500' />
-      </zones>
-      <devicelayouts>
-        <devicelayout auto-generated='true' name='Phone'>
-          <size maxheight='700' minheight='700' sizing-mode='vscroll' />
-          <zones>
-            <zone h='100000' id='4' type='layout-basic' w='100000' x='0' y='0'>
-              <zone h='98000' id='5' param='vert' type='layout-flow' w='98400' x='800' y='1000'>
-                <zone fixed-size='280' h='58875' id='3' is-centered='0' is-fixed='true' is-scaled='1' param='Image/Bammel_forecast.png' type='bitmap' w='87600' x='5800' y='9000'>
-                  <zone-style>
-                    <format attr='border-color' value='#000000' />
-                    <format attr='border-style' value='none' />
-                    <format attr='border-width' value='0' />
-                    <format attr='margin' value='4' />
-                    <format attr='padding' value='0' />
-                  </zone-style>
-                </zone>
-              </zone>
-              <zone-style>
-                <format attr='border-color' value='#000000' />
-                <format attr='border-style' value='none' />
-                <format attr='border-width' value='0' />
-                <format attr='margin' value='8' />
-              </zone-style>
-            </zone>
-          </zones>
-        </devicelayout>
-      </devicelayouts>
-      <simple-id uuid='{97C54EDF-3D8C-4D62-8708-A9CA832C39A4}' />
-    </dashboard>
     <dashboard name='ComparisonDash'>
       <style />
-      <size maxheight='800' maxwidth='1000' minheight='800' minwidth='1000' />
+      <size maxheight='700' maxwidth='1000' minheight='700' minwidth='1000' sizing-mode='fixed' />
       <zones>
-        <zone h='70625' id='3' name='Comparison' show-title='false' w='89100' x='6600' y='6125' />
-        <zone h='8875' id='4' name='Comparison' pane-specification-id='3' param='[federated.0y1g3v31sxu9dk13a7ore1611n8b].[:Measure Names]' type='color' w='13300' x='16600' y='12000' />
+        <zone h='70571' id='3' name='Comparison' show-title='false' w='89100' x='6200' y='12714' />
+        <zone h='9429' id='4' name='Comparison' pane-specification-id='3' param='[federated.0y1g3v31sxu9dk13a7ore1611n8b].[:Measure Names]' type='color' w='13700' x='13800' y='19143' />
+        <zone h='4286' id='7' type='text' w='10000' x='15000' y='8000'>
+          <formatted-text>
+            <run fontcolor='#074080' fontsize='15'>Allison #2</run>
+          </formatted-text>
+        </zone>
+        <zone h='3571' id='8' type='empty' w='20400' x='25500' y='8571'>
+          <zone-style>
+            <format attr='border-color' value='#074080' />
+            <format attr='border-style' value='dashed' />
+            <format attr='border-width' value='1' />
+            <format attr='margin' value='11' />
+            <format attr='background-color' value='#074080' />
+          </zone-style>
+        </zone>
+        <zone h='4286' id='9' type='text' w='10000' x='46100' y='7857'>
+          <formatted-text>
+            <run fontcolor='#074080' fontsize='15'>Ike</run>
+          </formatted-text>
+        </zone>
+        <zone h='5571' id='10' type='empty' w='32500' x='49700' y='7571'>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='18' />
+            <format attr='background-color' value='#074080' />
+          </zone-style>
+        </zone>
+        <zone h='4286' id='11' type='text' w='10000' x='81900' y='8143'>
+          <formatted-text>
+            <run fontcolor='#074080' fontsize='15'>Harvey</run>
+          </formatted-text>
+        </zone>
       </zones>
       <devicelayouts>
         <devicelayout auto-generated='true' name='Phone'>
           <size maxheight='700' minheight='700' sizing-mode='vscroll' />
           <zones>
-            <zone h='100000' id='5' type='layout-basic' w='100000' x='0' y='0'>
-              <zone h='98000' id='6' param='vert' type='layout-flow' w='98400' x='800' y='1000'>
-                <zone fixed-size='280' h='70625' id='3' is-fixed='true' name='Comparison' show-title='false' w='89100' x='6600' y='6125'>
+            <zone h='100000' id='16' type='layout-basic' w='100000' x='0' y='0'>
+              <zone h='97714' id='17' param='vert' type='layout-flow' w='98400' x='800' y='1143'>
+                <zone h='4286' id='9' type='text' w='10000' x='46100' y='7857'>
+                  <formatted-text>
+                    <run fontcolor='#074080' fontsize='15'>Ike</run>
+                  </formatted-text>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
                     <format attr='border-style' value='none' />
@@ -564,7 +647,40 @@
                     <format attr='padding' value='0' />
                   </zone-style>
                 </zone>
-                <zone h='8875' id='4' name='Comparison' pane-specification-id='3' param='[federated.0y1g3v31sxu9dk13a7ore1611n8b].[:Measure Names]' type='color' w='13300' x='16600' y='12000'>
+                <zone h='4286' id='7' type='text' w='10000' x='15000' y='8000'>
+                  <formatted-text>
+                    <run fontcolor='#074080' fontsize='15'>Allison #2</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='4286' id='11' type='text' w='10000' x='81900' y='8143'>
+                  <formatted-text>
+                    <run fontcolor='#074080' fontsize='15'>Harvey</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='70571' id='3' is-fixed='true' name='Comparison' show-title='false' w='89100' x='6200' y='12714'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='9429' id='4' name='Comparison' pane-specification-id='3' param='[federated.0y1g3v31sxu9dk13a7ore1611n8b].[:Measure Names]' type='color' w='13700' x='13800' y='19143'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
                     <format attr='border-style' value='none' />
@@ -590,21 +706,109 @@
       <style />
       <size maxheight='700' maxwidth='1000' minheight='700' minwidth='1000' sizing-mode='fixed' />
       <zones>
-        <zone h='63625' id='3' is-scaled='1' param='Image/Bammel_decomposed.png' type='bitmap' w='90900' x='6100' y='1000' />
-        <zone h='16429' id='6' type='text' w='84500' x='10400' y='66143'>
+        <zone h='47857' id='3' is-scaled='1' param='Image/Bammel_decomposed.png' type='bitmap' w='61300' x='38000' y='4857' />
+        <zone forceUpdate='true' h='52714' id='6' type='text' w='31000' x='6100' y='25286'>
           <formatted-text>
-            <run fontsize='12'>The decomposition above separated our historical data into the different components and will use the seasonal component to create a forecast shown later in the story. </run>
+            <run fontcolor='#074080' fontsize='20'>Decomposition</run>
+            <run>Æ&#10;&#10;</run>
+            <run fontcolor='#074080' fontsize='12'>Decomposed the dataset to reveal any trends that may be present to use with the ARIMA model.</run>
+            <run>Æ&#10;&#10;</run>
+            <run fontcolor='#074080' fontsize='12'>Components broken down to:</run>
             <run>Æ&#10;</run>
+            <run fontcolor='#074080' fontsize='12'>-Observed</run>
+            <run>Æ&#10;</run>
+            <run fontcolor='#074080' fontsize='12'>-Trend</run>
+            <run>Æ&#10;</run>
+            <run fontcolor='#074080' fontsize='12'>-Seasonality</run>
+            <run>Æ&#10;</run>
+            <run fontcolor='#074080' fontsize='12'>-Residual</run>
           </formatted-text>
+        </zone>
+        <zone h='41429' id='7' is-centered='0' is-scaled='1' param='Image/Sagemont_decomposed.png' type='bitmap' w='60900' x='38100' y='58714' />
+        <zone forceUpdate='true' h='4286' id='8' type='text' w='24600' x='38900' y='1857'>
+          <formatted-text>
+            <run fontcolor='#074080' fontsize='20'>Bammel Forest</run>
+          </formatted-text>
+        </zone>
+        <zone forceUpdate='true' h='4857' id='9' type='text' w='24200' x='40000' y='52286'>
+          <formatted-text>
+            <run fontcolor='#074080' fontsize='20'>Sagemont</run>
+          </formatted-text>
+        </zone>
+        <zone h='5714' id='10' type='empty' w='61700' x='37400' y='48143'>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='18' />
+            <format attr='background-color' value='#074080' />
+          </zone-style>
         </zone>
       </zones>
       <devicelayouts>
         <devicelayout auto-generated='true' name='Phone'>
-          <size maxheight='700' minheight='700' sizing-mode='vscroll' />
+          <size maxheight='750' minheight='750' sizing-mode='vscroll' />
           <zones>
-            <zone h='100000' id='4' type='layout-basic' w='100000' x='0' y='0'>
-              <zone h='98000' id='5' param='vert' type='layout-flow' w='98400' x='800' y='1000'>
-                <zone fixed-size='280' h='63625' id='3' is-fixed='true' is-scaled='1' param='Image/Bammel_decomposed.png' type='bitmap' w='90900' x='6100' y='6500'>
+            <zone h='100000' id='15' type='layout-basic' w='100000' x='0' y='0'>
+              <zone h='97714' id='16' param='vert' type='layout-flow' w='98400' x='800' y='1143'>
+                <zone forceUpdate='true' h='4286' id='8' type='text' w='24600' x='38900' y='1857'>
+                  <formatted-text>
+                    <run fontcolor='#074080' fontsize='20'>Bammel Forest</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='47857' id='3' is-fixed='true' is-scaled='1' param='Image/Bammel_decomposed.png' type='bitmap' w='61300' x='38000' y='4857'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone forceUpdate='true' h='52714' id='6' type='text' w='31000' x='6100' y='25286'>
+                  <formatted-text>
+                    <run fontcolor='#074080' fontsize='20'>Decomposition</run>
+                    <run>Æ&#10;&#10;</run>
+                    <run fontcolor='#074080' fontsize='12'>Decomposed the dataset to reveal any trends that may be present to use with the ARIMA model.</run>
+                    <run>Æ&#10;&#10;</run>
+                    <run fontcolor='#074080' fontsize='12'>Components broken down to:</run>
+                    <run>Æ&#10;</run>
+                    <run fontcolor='#074080' fontsize='12'>-Observed</run>
+                    <run>Æ&#10;</run>
+                    <run fontcolor='#074080' fontsize='12'>-Trend</run>
+                    <run>Æ&#10;</run>
+                    <run fontcolor='#074080' fontsize='12'>-Seasonality</run>
+                    <run>Æ&#10;</run>
+                    <run fontcolor='#074080' fontsize='12'>-Residual</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone forceUpdate='true' h='4857' id='9' type='text' w='24200' x='40000' y='52286'>
+                  <formatted-text>
+                    <run fontcolor='#074080' fontsize='20'>Sagemont</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='41429' id='7' is-centered='0' is-fixed='true' is-scaled='1' param='Image/Sagemont_decomposed.png' type='bitmap' w='60900' x='38100' y='58714'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
                     <format attr='border-style' value='none' />
@@ -628,12 +832,18 @@
     </dashboard>
     <dashboard name='Forecasting'>
       <style />
-      <size maxheight='800' maxwidth='1000' minheight='800' minwidth='1000' />
+      <size maxheight='900' maxwidth='1000' minheight='900' minwidth='1000' sizing-mode='fixed' />
       <zones>
-        <zone h='64125' id='3' param='Image/Bammel_onestepforecast.png' type='bitmap' w='91600' x='3300' y='4125' />
-        <zone forceUpdate='true' h='16250' id='6' type='text' w='75800' x='13700' y='68375'>
+        <zone h='45556' id='6' is-centered='0' is-scaled='1' param='Image/Sagemont_forecast.png' type='bitmap' w='73900' x='1000' y='50778' />
+        <zone h='41444' id='13' is-scaled='1' param='Image/Bammel_forecast.png' type='bitmap' w='75100' x='1300' y='5778' />
+        <zone h='4222' id='14' type='text' w='19800' x='10900' y='2222'>
           <formatted-text>
-            <run fontsize='12'>The graph above displays the forecast for the gauge nearest to the Bammel Forest neighborhood located in the North West region of Houston. The forecast in orange show similar highs and lows to the observed data in 2018. We will use this predictive model to foreceast into three years to identify the neighborhood that will require priority versus others when severe flooding may occur. </run>
+            <run fontcolor='#074080' fontsize='20'>Bammel Forest</run>
+          </formatted-text>
+        </zone>
+        <zone h='4222' id='15' type='text' w='13500' x='20100' y='57889'>
+          <formatted-text>
+            <run fontcolor='#074080' fontsize='20'>Sagemont</run>
           </formatted-text>
         </zone>
       </zones>
@@ -641,9 +851,9 @@
         <devicelayout auto-generated='true' name='Phone'>
           <size maxheight='700' minheight='700' sizing-mode='vscroll' />
           <zones>
-            <zone h='100000' id='4' type='layout-basic' w='100000' x='0' y='0'>
-              <zone h='98000' id='5' param='vert' type='layout-flow' w='98400' x='800' y='1000'>
-                <zone fixed-size='280' h='64125' id='3' is-fixed='true' param='Image/Bammel_onestepforecast.png' type='bitmap' w='91600' x='3300' y='4125'>
+            <zone h='100000' id='11' type='layout-basic' w='100000' x='0' y='0'>
+              <zone h='98000' id='12' param='vert' type='layout-flow' w='98400' x='800' y='1000'>
+                <zone fixed-size='280' h='48250' id='6' is-fixed='true' is-scaled='1' param='Image/Sagemont_forecast.png' type='bitmap' w='70900' x='4700' y='45125'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
                     <format attr='border-style' value='none' />
@@ -663,22 +873,52 @@
           </zones>
         </devicelayout>
       </devicelayouts>
-      <simple-id uuid='{C29E036B-67F0-450C-983F-80D1DD541D25}' />
+      <simple-id uuid='{97C54EDF-3D8C-4D62-8708-A9CA832C39A4}' />
     </dashboard>
     <dashboard name='Gauges'>
       <style />
-      <size maxheight='700' maxwidth='900' minheight='700' minwidth='900' sizing-mode='fixed' />
+      <size maxheight='700' maxwidth='1000' minheight='700' minwidth='1000' sizing-mode='fixed' />
       <zones>
-        <zone h='36000' id='3' name='Bammel' show-title='false' w='94444' x='3333' y='4125' />
-        <zone h='36875' id='6' name='Sagemont' show-title='false' w='93667' x='3778' y='43625' />
+        <zone h='36000' id='3' name='Bammel' show-title='false' w='56111' x='39778' y='5286' />
+        <zone h='37000' id='6' name='Sagemont' show-title='false' w='56556' x='40222' y='53000' />
+        <zone forceUpdate='true' h='12857' id='9' type='text' w='23100' x='10300' y='47429'>
+          <formatted-text>
+            <run fontcolor='#074080' fontsize='20'>Sagemont</run>
+            <run>Æ&#10;</run>
+            <run fontcolor='#074080' fontsize='11' italic='true'>Southeast of Houston</run>
+          </formatted-text>
+        </zone>
+        <zone h='8714' id='10' type='text' w='19500' x='10500' y='1143'>
+          <formatted-text>
+            <run fontcolor='#074080' fontsize='20'>Bammel</run>
+            <run>Æ&#10;</run>
+            <run fontcolor='#074080' fontsize='12' italic='true'>Northwest of Houston</run>
+          </formatted-text>
+        </zone>
+        <zone h='3857' id='11' type='empty' w='88500' x='8300' y='44286'>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='11' />
+            <format attr='background-color' value='#074080' />
+          </zone-style>
+        </zone>
+        <zone h='29143' id='12' is-centered='0' is-scaled='1' param='Image/Screen Shot 2019-05-17 at 7.38.08 PM.png' type='bitmap' w='27900' x='10500' y='12286' />
+        <zone h='30000' id='13' is-centered='0' is-scaled='1' param='Image/Screen Shot 2019-05-17 at 7.42.55 PM.png' type='bitmap' w='28200' x='10700' y='59143' />
       </zones>
       <devicelayouts>
         <devicelayout auto-generated='true' name='Phone'>
-          <size maxheight='700' minheight='700' sizing-mode='vscroll' />
+          <size maxheight='1050' minheight='1050' sizing-mode='vscroll' />
           <zones>
-            <zone h='100000' id='7' type='layout-basic' w='100000' x='0' y='0'>
-              <zone h='98000' id='8' param='vert' type='layout-flow' w='98222' x='889' y='1000'>
-                <zone fixed-size='179' h='22375' id='3' is-fixed='true' name='Bammel' show-title='false' w='95222' x='3333' y='4125'>
+            <zone h='100000' id='18' type='layout-basic' w='100000' x='0' y='0'>
+              <zone h='97714' id='19' param='vert' type='layout-flow' w='98400' x='800' y='1143'>
+                <zone h='8714' id='10' type='text' w='19500' x='10500' y='1143'>
+                  <formatted-text>
+                    <run fontcolor='#074080' fontsize='20'>Bammel</run>
+                    <run>Æ&#10;</run>
+                    <run fontcolor='#074080' fontsize='12' italic='true'>Northwest of Houston</run>
+                  </formatted-text>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
                     <format attr='border-style' value='none' />
@@ -687,7 +927,48 @@
                     <format attr='padding' value='0' />
                   </zone-style>
                 </zone>
-                <zone fixed-size='204' h='25500' id='6' is-fixed='true' name='Sagemont' show-title='false' w='93667' x='3889' y='32375'>
+                <zone fixed-size='252' h='36000' id='3' is-fixed='true' name='Bammel' show-title='false' w='56111' x='39778' y='5286'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='204' h='29143' id='12' is-centered='0' is-fixed='true' is-scaled='1' param='Image/Screen Shot 2019-05-17 at 7.38.08 PM.png' type='bitmap' w='27900' x='10500' y='12286'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone forceUpdate='true' h='12857' id='9' type='text' w='23100' x='10300' y='47429'>
+                  <formatted-text>
+                    <run fontcolor='#074080' fontsize='20'>Sagemont</run>
+                    <run>Æ&#10;</run>
+                    <run fontcolor='#074080' fontsize='11' italic='true'>Southeast of Houston</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='259' h='37000' id='6' is-fixed='true' name='Sagemont' show-title='false' w='56556' x='40222' y='53000'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='210' h='30000' id='13' is-centered='0' is-fixed='true' is-scaled='1' param='Image/Screen Shot 2019-05-17 at 7.42.55 PM.png' type='bitmap' w='28200' x='10700' y='59143'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
                     <format attr='border-style' value='none' />
@@ -709,13 +990,124 @@
       </devicelayouts>
       <simple-id uuid='{E569AFC6-7ED4-45CC-BE04-F2BEF5714816}' />
     </dashboard>
+    <dashboard name='OneStep'>
+      <style />
+      <size maxheight='900' maxwidth='1000' minheight='900' minwidth='1000' sizing-mode='fixed' />
+      <zones>
+        <zone forceUpdate='true' h='43889' id='3' is-centered='0' is-scaled='1' param='Image/Bammel_onestepforecast1.png' type='bitmap' w='73500' x='3000' y='6333' />
+        <zone forceUpdate='true' h='57571' id='6' type='text' w='23000' x='76400' y='22000'>
+          <formatted-text>
+            <run fontsize='12'>The graph above displays the forecast for the gauge nearest to the Bammel Forest neighborhood located in the North West region of Houston. The forecast in orange show similar highs and lows to the observed data in 2018. We will use this predictive model to foreceast into three years to identify the neighborhood that will require priority versus others when severe flooding may occur. </run>
+          </formatted-text>
+        </zone>
+        <zone forceUpdate='true' h='52889' id='7' is-centered='0' is-scaled='1' param='Image/Sagemont_onestepforecast1.png' type='bitmap' w='72500' x='3200' y='55333' />
+        <zone h='4222' id='10' type='text' w='19800' x='9500' y='3111'>
+          <formatted-text>
+            <run fontcolor='#074080' fontsize='20'>Bammel Forest</run>
+          </formatted-text>
+        </zone>
+        <zone h='4222' id='11' type='text' w='13500' x='10300' y='50556'>
+          <formatted-text>
+            <run fontcolor='#074080' fontsize='20'>Sagemont</run>
+          </formatted-text>
+        </zone>
+        <zone h='4556' id='12' type='empty' w='63500' x='7500' y='6778'>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='19' />
+            <format attr='background-color' value='#074080' />
+          </zone-style>
+        </zone>
+        <zone h='5222' id='13' type='empty' w='63900' x='8400' y='53889'>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='22' />
+            <format attr='background-color' value='#074080' />
+          </zone-style>
+        </zone>
+      </zones>
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <size maxheight='750' minheight='750' sizing-mode='vscroll' />
+          <zones>
+            <zone h='100000' id='16' type='layout-basic' w='100000' x='0' y='0'>
+              <zone h='98222' id='17' param='vert' type='layout-flow' w='98400' x='800' y='889'>
+                <zone h='4222' id='10' type='text' w='19800' x='9500' y='3111'>
+                  <formatted-text>
+                    <run fontcolor='#074080' fontsize='20'>Bammel Forest</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' forceUpdate='true' h='43889' id='3' is-centered='0' is-fixed='true' is-scaled='1' param='Image/Bammel_onestepforecast1.png' type='bitmap' w='73500' x='3000' y='6333'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone forceUpdate='true' h='57571' id='6' type='text' w='23000' x='76400' y='22000'>
+                  <formatted-text>
+                    <run fontsize='12'>The graph above displays the forecast for the gauge nearest to the Bammel Forest neighborhood located in the North West region of Houston. The forecast in orange show similar highs and lows to the observed data in 2018. We will use this predictive model to foreceast into three years to identify the neighborhood that will require priority versus others when severe flooding may occur. </run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='4222' id='11' type='text' w='13500' x='10300' y='50556'>
+                  <formatted-text>
+                    <run fontcolor='#074080' fontsize='20'>Sagemont</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' forceUpdate='true' h='52889' id='7' is-centered='0' is-fixed='true' is-scaled='1' param='Image/Sagemont_onestepforecast1.png' type='bitmap' w='72500' x='3200' y='55333'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{C29E036B-67F0-450C-983F-80D1DD541D25}' />
+    </dashboard>
     <dashboard name='The Story' type='storyboard'>
       <layout-options>
         <title>
           <formatted-text>
             <run fontsize='16'>Harris County Flood Gauges</run>
-            <run>Æ&#10;</run>
-            <run bold='true' fontsize='11' underline='true'>Bammel Forest (NW) &amp; Sagemont (SE)</run>
             <run>Æ&#10;</run>
             <run fontsize='9' italic='true'>Retrieved from Harris County Flood Warning System, </run>
             <run auto-url='true' fontcolor='#0000ff' fontname='Benton Sans Book' fontsize='9' hyperlink='tabdoc:load-url url=&amp;quot;https://www.harriscountyfws.org/&amp;quot;' italic='true' underline='true'>https://www.harriscountyfws.org/</run>
@@ -723,20 +1115,43 @@
         </title>
       </layout-options>
       <style />
-      <size maxheight='964' maxwidth='1016' minheight='964' minwidth='1016' />
+      <size maxheight='964' maxwidth='1116' minheight='964' minwidth='1116' sizing-mode='fixed' />
       <zones>
         <zone h='100000' id='2' type='layout-basic' w='100000' x='0' y='0'>
-          <zone h='98340' id='1' param='vert' removable='false' type='layout-flow' w='98426' x='787' y='830'>
-            <zone h='6950' id='3' type='title' w='98426' x='787' y='830' />
-            <zone h='10477' id='4' is-fixed='true' paired-zone-id='5' removable='false' type='flipboard-nav' w='98426' x='787' y='7780' />
-            <zone h='80913' id='5' paired-zone-id='4' removable='false' type='flipboard' w='98426' x='787' y='18257'>
-              <flipboard active-id='1' nav-type='caption' show-nav-arrows='true'>
+          <zone h='98340' id='1' param='vert' removable='false' type='layout-flow' w='98566' x='717' y='830'>
+            <zone h='4772' id='3' type='title' w='98566' x='717' y='830' />
+            <zone h='10477' id='4' is-fixed='true' paired-zone-id='5' removable='false' type='flipboard-nav' w='98566' x='717' y='5602' />
+            <zone h='83091' id='5' paired-zone-id='4' removable='false' type='flipboard' w='98566' x='717' y='16079'>
+              <flipboard active-id='4' nav-type='caption' show-nav-arrows='true'>
                 <story-points>
-                  <story-point caption='Look into Bammel and Sagemont Gauges' captured-sheet='Gauges' id='1' />
+                  <story-point caption='Bammel &amp; Sagemont Gauges' captured-sheet='Gauges' id='1' />
                   <story-point caption='Bammel vs. Sagemont' captured-sheet='ComparisonDash' id='5' />
-                  <story-point caption='One-Step Forward' captured-sheet='Forecasting' id='2' />
-                  <story-point caption='Decomposition' captured-sheet='Decomposed' id='3' />
-                  <story-point caption='Bammel Forecast' captured-sheet='BammelForecast' id='4' />
+                  <story-point caption='Decomposition' captured-sheet='Decomposed' id='3'>
+                    <capturedDeltas>
+                      <dashboard name='Decomposed'>
+                        <zone id='6'>
+                          <formatted-text>
+                            <run fontcolor='#074080' fontsize='20'>Decomposition</run>
+                            <run>Æ&#10;&#10;</run>
+                            <run fontcolor='#074080' fontsize='12'>Decomposed the dataset to reveal any trends that may be present to use with the ARIMA model.</run>
+                            <run>Æ&#10;&#10;</run>
+                            <run fontcolor='#074080' fontsize='12'>Components broken down to:</run>
+                            <run>Æ&#10;</run>
+                            <run fontcolor='#074080' fontsize='12'>Observed</run>
+                            <run>Æ&#10;</run>
+                            <run fontcolor='#074080' fontsize='12'>Trend</run>
+                            <run>Æ&#10;</run>
+                            <run fontcolor='#074080' fontsize='12'>Seasonality</run>
+                            <run>Æ&#10;</run>
+                            <run fontcolor='#074080' fontsize='12'>Residual</run>
+                          </formatted-text>
+                        </zone>
+                      </dashboard>
+                    </capturedDeltas>
+                  </story-point>
+                  <story-point caption='One-Step Forward' captured-sheet='OneStep' id='2' />
+                  <story-point caption='Forecast' captured-sheet='Forecasting' id='4' />
+                  <story-point caption='Trends &amp; Patterns' captured-sheet='Trends&amp;Patterns' id='6' />
                 </story-points>
               </flipboard>
             </zone>
@@ -750,6 +1165,220 @@
         </zone>
       </zones>
       <simple-id uuid='{D984F990-99A5-45A6-A2DE-AC5B46157777}' />
+    </dashboard>
+    <dashboard name='Trends&amp;Patterns'>
+      <style />
+      <size maxheight='900' maxwidth='1000' minheight='900' minwidth='1000' sizing-mode='fixed' />
+      <zones>
+        <zone h='39556' id='3' is-scaled='1' param='Image/BammelMonths.png' type='bitmap' w='64200' x='33600' y='9778' />
+        <zone forceUpdate='true' h='3778' id='4' type='text' w='36800' x='7200' y='2556'>
+          <formatted-text>
+            <run fontcolor='#074080' fontsize='24'>Bammel Forest </run>
+          </formatted-text>
+        </zone>
+        <zone h='39333' id='5' is-scaled='1' param='Image/SagemontMonths.png' type='bitmap' w='56600' x='5100' y='60333' />
+        <zone forceUpdate='true' h='5556' id='6' type='text' w='29700' x='7500' y='49444'>
+          <formatted-text>
+            <run fontcolor='#074080' fontsize='24'>Sagemont </run>
+          </formatted-text>
+        </zone>
+        <zone h='9444' id='12' type='empty' w='95000' x='3000' y='3444'>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='40' />
+            <format attr='background-color' value='#074080' />
+          </zone-style>
+        </zone>
+        <zone forceUpdate='true' h='15889' id='13' type='text' w='17700' x='8800' y='10111'>
+          <formatted-text>
+            <run bold='true' fontcolor='#074080' fontsize='28'>October</run>
+            <run>Æ&#10;</run>
+            <run fontcolor='#074080' fontsize='11' italic='true'>Lowest Month of</run>
+            <run>Æ&#10;</run>
+            <run fontcolor='#074080' fontsize='11' italic='true'>rainfall recorded</run>
+          </formatted-text>
+        </zone>
+        <zone forceUpdate='true' h='17222' id='14' type='text' w='20700' x='8600' y='27222'>
+          <formatted-text>
+            <run bold='true' fontcolor='#074080' fontsize='28'>September</run>
+            <run>Æ&#10;</run>
+            <run fontcolor='#074080' fontsize='12' italic='true'>Highest Month of</run>
+            <run>Æ&#10;</run>
+            <run fontcolor='#074080' fontsize='12' italic='true'>rainfall recorded</run>
+          </formatted-text>
+        </zone>
+        <zone h='44444' id='15' type='empty' w='7000' x='27600' y='8222'>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='33' />
+            <format attr='background-color' value='#074080' />
+          </zone-style>
+        </zone>
+        <zone h='7556' id='16' type='empty' w='94000' x='3800' y='52556'>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='32' />
+            <format attr='background-color' value='#074080' />
+          </zone-style>
+        </zone>
+        <zone forceUpdate='true' h='15111' id='17' type='text' w='17800' x='70400' y='60778'>
+          <formatted-text>
+            <run bold='true' fontcolor='#074080' fontsize='28'>October</run>
+            <run>Æ&#10;</run>
+            <run fontcolor='#074080' fontsize='12' italic='true'>Lowest Month of</run>
+            <run>Æ&#10;</run>
+            <run fontcolor='#074080' fontsize='12' italic='true'>rainfall recorded</run>
+          </formatted-text>
+        </zone>
+        <zone forceUpdate='true' h='16889' id='18' type='text' w='19800' x='70900' y='80222'>
+          <formatted-text>
+            <run bold='true' fontcolor='#074080' fontsize='28'>August</run>
+            <run>Æ&#10;</run>
+            <run fontcolor='#074080' fontsize='12' italic='true'>Highest Month of</run>
+            <run>Æ&#10;</run>
+            <run fontcolor='#074080' fontsize='12' italic='true'>rainfall recorded</run>
+          </formatted-text>
+        </zone>
+        <zone h='43667' id='19' type='empty' w='7000' x='60300' y='55889'>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='33' />
+            <format attr='background-color' value='#074080' />
+          </zone-style>
+        </zone>
+      </zones>
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <size maxheight='950' minheight='950' sizing-mode='vscroll' />
+          <zones>
+            <zone h='100000' id='22' type='layout-basic' w='100000' x='0' y='0'>
+              <zone h='98222' id='23' param='vert' type='layout-flow' w='98400' x='800' y='889'>
+                <zone forceUpdate='true' h='3778' id='4' type='text' w='36800' x='7200' y='2556'>
+                  <formatted-text>
+                    <run fontcolor='#074080' fontsize='24'>Bammel Forest </run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='39556' id='3' is-fixed='true' is-scaled='1' param='Image/BammelMonths.png' type='bitmap' w='64200' x='33600' y='9778'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone forceUpdate='true' h='15889' id='13' type='text' w='17700' x='8800' y='10111'>
+                  <formatted-text>
+                    <run bold='true' fontcolor='#074080' fontsize='28'>October</run>
+                    <run>Æ&#10;</run>
+                    <run fontcolor='#074080' fontsize='11' italic='true'>Lowest Month of</run>
+                    <run>Æ&#10;</run>
+                    <run fontcolor='#074080' fontsize='11' italic='true'>rainfall recorded</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone forceUpdate='true' h='17222' id='14' type='text' w='20700' x='8600' y='27222'>
+                  <formatted-text>
+                    <run bold='true' fontcolor='#074080' fontsize='28'>September</run>
+                    <run>Æ&#10;</run>
+                    <run fontcolor='#074080' fontsize='12' italic='true'>Highest Month of</run>
+                    <run>Æ&#10;</run>
+                    <run fontcolor='#074080' fontsize='12' italic='true'>rainfall recorded</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone forceUpdate='true' h='5556' id='6' type='text' w='29700' x='7500' y='49444'>
+                  <formatted-text>
+                    <run fontcolor='#074080' fontsize='24'>Sagemont </run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='39333' id='5' is-fixed='true' is-scaled='1' param='Image/SagemontMonths.png' type='bitmap' w='56600' x='5100' y='60333'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone forceUpdate='true' h='15111' id='17' type='text' w='17800' x='70400' y='60778'>
+                  <formatted-text>
+                    <run bold='true' fontcolor='#074080' fontsize='28'>October</run>
+                    <run>Æ&#10;</run>
+                    <run fontcolor='#074080' fontsize='12' italic='true'>Lowest Month of</run>
+                    <run>Æ&#10;</run>
+                    <run fontcolor='#074080' fontsize='12' italic='true'>rainfall recorded</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone forceUpdate='true' h='16889' id='18' type='text' w='19800' x='70900' y='80222'>
+                  <formatted-text>
+                    <run bold='true' fontcolor='#074080' fontsize='28'>August</run>
+                    <run>Æ&#10;</run>
+                    <run fontcolor='#074080' fontsize='12' italic='true'>Highest Month of</run>
+                    <run>Æ&#10;</run>
+                    <run fontcolor='#074080' fontsize='12' italic='true'>rainfall recorded</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{37B616D9-7F71-4ED4-82DB-C4D542849310}' />
     </dashboard>
   </dashboards>
   <windows source-height='30'>
@@ -845,7 +1474,7 @@
       </viewpoint>
       <simple-id uuid='{605EF525-C9DD-447C-9CA3-CB20FE985C3D}' />
     </window>
-    <window class='worksheet' maximized='true' name='Comparison'>
+    <window class='worksheet' name='Comparison'>
       <cards>
         <edge name='left'>
           <strip size='160'>
@@ -911,11 +1540,6 @@
       <active id='-1' />
       <simple-id uuid='{90667633-126F-4D4F-A182-93C212182DE6}' />
     </window>
-    <window class='dashboard' name='Forecasting'>
-      <viewpoints />
-      <active id='-1' />
-      <simple-id uuid='{1E929F39-DB31-4CAA-9B1A-A0EBEF48A499}' />
-    </window>
     <window class='dashboard' name='Decomposed'>
       <viewpoints />
       <active id='-1' />
@@ -930,10 +1554,20 @@
       <active id='-1' />
       <simple-id uuid='{2428B819-B48B-4D0E-B012-8567F2229411}' />
     </window>
-    <window class='dashboard' name='BammelForecast'>
+    <window class='dashboard' name='OneStep'>
+      <viewpoints />
+      <active id='10' />
+      <simple-id uuid='{1E929F39-DB31-4CAA-9B1A-A0EBEF48A499}' />
+    </window>
+    <window class='dashboard' maximized='true' name='Forecasting'>
+      <viewpoints />
+      <active id='15' />
+      <simple-id uuid='{EEEF8CD2-555F-423B-84BE-20A3F24BFE65}' />
+    </window>
+    <window class='dashboard' name='Trends&amp;Patterns'>
       <viewpoints />
       <active id='-1' />
-      <simple-id uuid='{EEEF8CD2-555F-423B-84BE-20A3F24BFE65}' />
+      <simple-id uuid='{E6A72C0B-C6F5-48B4-B88E-F59CC8064C11}' />
     </window>
     <window class='dashboard' name='The Story'>
       <viewpoints />
