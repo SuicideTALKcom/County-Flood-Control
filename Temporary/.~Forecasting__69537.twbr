@@ -1344,7 +1344,7 @@
             <zone h='77904' id='1' param='vert' removable='false' type='layout-flow' w='98684' x='658' y='21266'>
               <zone fixed-size='101' h='10477' id='4' is-fixed='true' paired-zone-id='5' removable='false' type='flipboard-nav' w='98684' x='658' y='21266' />
               <zone h='67427' id='5' paired-zone-id='4' removable='false' type='flipboard' w='98684' x='658' y='31743'>
-                <flipboard active-id='4' nav-type='caption' show-nav-arrows='true'>
+                <flipboard active-id='7' nav-type='caption' show-nav-arrows='true'>
                   <story-points>
                     <story-point caption='Observed' captured-sheet='Gauges' id='1' />
                     <story-point caption='Comparison' captured-sheet='ComparisonDash' id='5' />
@@ -1794,7 +1794,7 @@
       <active id='-1' />
       <simple-id uuid='{1E929F39-DB31-4CAA-9B1A-A0EBEF48A499}' />
     </window>
-    <window class='dashboard' maximized='true' name='ARIMA'>
+    <window class='dashboard' name='ARIMA'>
       <viewpoints />
       <active id='20' />
       <simple-id uuid='{EEEF8CD2-555F-423B-84BE-20A3F24BFE65}' />
@@ -1809,9 +1809,9 @@
       <active id='4' />
       <simple-id uuid='{E6A72C0B-C6F5-48B4-B88E-F59CC8064C11}' />
     </window>
-    <window class='dashboard' name='The Story'>
+    <window class='dashboard' maximized='true' name='The Story'>
       <viewpoints />
-      <active id='5' />
+      <active id='-1' />
       <grid grid-overlay-mode='on' />
       <simple-id uuid='{B47226E7-5065-4120-80B0-EE2B735B4502}' />
     </window>
