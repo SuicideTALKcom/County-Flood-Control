@@ -10,7 +10,7 @@
     <WindowsPersistSimpleIdentifiers />
     <ZoneBackgroundTransparency />
   </document-format-change-manifest>
-  <repository-location id='CountyTableau' path='/workbooks' revision='1.1' />
+  <repository-location id='Neighborhood_homes' path='/workbooks' revision='1.0' />
   <preferences>
     <preference name='ui.encoding.shelf.height' value='24' />
     <preference name='ui.shelf.height' value='26' />
@@ -464,14 +464,6 @@
         <param name='target' value='CountyDash' />
       </command>
     </action>
-    <action caption='Filter 1 (generated) 1' name='[Action2]'>
-      <activation auto-clear='true' type='on-select' />
-      <source dashboard='NeighborhoodDash' type='sheet' worksheet='CountyList' />
-      <command command='tsc:tsl-filter'>
-        <param name='special-fields' value='all' />
-        <param name='target' value='NeighborhoodDash' />
-      </command>
-    </action>
   </actions>
   <worksheets>
     <worksheet name='CountyList'>
@@ -726,6 +718,10 @@
           <aggregation value='true' />
         </view>
         <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' field='[federated.0ze7y1n179jrf211fw0080nw6wrh].[Longitude (generated)]' field-type='quantitative' max='-10541931.829785185' min='-10686116.203139959' projection='EPSG:3857' range-type='fixed' scope='cols' type='space' />
+            <encoding attr='space' class='0' field='[federated.0ze7y1n179jrf211fw0080nw6wrh].[Latitude (generated)]' field-type='quantitative' max='3511303.0686562564' min='3443974.115741482' projection='EPSG:3857' range-type='fixed' scope='rows' type='space' />
+          </style-rule>
           <style-rule element='map-layer'>
             <format attr='enabled' id='tab_base' value='true' />
             <format attr='enabled' id='um_lcover' value='true' />
@@ -762,7 +758,7 @@
             <view>
               <breakdown value='auto' />
             </view>
-            <mark class='Automatic' />
+            <mark class='Shape' />
             <mark-sizing mark-sizing-setting='marks-scaling-off' />
             <encodings>
               <color column='[federated.0ze7y1n179jrf211fw0080nw6wrh].[none:neighborhood:nk]' />
@@ -772,6 +768,7 @@
             <style>
               <style-rule element='mark'>
                 <format attr='size' value='1.8790607452392578' />
+                <format attr='shape' value=':custom/home.png' />
               </style-rule>
             </style>
           </pane>
@@ -875,8 +872,6 @@
         <column-instance column='[neighborhood]' derivation='None' name='[none:neighborhood:nk]' pivot='key' type='nominal' />
       </datasource-dependencies>
       <zones>
-        <zone h='37071' id='3' name='CountyMap' show-title='false' w='93600' x='3300' y='9071' />
-        <zone h='3714' id='8' mode='dropdown' name='CountyMap' param='[federated.0ze7y1n179jrf211fw0080nw6wrh].[none:neighborhood:nk]' show-title='false' type='filter' w='16583' x='23833' y='5786' />
         <zone h='2500' id='10' type='empty' w='97100' x='1200' y='3357'>
           <zone-style>
             <format attr='border-color' value='#000000' />
@@ -896,7 +891,9 @@
             <run fontcolor='#074080' fontsize='14'>Search by Neighborhood:</run>
           </formatted-text>
         </zone>
-        <zone h='51214' id='15' name='CountyList' show-title='false' w='93400' x='3600' y='48000' />
+        <zone h='37429' id='16' name='NeighborhoodMap' show-title='false' w='93417' x='3417' y='8286' />
+        <zone h='3143' id='17' mode='checkdropdown' name='NeighborhoodMap' param='[federated.0ze7y1n179jrf211fw0080nw6wrh].[none:neighborhood:nk]' show-title='false' type='filter' w='13333' x='23250' y='5857' />
+        <zone h='44357' id='18' name='NeighborhoodList' show-title='false' w='93583' x='3417' y='47786' />
       </zones>
       <devicelayouts>
         <devicelayout auto-generated='true' name='Phone'>
@@ -928,24 +925,6 @@
                     <format attr='padding' value='0' />
                   </zone-style>
                 </zone>
-                <zone h='3714' id='8' mode='dropdown' name='CountyMap' param='[federated.0ze7y1n179jrf211fw0080nw6wrh].[none:neighborhood:nk]' show-title='false' type='filter' w='16600' x='27900' y='5714'>
-                  <zone-style>
-                    <format attr='border-color' value='#000000' />
-                    <format attr='border-style' value='none' />
-                    <format attr='border-width' value='0' />
-                    <format attr='margin' value='4' />
-                    <format attr='padding' value='0' />
-                  </zone-style>
-                </zone>
-                <zone fixed-size='280' h='37071' id='3' is-fixed='true' name='CountyMap' show-title='false' w='93600' x='3300' y='9071'>
-                  <zone-style>
-                    <format attr='border-color' value='#000000' />
-                    <format attr='border-style' value='none' />
-                    <format attr='border-width' value='0' />
-                    <format attr='margin' value='4' />
-                    <format attr='padding' value='0' />
-                  </zone-style>
-                </zone>
               </zone>
               <zone-style>
                 <format attr='border-color' value='#000000' />
@@ -960,7 +939,7 @@
       <simple-id uuid='{99508F21-94EF-4E6E-8C67-ED581C936F86}' />
     </dashboard>
   </dashboards>
-  <windows source-height='30'>
+  <windows pres-mode='true' source-height='30'>
     <window class='worksheet' name='CountyMap'>
       <cards>
         <edge name='left'>
@@ -1074,10 +1053,10 @@
     </window>
     <window class='dashboard' maximized='true' name='NeighborhoodDash'>
       <viewpoints>
-        <viewpoint name='CountyList'>
+        <viewpoint name='NeighborhoodList'>
           <zoom type='entire-view' />
         </viewpoint>
-        <viewpoint name='CountyMap'>
+        <viewpoint name='NeighborhoodMap'>
           <zoom type='entire-view' />
         </viewpoint>
       </viewpoints>
