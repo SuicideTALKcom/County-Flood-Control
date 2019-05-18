@@ -17,11 +17,11 @@ def homes_comparison(homes):
     #loop thorugh each new df scrape and compare it against the sql database
     for i, house in homesdf.iterrows():
         #read the sql database and take the address column to compare 
-        retrieved_data = pd.read_sql(f"SELECT Address FROM home WHERE Address = '{house['address']}'", engine)
+        retrieved_data = pd.read_sql(f"SELECT Address FROM homes WHERE Address = '{house['address']}'", engine)
         #grab the address from the web scrape and  
         #compare if the address exists against the address column in the sql database
         if retrieved_data.empty:
-            homesdf.iloc[i].to_sql('home', if_exists = 'append', con=engine)
+            homesdf.iloc[i].to_sql('homes', if_exists = 'append', con=engine)
     return 
 
 
