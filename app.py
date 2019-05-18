@@ -125,7 +125,7 @@ def about():
 @app.route("/api/neighborhood/<neighborhood>")
 def api(neighborhood):
     print("neighborhood route")
-    query = session.query(home.neighborhood,home.address, home.price, home.days, home.agent, home.city, home.state, home.zip)
+    query = session.query(home.neighborhood,home.address, home.price, home.days, home.agent)
     
     if neighborhood == True:
         results = query.all()
