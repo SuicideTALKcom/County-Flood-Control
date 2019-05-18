@@ -9,7 +9,7 @@ from datetime import datetime
 
 def homes_comparison(homes):
     #create a connection to the sql database 
-    engine = create_engine("mysql+pymysql://xq5039a54f2ukgye:pzghos28lbhgg711@otwsl2e23jrxcqvx.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/lmib79r99ct0zdgq", echo=False)
+    engine = create_engine("mysql://xq5039a54f2ukgye:pzghos28lbhgg711@otwsl2e23jrxcqvx.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/lmib79r99ct0zdgq", echo=False)
 
     #put the results of the function into a dataframe
     homesdf = pd.DataFrame(homes)
@@ -21,7 +21,7 @@ def homes_comparison(homes):
         #grab the address from the web scrape and  
         #compare if the address exists against the address column in the sql database
         if retrieved_data.empty:
-            homesdf.iloc[i].to_sql('lmib79r99ct0zdgq', if_exists = 'append', con=engine)
+            homesdf.iloc[i].to_sql('lmib79r99ct0zdgq', if_exists = 'append', schema= 'online', con=engine)
 
     return 
 
