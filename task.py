@@ -5,7 +5,7 @@ import pandas as pd
 import numpy as np 
 import time
 from datetime import datetime
-from config import connection 
+# from config import connection 
 
 def homes_comparison(homes):
     #create a connection to the sql database 
