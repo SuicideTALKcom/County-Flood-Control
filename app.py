@@ -107,9 +107,21 @@ def contact():
 def charts():
     return render_template ("charts.html")
 
-@app.route("/tableau")
-def tableau():
-    return render_template ("tableau.html")
+@app.route("/tableau1")
+def tableau1():
+    return render_template ("tableau1.html")
+
+@app.route("/tableau2")
+def tableau2():
+    return render_template ("tableau2.html")
+
+@app.route("/tableau3")
+def tableau3():
+    return render_template ("tableau3.html")
+
+@app.route("/tableau4")
+def tableau4():
+    return render_template ("tableau4.html")
 
 @app.route("/about")
 def about():
