@@ -9,7 +9,7 @@ from datetime import datetime
 
 def homes_comparison(homes):
     #create a connection to the sql database 
-    engine = create_engine(connection, echo=False)
+    engine = create_engine("mysql+pymysql://xq5039a54f2ukgye:pzghos28lbhgg711@otwsl2e23jrxcqvx.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/lmib79r99ct0zdgq", echo=False)
 
     #put the results of the function into a dataframe
     homesdf = pd.DataFrame(homes)
@@ -17,7 +17,7 @@ def homes_comparison(homes):
     #loop thorugh each new df scrape and compare it against the sql database
     for i, house in homesdf.iterrows():
         #read the sql database and take the address column to compare 
-        retrieved_data = pd.read_sql(f"SELECT Address FROM home WHERE Address = '{house['address']}'", engine)
+        retrieved_data = pd.read_sql(f"SELECT address FROM home WHERE address = '{house['address']}'", engine)
         #grab the address from the web scrape and  
         #compare if the address exists against the address column in the sql database
         if retrieved_data.empty:
