@@ -20,7 +20,7 @@
       <connection class='federated'>
         <named-connections>
           <named-connection caption='scraped_hommes' name='textscan.0gd8dar0ki4g971cp8yye1b7sk8i'>
-            <connection class='textscan' directory='/Users/margretsaniel/Downloads' filename='scraped_hommes.csv' password='' server='' workgroup-auth-mode='as-is' />
+            <connection class='textscan' directory='Data/Downloads' filename='scraped_hommes.csv' password='' server='' workgroup-auth-mode='as-is' />
           </named-connection>
         </named-connections>
         <relation connection='textscan.0gd8dar0ki4g971cp8yye1b7sk8i' name='scraped_hommes.csv' table='[scraped_hommes#csv]' type='table'>
@@ -222,7 +222,7 @@
           <groupfilter function='level-members' level='[neighborhood]' />
         </groupfilter>
       </group>
-      <extract count='-1' enabled='true' units='records'>
+      <extract count='-1' enabled='false' units='records'>
         <connection access_mode='readonly' authentication='auth-none' author-locale='en_US' class='hyper' dbname='Data/Datasources/scraped_hommes.hyper' default-settings='yes' schema='Extract' sslmode='' tablename='Extract' update-time='05/18/2019 07:03:30 AM' username='tableau_internal_user'>
           <relation name='Extract' table='[Extract].[Extract]' type='table' />
           <refresh>
@@ -368,7 +368,7 @@
           </metadata-records>
         </connection>
       </extract>
-      <layout dim-ordering='alphabetic' dim-percentage='0.544204' measure-ordering='alphabetic' measure-percentage='0.455796' show-structure='true' />
+      <layout dim-ordering='alphabetic' dim-percentage='0.588843' measure-ordering='alphabetic' measure-percentage='0.411157' show-structure='true' />
       <style>
         <style-rule element='mark'>
           <encoding attr='color' field='[none:neighborhood:nk]' type='palette'>
@@ -934,6 +934,10 @@
           <aggregation value='true' />
         </view>
         <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' field='[federated.0ze7y1n179jrf211fw0080nw6wrh].[Longitude (generated)]' field-type='quantitative' max='-10536396.179736743' min='-10680580.553091517' projection='EPSG:3857' range-type='fixed' scope='cols' type='space' />
+            <encoding attr='space' class='0' field='[federated.0ze7y1n179jrf211fw0080nw6wrh].[Latitude (generated)]' field-type='quantitative' max='3510530.6523704273' min='3443201.6994556529' projection='EPSG:3857' range-type='fixed' scope='rows' type='space' />
+          </style-rule>
           <style-rule element='map-layer'>
             <format attr='enabled' id='tab_base' value='true' />
             <format attr='enabled' id='um_lcover' value='true' />
@@ -1471,7 +1475,7 @@
       </cards>
       <simple-id uuid='{41B5993B-F1BC-462D-9C37-484C66BF941F}' />
     </window>
-    <window class='dashboard' name='NeighborhoodDash'>
+    <window class='dashboard' maximized='true' name='NeighborhoodDash'>
       <viewpoints>
         <viewpoint name='NeighborhoodList'>
           <zoom type='entire-view' />
@@ -1555,7 +1559,7 @@
       </cards>
       <simple-id uuid='{605BF88A-7837-4CC1-973E-E3651ED6B245}' />
     </window>
-    <window class='dashboard' maximized='true' name='AnalyticsDash'>
+    <window class='dashboard' name='AnalyticsDash'>
       <viewpoints>
         <viewpoint name='AnalyticsContacts' />
         <viewpoint name='AnalyticsDays'>
