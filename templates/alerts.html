@@ -93,20 +93,23 @@
 		<!-- Content
 		============================================= -->
 		<section id="content">
+			
+			<div class="heading-block topmargin noborder">
+				<h2 class="center">Email &nbsp;Alert &nbsp;System</h2>
+			</div>
 
-			<div class="content-wrap">
+				<div class="content-wrap">
 
-				<div class="container clearfix">
+					<div class="container clearfix">
 
 						<!-- Alerts Contact Form
 						============================================= -->
-						<h3>Send Email Alert Notifications</h3>
 
 						<div class="form-widget">
 
 							<div class="form-result"></div>
 
-							<form class="nobottommargin" id="template-contactform" name="template-contactform" action="include/form.php" method="post">
+							<form class="nobottommargin" id="template-contactform" name="template-contactform" action="{{ url_for('static', filename='include/form.php') }}" method="post">
 
 								<div class="form-process"></div>
 
@@ -122,7 +125,7 @@
 
 								<div class="col_one_third col_last">
 									<label for="template-contactform-phone">Phone</label>
-									<input type="text" id="template-contactform-phone" name="template-contactform-phone" value="" class="sm-form-control" />
+									<input type="text" id="template-contactform-phone" name="template-contactform-phone" value="" class="required sm-form-control" />
 								</div>
 
 								<div class="clear"></div>
@@ -165,7 +168,7 @@
 		<footer id="footer" class="dark">
 
 
-			<!-- Copyrights
+			<!-- Copyright
 			============================================= -->
 			<div id="copyrights">
 
@@ -173,12 +176,13 @@
 
 					<div class="col_full nobottommargin center">
 
-						Copyright &copy; &nbsp;2019 &nbsp;Houston &nbsp;Emergency &nbsp;Coders
+						Copyright &copy; &nbsp;2019 &nbsp;Emergency &nbsp;Coders
+						
 					</div>
 
 				</div>
 
-			</div><!-- #copyrights end -->
+			</div><!-- #copyright end -->
 
 		</footer><!-- #footer end -->
 

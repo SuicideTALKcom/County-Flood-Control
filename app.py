@@ -5,14 +5,17 @@ import os
 import time 
 import pandas as pd
 import numpy as np
-
+# from config import connection 
 import sqlalchemy
 from sqlalchemy.ext.automap import automap_base
 from sqlalchemy.orm import Session
 from sqlalchemy import create_engine, func, inspect
-#import pymysql
-
+import pymysql
+from Lesly_scrape import main
+import threading
 from flask import Flask, jsonify, render_template
+import json
+
 #from flask_sqlalchemy import SQLAlchemy
 
 
@@ -25,7 +28,7 @@ from flask import Flask, jsonify, render_template
 if (os.environ.get("JAWSDB_URL")):
     engine = create_engine(os.environ.get("JAWSDB_URL"))
 else:
-    engine = create_engine("mysql+pymysql://root:banana@localhost/homes_db")
+    engine = create_engine("mysql://xq5039a54f2ukgye:pzghos28lbhgg711@otwsl2e23jrxcqvx.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/lmib79r99ct0zdgq")
 
 # reflect an existing database into a new model
 Base = automap_base()
@@ -68,6 +71,26 @@ def neighborhoods():
 def analytics():
     return render_template("analytics.html")
 
+@app.route("/dashboard")
+def dashboard():
+    return render_template("dashboard.html")
+
+@app.route("/forecasting")
+def forecasting():
+    return render_template("forecasting.html")
+
+@app.route("/canvas")
+def canvas():
+    return render_template("canvas.html")
+
+@app.route("/atest")
+def atest():
+    return render_template("atest.html")
+
+@app.route("/support")
+def support():
+    return render_template("support.html")
+
 @app.route("/faqs")
 def faqs():
     return render_template("faqs.html")
@@ -84,9 +107,21 @@ def contact():
 def charts():
     return render_template ("charts.html")
 
-@app.route("/tableau")
-def tableau():
-    return render_template ("tableau.html")
+@app.route("/tableau1")
+def tableau1():
+    return render_template ("tableau1.html")
+
+@app.route("/tableau2")
+def tableau2():
+    return render_template ("tableau2.html")
+
+@app.route("/tableau3")
+def tableau3():
+    return render_template ("tableau3.html")
+
+@app.route("/tableau4")
+def tableau4():
+    return render_template ("tableau4.html")
 
 @app.route("/about")
 def about():
@@ -102,7 +137,7 @@ def about():
 @app.route("/api/neighborhood/<neighborhood>")
 def api(neighborhood):
     print("neighborhood route")
-    query = session.query(home.Neighborhood,home.Address, home.Price, home.Days_on_Market, home.Agent)
+    query = session.query(home.neighborhood,home.address, home.price, home.days, home.agent,home.state,home.zip,home.office)
     
     if neighborhood == True:
         results = query.all()
@@ -112,37 +147,16 @@ def api(neighborhood):
     new_home = pd.DataFrame(results).to_json(orient = 'records')
     
     # from pprint import pprint
-    import json
+
 
     # pprint(json.loads(new_home))
 
     return jsonify(json.loads(new_home))
    
-# @app.route("/chart")
-# def chart():
-
-#     return render_template("chart.html")
-
-#change from array of arrays into an array of objects
-#query for a specific neighborhood instead of all rows 
-
-
-
-
-#Neighborhood Name
-#Address
-#Price
-#Days on Market
-#Agent    
-    
-
-#need an API route for analytics 
-
-# @app.route("/api")
-# def dummy():
-#     return jsonify({
-#         "test": "success"
-#     })
 
 if __name__ == "__main__":
-    app.run()   
+    app.debug = False
+    threading.Thread(target=app.run).start()
+    while True:
+        main()
+   

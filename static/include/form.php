@@ -1,24 +1,24 @@
 <?php
 
 /*-------------------------------------------------
-
-	Form Processor Plugin
-	by SemiColonWeb
-
----------------------------------------------------*/
-
-
-/*-------------------------------------------------
 	PHPMailer Initialization Files
 ---------------------------------------------------*/
 
+/*
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
 require 'phpmailer/src/Exception.php';
 require 'phpmailer/src/PHPMailer.php';
 require 'phpmailer/src/SMTP.php';
+*/
 
+use PHPMailer\PHPMailer\PHPMailer; {{ url_for('static', filename='PHPMailer\PHPMailer\PHPMailer') }}
+use PHPMailer\PHPMailer\Exception; {{ url_for('static', filename='PHPMailer\PHPMailer\Exception') }}
+
+require 'phpmailer/src/Exception.php'; {{ url_for('static', filename='include/phpmailer/src/Exception.php') }}
+require 'phpmailer/src/PHPMailer.php'; {{ url_for('static', filename='include/phpmailer/src/PHPMailer.php') }}
+require 'phpmailer/src/SMTP.php'; {{ url_for('static', filename='include/phpmailer/src/SMTP.php') }}
 
 /*-------------------------------------------------
 	Receiver's Email
@@ -27,8 +27,8 @@ require 'phpmailer/src/SMTP.php';
 $toemails = array();
 
 $toemails[] = array(
-				'email' => 'your-email@website.com', // Your Email Address
-				'name' => 'Your Name' // Your Name
+				'email' => 'doug@dfnworld.com', // Your Email Address
+				'name' => 'Doug Newsom' // Your Name
 			);
 
 
@@ -37,8 +37,8 @@ $toemails[] = array(
 ---------------------------------------------------*/
 
 $fromemail = array(
-				'email' => 'no-reply@website.com', // Company's Email Address (preferably currently used Domain Name)
-				'name' => 'Company Name' // Company Name
+				'email' => 'Doug.Lesly.Margret@Rice.com', // Company's Email Address (preferably currently used Domain Name)
+				'name' => 'Emergency Coders' // Company Name
 			);
 
 
@@ -78,8 +78,8 @@ if( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 	---------------------------------------------------*/
 
 	$message = array(
-		'success'			=> 'We have <strong>successfully</strong> received your Message and will get Back to you as soon as possible.',
-		'error'				=> 'Email <strong>could not</strong> be sent due to some Unexpected Error. Please Try Again later.',
+		'success'			=> 'You have <strong>successfully</strong> sent your message.  We will get back to you soon.',
+		'error'				=> 'Your Email <strong>could not</strong> be sent due to an Unexpected Error. Please try again later.',
 		'error_bot'			=> 'Bot Detected! Form could not be processed! Please Try Again!',
 		'error_unexpected'	=> 'An <strong>unexpected error</strong> occured. Please Try Again later.',
 		'recaptcha_invalid'	=> 'Captcha not Validated! Please Try Again!',
@@ -142,7 +142,7 @@ if( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 	}
 
 	$template	= !empty( $submits['template'] ) ? $submits['template'] : 'html';
-	$html_title	= !empty( $submits['html_title'] ) ? $submits['html_title'] : 'Form Response';
+	$html_title	= !empty( $submits['html_title'] ) ? $submits['html_title'] : 'HCFCD Contact Form';
 	$forcerecap	= ( !empty( $submits['force_recaptcha'] ) && $submits['force_recaptcha'] != 'false' ) ? true : false;
 	$replyto	= !empty( $submits['replyto'] ) ? explode( ',', $submits['replyto'] ) : false;
 
@@ -169,7 +169,7 @@ if( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 		}
 	}
 
-	$ar_footer	= !empty( $submits['ar_footer'] ) ? $submits['ar_footer'] : 'Copyrights &copy; ' . date('Y') . ' <strong>SemiColonWeb</strong>. All Rights Reserved.';
+	$ar_footer	= !empty( $submits['ar_footer'] ) ? $submits['ar_footer'] : 'Copyrights &copy; ' . date('Y') . ' <strong>Emergency Coders</strong>. All Rights Reserved.';
 
 	$mail->Subject = !empty( $submits['subject'] ) ? $submits['subject'] : 'Form Response from your Website';
 	$mail->SetFrom( $fromemail['email'] , $fromemail['name'] );
