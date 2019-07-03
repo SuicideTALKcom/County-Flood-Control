@@ -8,7 +8,9 @@ from urllib import parse
 import re 
 from datetime import datetime
 import schedule
-import threading 
+import threading
+import itertools
+import ast
 from task import homes_comparison
 
 def har_homes():
@@ -50,35 +52,80 @@ def har_homes():
 
     all_homes = []
 
-    #iterate through the urls
     for url in urls:
         html = requests.get(url).text
-        soup = BeautifulSoup(html, "html.parser")
-        homes = soup.find('div', class_= "prop_list").text
+        soup = BeautifulSoup(html, 'lxml')
+        price, homes = itertools.tee(soup.find_all("div", class_="prop_list"))
         neighborhood = url.split('/')[3].replace('-',' ')
-        home_info = dict()
-        home_info ['neighborhood'] = neighborhood
 
-        try:
-            all_info = soup.find('div', class_= 'mpi_info') 
-            price = soup.find('div', class_= 'mpi_img')
-            full_address = all_info.findAll('a', class_= 'address')[0].text
-            split_address = full_address.split(',')
-            home_info['address']= split_address[0].strip()
-            home_info['city']= split_address[1].strip()
-            state_zip = split_address[2].split(' ')
-            home_info['state'] = state_zip[1].strip()
-            home_info['zip'] = state_zip[2].strip()
-            home_info['days']= all_info.findAll('span', class_= 'bold')[1].text
-            home_info['agent'] = all_info.findAll('a', class_='bold')[0].text
-            home_info['office'] = all_info.findAll('a', class_= 'bold')[1].text
-            home_info['price']= price.find('div','price').text.replace(',','').replace('$','').strip()
-            home_info['datetime']= str(datetime.today())
-            all_homes.append(home_info)
-        except:
-            print("No results given for " + url)
-            continue
-            
+        for item in homes: 
+            try:
+                for info in item.find_all(class_= 'mpi_info'):
+                    full_address = info.find_all('a', class_= 'address')[0].text
+                    split_address = full_address.split(',')
+                    use_split_address = split_address[0].strip()
+                    use_split_city = split_address[1].strip()
+                    state_zip = split_address[2].split(' ')
+                    use_state = state_zip[1].strip()
+                    use_zip = state_zip[2].strip()
+                    use_days = info.find_all('span', class_= 'bold')[1].text
+                    use_agent = info.find_all('a', class_='bold')[0].text 
+                    use_office = info.find_all('a', class_= 'bold')[1].text.strip()
+
+                    home_info=  {
+                        "neighborhood": neighborhood,
+                        "address": use_split_address,
+                        "city": use_split_city,
+                        "state": use_state,
+                        "zip": use_zip,
+                        "days": use_days,
+                        "agent": use_agent,
+                        "office": use_office}
+                    all_homes.append(home_info)
+
+
+            except:
+                print("No results given for " + url)
+                continue
+
+
+
+        for p in price:
+            try:
+                for price_div in p.find_all(class_='price'):
+
+                    try:
+                        price_div.find('img').decompose()
+                    except:
+                        print()
+
+                    price_list = price_div.text.replace('$', '').replace(',','').strip('][')
+
+
+                    new_price = price_list[2:8].strip().split('/n')
+
+                    for new in new_price:
+                        final_price = {
+                            "price": new
+                            }
+
+                    all_homes.append(final_price)
+
+            except:
+                print("exception occured")
+                continue
+
+
+
+
+
+    half_len_cities = round(len(all_homes)/2)
+    for index in range(half_len_cities):
+        all_homes[index]["price"] = all_homes[half_len_cities]["price"]
+        del all_homes[half_len_cities]
+
+
+
     return all_homes
 
 def compare():
