@@ -15,6 +15,7 @@ from Lesly_scrape import main
 import threading
 from flask import Flask, jsonify, render_template
 import json
+import requests
 
 #from flask_sqlalchemy import SQLAlchemy
 

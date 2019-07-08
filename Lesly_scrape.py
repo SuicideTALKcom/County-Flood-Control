@@ -57,6 +57,8 @@ def har_homes():
         soup = BeautifulSoup(html, 'lxml')
         price, homes = itertools.tee(soup.find_all("div", class_="prop_list"))
         neighborhood = url.split('/')[3].replace('-',' ')
+        if soup.find_all("h2", {"class":"charcole reguler"}):
+            pass
 
         for item in homes: 
             try:
@@ -125,18 +127,19 @@ def har_homes():
         del all_homes[half_len_cities]
 
 
-
+    print(all_homes)
     return all_homes
 
+
 def compare():
-    homes_comparison(har_homes())
+    homes_comparison(scraped_homes = har_homes())
     # print("banana")
 
 def threader(job_func):
     job_thread = threading.Thread(target=job_func)
     job_thread.start()
 
-schedule.every(180).seconds.do(threader, compare)
+    schedule.every(180).seconds.do(threader, compare)
 
 def main():    
     schedule.run_pending()
