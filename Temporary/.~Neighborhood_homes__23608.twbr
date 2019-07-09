@@ -4,13 +4,14 @@
 <workbook source-build='2019.1.3 (20191.19.0417.1429)' source-platform='mac' version='18.1' xml:base='https://public.tableau.com' xmlns:user='http://www.tableausoftware.com/xml/user'>
   <document-format-change-manifest>
     <AutoCreateAndUpdateDSDPhoneLayouts />
+    <DashboardGridOverlay />
     <IntuitiveSorting />
     <IntuitiveSorting_SP2 />
     <SheetIdentifierTracking />
     <WindowsPersistSimpleIdentifiers />
     <ZoneBackgroundTransparency />
   </document-format-change-manifest>
-  <repository-location id='County_homesv2' path='/workbooks' revision='1.1' />
+  <repository-location id='Analytics_dash' path='/workbooks' revision='1.6' />
   <preferences>
     <preference name='ui.encoding.shelf.height' value='24' />
     <preference name='ui.shelf.height' value='26' />
@@ -434,7 +435,7 @@
           </metadata-records>
         </connection>
       </extract>
-      <layout dim-ordering='alphabetic' dim-percentage='0.574297' measure-ordering='alphabetic' measure-percentage='0.425703' show-structure='true' />
+      <layout dim-ordering='alphabetic' dim-percentage='0.53012' measure-ordering='alphabetic' measure-percentage='0.46988' show-structure='true' />
       <style>
         <style-rule element='mark'>
           <encoding attr='color' field='[none:region:nk]' type='palette'>
@@ -634,7 +635,7 @@
           <style-rule element='header'>
             <format attr='width' field='[federated.0ze7y1n179jrf211fw0080nw6wrh].[none:office:nk]' value='392' />
             <format attr='width' field='[federated.0ze7y1n179jrf211fw0080nw6wrh].[none:agent:nk]' value='128' />
-            <format attr='width' field='[federated.0ze7y1n179jrf211fw0080nw6wrh].[none:address:nk]' value='108' />
+            <format attr='width' field='[federated.0ze7y1n179jrf211fw0080nw6wrh].[none:address:nk]' value='196' />
             <format attr='width' field='[federated.0ze7y1n179jrf211fw0080nw6wrh].[none:price:ok]' value='80' />
           </style-rule>
         </style>
@@ -675,6 +676,9 @@
             <column-instance column='[neighborhood]' derivation='None' name='[none:neighborhood:nk]' pivot='key' type='nominal' />
             <column-instance column='[days]' derivation='Sum' name='[sum:days:qk]' pivot='key' type='quantitative' />
           </datasource-dependencies>
+          <shelf-sorts>
+            <shelf-sort-v2 dimension-to-sort='[federated.0ze7y1n179jrf211fw0080nw6wrh].[none:neighborhood:nk]' direction='ASC' is-on-innermost-dimension='true' measure-to-sort-by='[federated.0ze7y1n179jrf211fw0080nw6wrh].[sum:days:qk]' shelf='rows' />
+          </shelf-sorts>
           <aggregation value='true' />
         </view>
         <style>
@@ -1033,6 +1037,10 @@
           <aggregation value='true' />
         </view>
         <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' field='[federated.0ze7y1n179jrf211fw0080nw6wrh].[Longitude (generated)]' field-type='quantitative' max='-10539725.863133408' min='-10666815.686466292' projection='EPSG:3857' range-type='fixed' scope='cols' type='space' />
+            <encoding attr='space' class='0' field='[federated.0ze7y1n179jrf211fw0080nw6wrh].[Latitude (generated)]' field-type='quantitative' max='3513345.4274413879' min='3456187.4830463608' projection='EPSG:3857' range-type='fixed' scope='rows' type='space' />
+          </style-rule>
           <style-rule element='map-layer'>
             <format attr='enabled' id='tab_base' value='true' />
             <format attr='enabled' id='um_lcover' value='true' />
@@ -1183,6 +1191,10 @@
           <aggregation value='true' />
         </view>
         <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' field='[federated.0ze7y1n179jrf211fw0080nw6wrh].[Longitude (generated)]' field-type='quantitative' max='-10503879.397651011' min='-10709243.372533234' projection='EPSG:3857' range-type='fixed' scope='cols' type='space' />
+            <encoding attr='space' class='0' field='[federated.0ze7y1n179jrf211fw0080nw6wrh].[Latitude (generated)]' field-type='quantitative' max='3523999.5907695545' min='3434608.0024121329' projection='EPSG:3857' range-type='fixed' scope='rows' type='space' />
+          </style-rule>
           <style-rule element='map-layer'>
             <format attr='enabled' id='tab_base' value='true' />
             <format attr='enabled' id='um_lcover' value='true' />
@@ -1256,7 +1268,7 @@
   <dashboards>
     <dashboard name='AnalyticsDash'>
       <style />
-      <size maxheight='1200' maxwidth='1200' minheight='1200' minwidth='1200' sizing-mode='fixed' />
+      <size sizing-mode='automatic' />
       <datasources>
         <datasource caption='scraped_hommes' name='federated.0ze7y1n179jrf211fw0080nw6wrh' />
       </datasources>
@@ -1267,73 +1279,104 @@
         <column-instance column='[days]' derivation='Sum' name='[sum:days:qk]' pivot='key' type='quantitative' />
       </datasource-dependencies>
       <zones>
-        <zone h='99583' id='3' type='empty' w='4750' x='53000' y='417'>
-          <zone-style>
-            <format attr='border-color' value='#000000' />
-            <format attr='border-style' value='none' />
-            <format attr='border-width' value='0' />
-            <format attr='margin' value='26' />
-            <format attr='background-color' value='#074080' />
-          </zone-style>
-        </zone>
-        <zone forceUpdate='true' h='12700' id='6' type='text' w='41700' x='4000' y='1700'>
+        <zone forceUpdate='true' h='6295' id='6' type='text' w='39712' x='1731' y='1619'>
           <formatted-text>
-            <run bold='true' fontcolor='#074080' fontname='Tableau Bold' fontsize='36'>What&apos;s on the </run>
-            <run>Æ&#10;</run>
-            <run bold='true' fontcolor='#074080' fontname='Tableau Bold' fontsize='36'>market today?</run>
+            <run bold='true' fontcolor='#074080' fontname='Tableau Bold' fontsize='22'>What&apos;s on the market today?</run>
           </formatted-text>
         </zone>
-        <zone forceUpdate='true' h='9455' id='7' type='text' w='47800' x='3800' y='13000'>
+        <zone forceUpdate='true' h='12230' id='7' type='text' w='52212' x='1731' y='6475'>
           <formatted-text>
-            <run fontcolor='#074080' fontname='Avenir' fontsize='11'>A glimpse into the Houston market with a focus on neighborhoods that are included in the HCFCD buyout program. All data refreshes per task scheduler programmed in the back-end. This displays the homes on sale along with other metrics that can be helpful to the user. </run>
+            <run fontcolor='#074080' fontname='Avenir' fontsize='10'>A glimpse into the Houston market with a focus on neighborhoods that are included in the HCFCD buyout program. All data refreshes per task scheduler programmed in the back-end. This displays the homes on sale along with other metrics that can be helpful to the user. </run>
           </formatted-text>
         </zone>
-        <zone h='22750' id='8' name='AnalyticsPage' show-title='false' w='38300' x='60400' y='12500' />
-        <zone h='4500' id='9' name='AnalyticsPage' param='[federated.0ze7y1n179jrf211fw0080nw6wrh].[sum:days:qk]' show-domain='false' show-null-ctrls='false' type='filter' w='25600' x='66800' y='7667' />
-        <zone h='22091' id='11' name='CountyMap4' show-title='false' w='49000' x='3500' y='22455' />
+        <zone h='34892' id='8' name='AnalyticsPage' show-title='false' w='41442' x='57981' y='13129' />
+        <zone h='4496' id='9' name='AnalyticsPage' param='[federated.0ze7y1n179jrf211fw0080nw6wrh].[sum:days:qk]' show-domain='false' show-null-ctrls='false' type='filter' w='29808' x='62692' y='8453' />
+        <zone h='35252' id='11' name='CountyMap4' show-title='false' w='51731' x='1923' y='18165' />
         <zone h='4400' id='12' mode='checkdropdown' name='CountyMap4' param='[federated.0ze7y1n179jrf211fw0080nw6wrh].[none:neighborhood:nk]' type='filter' w='9800' x='42200' y='25500' />
-        <zone h='62000' id='13' name='AnalyticsDays' show-title='false' w='40600' x='59000' y='36500' />
-        <zone h='54250' id='14' name='AnalyticsContacts' show-title='false' w='50900' x='2600' y='50250' />
-        <zone h='2750' id='15' type='text' w='20300' x='3300' y='45333'>
+        <zone h='50180' id='13' name='AnalyticsDays' show-title='false' w='40385' x='58462' y='48201' />
+        <zone h='41727' id='14' name='AnalyticsContacts' show-title='false' w='51830' x='1830' y='58453' />
+        <zone forceUpdate='true' h='5036' id='15' type='text' w='20288' x='2019' y='53777'>
           <formatted-text>
-            <run fontcolor='#074080' fontsize='16'>Realtor Information</run>
+            <run bold='true' fontcolor='#074080' fontsize='16'>Realtor Information</run>
           </formatted-text>
         </zone>
-        <zone h='4167' id='16' type='empty' w='53500' x='900' y='46667'>
-          <zone-style>
-            <format attr='border-color' value='#000000' />
-            <format attr='border-style' value='none' />
-            <format attr='border-width' value='0' />
-            <format attr='margin' value='23' />
-            <format attr='background-color' value='#074080' />
-          </zone-style>
-        </zone>
-        <zone h='3500' id='17' type='empty' w='40000' x='58400' y='4833'>
-          <zone-style>
-            <format attr='border-color' value='#000000' />
-            <format attr='border-style' value='none' />
-            <format attr='border-width' value='0' />
-            <format attr='margin' value='19' />
-            <format attr='background-color' value='#074080' />
-          </zone-style>
-        </zone>
-        <zone forceUpdate='true' h='2917' id='18' type='text' w='34900' x='60400' y='2833'>
+        <zone forceUpdate='true' h='5216' id='18' type='text' w='34904' x='56827' y='3058'>
           <formatted-text>
-            <run fontcolor='#074080' fontsize='20'>Be the first to know...</run>
+            <run bold='true' fontcolor='#074080' fontsize='16'>Be the first to know...</run>
           </formatted-text>
         </zone>
       </zones>
       <devicelayouts>
-        <devicelayout auto-generated='true' name='Phone'>
-          <size maxheight='1450' minheight='1450' sizing-mode='vscroll' />
+        <devicelayout name='Desktop'>
+          <size sizing-mode='automatic' />
           <zones>
-            <zone h='100000' id='53' type='layout-basic' w='100000' x='0' y='0'>
-              <zone h='98666' id='54' param='vert' type='layout-flow' w='98666' x='667' y='667'>
-                <zone forceUpdate='true' h='12700' id='6' type='text' w='41700' x='4000' y='1700'>
+            <zone forceUpdate='true' h='12700' id='6' type='text' w='41700' x='4000' y='1700'>
+              <formatted-text>
+                <run bold='true' fontcolor='#074080' fontname='Tableau Bold' fontsize='22'>What&apos;s on the market today?</run>
+              </formatted-text>
+            </zone>
+            <zone forceUpdate='true' h='9455' id='7' type='text' w='47800' x='3800' y='13000'>
+              <formatted-text>
+                <run fontcolor='#074080' fontname='Avenir' fontsize='10'>A glimpse into the Houston market with a focus on neighborhoods that are included in the HCFCD buyout program. All data refreshes per task scheduler programmed in the back-end. This displays the homes on sale along with other metrics that can be helpful to the user. </run>
+              </formatted-text>
+            </zone>
+            <zone h='22750' id='8' name='AnalyticsPage' show-title='false' w='38300' x='60400' y='12500' />
+            <zone h='4500' id='9' name='AnalyticsPage' param='[federated.0ze7y1n179jrf211fw0080nw6wrh].[sum:days:qk]' show-domain='false' show-null-ctrls='false' type='filter' w='25600' x='66800' y='7667' />
+            <zone h='22091' id='11' name='CountyMap4' show-title='false' w='49000' x='3500' y='22455' />
+            <zone h='4400' id='12' mode='checkdropdown' name='CountyMap4' param='[federated.0ze7y1n179jrf211fw0080nw6wrh].[none:neighborhood:nk]' type='filter' w='9800' x='42200' y='25500' />
+            <zone h='62000' id='13' name='AnalyticsDays' show-title='false' w='40600' x='59000' y='36500' />
+            <zone h='54250' id='14' name='AnalyticsContacts' show-title='false' w='50900' x='2600' y='50250' />
+            <zone forceUpdate='true' h='2750' id='15' type='text' w='20300' x='3300' y='45333'>
+              <formatted-text>
+                <run bold='true' fontcolor='#074080' fontsize='16'>Realtor Information</run>
+              </formatted-text>
+            </zone>
+            <zone forceUpdate='true' h='2917' id='18' type='text' w='34900' x='60400' y='2833'>
+              <formatted-text>
+                <run bold='true' fontcolor='#074080' fontsize='16'>Be the first to know...</run>
+              </formatted-text>
+            </zone>
+          </zones>
+        </devicelayout>
+        <devicelayout name='Tablet'>
+          <size maxheight='1300' minheight='1300' sizing-mode='vscroll' />
+          <zones>
+            <zone forceUpdate='true' h='12700' id='6' type='text' w='41700' x='4000' y='1700'>
+              <formatted-text>
+                <run bold='true' fontcolor='#074080' fontname='Tableau Bold' fontsize='22'>What&apos;s on the market today?</run>
+              </formatted-text>
+            </zone>
+            <zone forceUpdate='true' h='9455' id='7' type='text' w='47800' x='3800' y='13000'>
+              <formatted-text>
+                <run fontcolor='#074080' fontname='Avenir' fontsize='10'>A glimpse into the Houston market with a focus on neighborhoods that are included in the HCFCD buyout program. All data refreshes per task scheduler programmed in the back-end. This displays the homes on sale along with other metrics that can be helpful to the user. </run>
+              </formatted-text>
+            </zone>
+            <zone h='22750' id='8' name='AnalyticsPage' show-title='false' w='38300' x='60400' y='12500' />
+            <zone h='4500' id='9' name='AnalyticsPage' param='[federated.0ze7y1n179jrf211fw0080nw6wrh].[sum:days:qk]' show-domain='false' show-null-ctrls='false' type='filter' w='25600' x='66800' y='7667' />
+            <zone h='22091' id='11' name='CountyMap4' show-title='false' w='49000' x='3500' y='22455' />
+            <zone h='4400' id='12' mode='checkdropdown' name='CountyMap4' param='[federated.0ze7y1n179jrf211fw0080nw6wrh].[none:neighborhood:nk]' type='filter' w='9800' x='42200' y='25500' />
+            <zone h='62000' id='13' name='AnalyticsDays' show-title='false' w='40600' x='59000' y='36500' />
+            <zone h='54250' id='14' name='AnalyticsContacts' show-title='false' w='50900' x='2600' y='50250' />
+            <zone forceUpdate='true' h='2750' id='15' type='text' w='20300' x='3300' y='45333'>
+              <formatted-text>
+                <run bold='true' fontcolor='#074080' fontsize='16'>Realtor Information</run>
+              </formatted-text>
+            </zone>
+            <zone forceUpdate='true' h='2917' id='18' type='text' w='34900' x='60400' y='2833'>
+              <formatted-text>
+                <run bold='true' fontcolor='#074080' fontsize='16'>Be the first to know...</run>
+              </formatted-text>
+            </zone>
+          </zones>
+        </devicelayout>
+        <devicelayout auto-generated='true' name='Phone'>
+          <size maxheight='1500' minheight='1500' sizing-mode='vscroll' />
+          <zones>
+            <zone h='100000' id='67' type='layout-basic' w='100000' x='0' y='0'>
+              <zone h='97122' id='68' param='vert' type='layout-flow' w='98462' x='769' y='1439'>
+                <zone forceUpdate='true' h='6295' id='6' type='text' w='39712' x='1731' y='1619'>
                   <formatted-text>
-                    <run bold='true' fontcolor='#074080' fontname='Tableau Bold' fontsize='36'>What&apos;s on the </run>
-                    <run>Æ&#10;</run>
-                    <run bold='true' fontcolor='#074080' fontname='Tableau Bold' fontsize='36'>market today?</run>
+                    <run bold='true' fontcolor='#074080' fontname='Tableau Bold' fontsize='22'>What&apos;s on the market today?</run>
                   </formatted-text>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
@@ -1343,9 +1386,9 @@
                     <format attr='padding' value='0' />
                   </zone-style>
                 </zone>
-                <zone forceUpdate='true' h='2917' id='18' type='text' w='34900' x='60400' y='2833'>
+                <zone forceUpdate='true' h='5216' id='18' type='text' w='34904' x='56827' y='3058'>
                   <formatted-text>
-                    <run fontcolor='#074080' fontsize='20'>Be the first to know...</run>
+                    <run bold='true' fontcolor='#074080' fontsize='16'>Be the first to know...</run>
                   </formatted-text>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
@@ -1355,28 +1398,28 @@
                     <format attr='padding' value='0' />
                   </zone-style>
                 </zone>
-                <zone h='4500' id='9' name='AnalyticsPage' param='[federated.0ze7y1n179jrf211fw0080nw6wrh].[sum:days:qk]' show-domain='false' show-null-ctrls='false' type='filter' w='25600' x='66800' y='7667'>
-                  <zone-style>
-                    <format attr='border-color' value='#000000' />
-                    <format attr='border-style' value='none' />
-                    <format attr='border-width' value='0' />
-                    <format attr='margin' value='4' />
-                    <format attr='padding' value='0' />
-                  </zone-style>
-                </zone>
-                <zone fixed-size='273' h='22750' id='8' is-fixed='true' name='AnalyticsPage' show-title='false' w='38300' x='60400' y='12500'>
-                  <zone-style>
-                    <format attr='border-color' value='#000000' />
-                    <format attr='border-style' value='none' />
-                    <format attr='border-width' value='0' />
-                    <format attr='margin' value='4' />
-                    <format attr='padding' value='0' />
-                  </zone-style>
-                </zone>
-                <zone forceUpdate='true' h='9455' id='7' type='text' w='47800' x='3800' y='13000'>
+                <zone forceUpdate='true' h='12230' id='7' type='text' w='52212' x='1731' y='6475'>
                   <formatted-text>
-                    <run fontcolor='#074080' fontname='Avenir' fontsize='11'>A glimpse into the Houston market with a focus on neighborhoods that are included in the HCFCD buyout program. All data refreshes per task scheduler programmed in the back-end. This displays the homes on sale along with other metrics that can be helpful to the user. </run>
+                    <run fontcolor='#074080' fontname='Avenir' fontsize='10'>A glimpse into the Houston market with a focus on neighborhoods that are included in the HCFCD buyout program. All data refreshes per task scheduler programmed in the back-end. This displays the homes on sale along with other metrics that can be helpful to the user. </run>
                   </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='4496' id='9' name='AnalyticsPage' param='[federated.0ze7y1n179jrf211fw0080nw6wrh].[sum:days:qk]' show-domain='false' show-null-ctrls='false' type='filter' w='29808' x='62692' y='8453'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='279' h='34892' id='8' is-fixed='true' name='AnalyticsPage' show-title='false' w='41442' x='57981' y='13129'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
                     <format attr='border-style' value='none' />
@@ -1394,7 +1437,7 @@
                     <format attr='padding' value='0' />
                   </zone-style>
                 </zone>
-                <zone fixed-size='266' h='22091' id='11' is-fixed='true' name='CountyMap4' show-title='false' w='49000' x='3500' y='22455'>
+                <zone fixed-size='280' h='35252' id='11' is-fixed='true' name='CountyMap4' show-title='false' w='51731' x='1923' y='18165'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
                     <format attr='border-style' value='none' />
@@ -1403,7 +1446,7 @@
                     <format attr='padding' value='0' />
                   </zone-style>
                 </zone>
-                <zone fixed-size='280' h='62000' id='13' is-fixed='true' name='AnalyticsDays' show-title='false' w='40600' x='59000' y='36500'>
+                <zone fixed-size='280' h='50180' id='13' is-fixed='true' name='AnalyticsDays' show-title='false' w='40385' x='58462' y='48201'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
                     <format attr='border-style' value='none' />
@@ -1412,9 +1455,9 @@
                     <format attr='padding' value='0' />
                   </zone-style>
                 </zone>
-                <zone h='2750' id='15' type='text' w='20300' x='3300' y='45333'>
+                <zone forceUpdate='true' h='5036' id='15' type='text' w='20288' x='2019' y='53777'>
                   <formatted-text>
-                    <run fontcolor='#074080' fontsize='16'>Realtor Information</run>
+                    <run bold='true' fontcolor='#074080' fontsize='16'>Realtor Information</run>
                   </formatted-text>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
@@ -1424,7 +1467,7 @@
                     <format attr='padding' value='0' />
                   </zone-style>
                 </zone>
-                <zone fixed-size='280' h='54250' id='14' is-fixed='true' name='AnalyticsContacts' show-title='false' w='50900' x='2600' y='50250'>
+                <zone fixed-size='280' h='41727' id='14' is-fixed='true' name='AnalyticsContacts' show-title='false' w='51830' x='1830' y='58453'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
                     <format attr='border-style' value='none' />
@@ -1446,36 +1489,114 @@
       </devicelayouts>
       <simple-id uuid='{DD12CE45-CC62-43F5-8DF5-6B6844B78AD8}' />
     </dashboard>
-    <dashboard name='CountyDash'>
+    <dashboard name='AnalyticsDash (2)'>
       <style />
       <size sizing-mode='automatic' />
+      <datasources>
+        <datasource caption='scraped_hommes' name='federated.0ze7y1n179jrf211fw0080nw6wrh' />
+      </datasources>
+      <datasource-dependencies datasource='federated.0ze7y1n179jrf211fw0080nw6wrh'>
+        <column aggregation='Sum' caption='Days' datatype='integer' name='[days]' role='dimension' type='ordinal' />
+        <column-instance column='[days]' derivation='Sum' name='[sum:days:qk]' pivot='key' type='quantitative' />
+      </datasource-dependencies>
       <zones>
-        <zone h='2542' id='10' type='empty' w='97100' x='1403' y='9887'>
+        <zone h='100000' id='2' type='layout-basic' w='100000' x='0' y='0'>
+          <zone h='97922' id='9' param='horz' type='layout-flow' w='98750' x='625' y='1039'>
+            <zone h='97922' id='5' param='horz' type='layout-flow' w='98750' x='625' y='1039'>
+              <zone h='97922' id='3' type='layout-basic' w='98750' x='625' y='1039'>
+                <zone h='23756' id='1' name='CountyMap4' show-title='false' w='47928' x='625' y='25877'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                  </zone-style>
+                </zone>
+                <zone h='97922' id='7' name='AnalyticsPage' show-title='false' w='46097' x='53278' y='1039'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                  </zone-style>
+                </zone>
+                <zone forceUpdate='true' h='17772' id='12' type='text' w='47928' x='625' y='8105'>
+                  <formatted-text>
+                    <run fontcolor='#074080' fontname='Avenir' fontsize='11'>A glimpse into the Houston market with a focus on neighborhoods that are included in the HCFCD buyout program. All data refreshes per task scheduler programmed in the back-end. This displays the homes on sale along with other metrics that can be helpful to the user. </run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                  </zone-style>
+                </zone>
+                <zone h='7066' id='13' type='text' w='47928' x='625' y='1039'>
+                  <formatted-text>
+                    <run bold='true' fontcolor='#074080' fontname='Tableau Bold' fontsize='22'>What&apos;s on the market today?</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                  </zone-style>
+                </zone>
+                <zone h='5987' id='14' type='text' w='47928' x='625' y='49633'>
+                  <formatted-text>
+                    <run bold='true' fontcolor='#074080' fontsize='16'>Realtor Information</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                  </zone-style>
+                </zone>
+                <zone h='97922' id='15' param='vert' type='layout-flow' w='4725' x='48553' y='1039' />
+                <zone h='43341' id='16' name='AnalyticsContacts' show-title='false' w='47928' x='625' y='55620'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                  </zone-style>
+                </zone>
+              </zone>
+            </zone>
+          </zone>
           <zone-style>
             <format attr='border-color' value='#000000' />
             <format attr='border-style' value='none' />
             <format attr='border-width' value='0' />
-            <format attr='margin' value='7' />
-            <format attr='background-color' value='#074080' />
+            <format attr='margin' value='8' />
           </zone-style>
         </zone>
-        <zone forceUpdate='true' h='6073' id='11' type='text' w='95697' x='2058' y='3531'>
+        <zone h='12410' id='10' name='AnalyticsPage' param='[federated.0ze7y1n179jrf211fw0080nw6wrh].[sum:days:qk]' show-domain='false' show-null-ctrls='false' type='filter' w='16154' x='66442' y='5755' />
+      </zones>
+      <simple-id uuid='{6C6AB6D8-8FD7-41CF-BC7C-6EA9C350D138}' />
+    </dashboard>
+    <dashboard name='CountyDash'>
+      <style />
+      <size sizing-mode='automatic' />
+      <zones>
+        <zone forceUpdate='true' h='7213' id='11' type='text' w='95697' x='2058' y='1475'>
           <formatted-text>
-            <run fontalignment='1' fontcolor='#074080' fontsize='20'>Harris County Home Listings by Zip Code</run>
+            <run bold='true' fontalignment='1' fontcolor='#074080' fontsize='24'>Harris County Home Listings by Zip Code</run>
           </formatted-text>
         </zone>
-        <zone h='38136' id='18' name='CountyList' show-title='false' w='95510' x='2339' y='60452' />
-        <zone h='45198' id='43' name='CountyMap' show-title='false' w='95603' x='2245' y='13418' />
+        <zone h='41803' id='18' name='CountyList' show-title='false' w='95884' x='1964' y='56721' />
+        <zone h='45246' id='43' name='CountyMap' show-title='false' w='96071' x='1871' y='10000' />
       </zones>
       <devicelayouts>
         <devicelayout auto-generated='true' name='Phone'>
           <size maxheight='700' minheight='700' sizing-mode='vscroll' />
           <zones>
-            <zone h='100000' id='56' type='layout-basic' w='100000' x='0' y='0'>
-              <zone h='97740' id='57' param='vert' type='layout-flow' w='98504' x='748' y='1130'>
-                <zone forceUpdate='true' h='6073' id='11' type='text' w='95697' x='2058' y='3531'>
+            <zone h='100000' id='64' type='layout-basic' w='100000' x='0' y='0'>
+              <zone h='97378' id='65' param='vert' type='layout-flow' w='98504' x='748' y='1311'>
+                <zone forceUpdate='true' h='7213' id='11' type='text' w='95697' x='2058' y='1475'>
                   <formatted-text>
-                    <run fontalignment='1' fontcolor='#074080' fontsize='20'>Harris County Home Listings by Zip Code</run>
+                    <run bold='true' fontalignment='1' fontcolor='#074080' fontsize='24'>Harris County Home Listings by Zip Code</run>
                   </formatted-text>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
@@ -1485,7 +1606,7 @@
                     <format attr='padding' value='0' />
                   </zone-style>
                 </zone>
-                <zone fixed-size='280' h='45198' id='43' is-fixed='true' name='CountyMap' show-title='false' w='95603' x='2245' y='13418'>
+                <zone fixed-size='280' h='45246' id='43' is-fixed='true' name='CountyMap' show-title='false' w='96071' x='1871' y='10000'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
                     <format attr='border-style' value='none' />
@@ -1494,7 +1615,7 @@
                     <format attr='padding' value='0' />
                   </zone-style>
                 </zone>
-                <zone fixed-size='280' h='38136' id='18' is-fixed='true' name='CountyList' show-title='false' w='95510' x='2339' y='60452'>
+                <zone fixed-size='280' h='41803' id='18' is-fixed='true' name='CountyList' show-title='false' w='95884' x='1964' y='56721'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
                     <format attr='border-style' value='none' />
@@ -1518,7 +1639,7 @@
     </dashboard>
     <dashboard name='NeighborhoodDash'>
       <style />
-      <size maxheight='1400' maxwidth='1200' minheight='1400' minwidth='1200' sizing-mode='fixed' />
+      <size sizing-mode='automatic' />
       <datasources>
         <datasource caption='scraped_hommes' name='federated.0ze7y1n179jrf211fw0080nw6wrh' />
       </datasources>
@@ -1527,38 +1648,29 @@
         <column caption='Region' datatype='string' name='[region]' role='dimension' type='nominal' />
       </datasource-dependencies>
       <zones>
-        <zone h='2500' id='10' type='empty' w='97100' x='1200' y='3357'>
-          <zone-style>
-            <format attr='border-color' value='#000000' />
-            <format attr='border-style' value='none' />
-            <format attr='border-width' value='0' />
-            <format attr='margin' value='16' />
-            <format attr='background-color' value='#074080' />
-          </zone-style>
-        </zone>
-        <zone forceUpdate='true' h='4643' id='11' type='text' w='52833' x='26583' y='357'>
+        <zone forceUpdate='true' h='8033' id='11' type='text' w='94574' x='2713' y='1475'>
           <formatted-text>
-            <run fontcolor='#074080' fontsize='20'>Harris County Neighborhood Home Listings</run>
+            <run bold='true' fontalignment='1' fontcolor='#074080' fontsize='24'>Harris County Neighborhood Home Listings</run>
           </formatted-text>
         </zone>
-        <zone h='35143' id='28' name='NeighborhoodMap' show-title='false' w='94083' x='3083' y='9000' />
-        <zone forceUpdate='true' h='2143' id='30' type='text' w='21417' x='2917' y='5571'>
+        <zone h='39508' id='28' name='NeighborhoodMap' show-title='false' w='94387' x='2806' y='14262' />
+        <zone forceUpdate='true' h='4098' id='30' type='text' w='16277' x='35360' y='8525'>
           <formatted-text>
-            <run fontcolor='#074080' fontsize='14'>Search by Region:</run>
+            <run fontcolor='#074080' fontsize='12'>Search by Region:</run>
           </formatted-text>
         </zone>
-        <zone h='2429' id='33' mode='checkdropdown' name='NeighborhoodMap' param='[federated.0ze7y1n179jrf211fw0080nw6wrh].[none:region:nk]' show-title='false' type='filter' values='database' w='14833' x='17250' y='6143' />
-        <zone h='52857' id='34' name='NeighborhoodList' show-title='false' w='93917' x='3167' y='45714' />
+        <zone h='3934' id='33' mode='checkdropdown' name='NeighborhoodMap' param='[federated.0ze7y1n179jrf211fw0080nw6wrh].[none:region:nk]' show-title='false' type='filter' values='database' w='11413' x='48550' y='9016' />
+        <zone h='42295' id='34' name='NeighborhoodList' show-title='false' w='93920' x='3181' y='56230' />
       </zones>
       <devicelayouts>
         <devicelayout auto-generated='true' name='Phone'>
           <size maxheight='750' minheight='750' sizing-mode='vscroll' />
           <zones>
-            <zone h='100000' id='61' type='layout-basic' w='100000' x='0' y='0'>
-              <zone h='98858' id='62' param='vert' type='layout-flow' w='98666' x='667' y='571'>
-                <zone forceUpdate='true' h='4643' id='11' type='text' w='52833' x='26583' y='357'>
+            <zone h='100000' id='69' type='layout-basic' w='100000' x='0' y='0'>
+              <zone h='97378' id='70' param='vert' type='layout-flow' w='98504' x='748' y='1311'>
+                <zone forceUpdate='true' h='8033' id='11' type='text' w='94574' x='2713' y='1475'>
                   <formatted-text>
-                    <run fontcolor='#074080' fontsize='20'>Harris County Neighborhood Home Listings</run>
+                    <run bold='true' fontalignment='1' fontcolor='#074080' fontsize='24'>Harris County Neighborhood Home Listings</run>
                   </formatted-text>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
@@ -1568,9 +1680,9 @@
                     <format attr='padding' value='0' />
                   </zone-style>
                 </zone>
-                <zone forceUpdate='true' h='2143' id='30' type='text' w='21417' x='2917' y='5571'>
+                <zone forceUpdate='true' h='4098' id='30' type='text' w='16277' x='35360' y='8525'>
                   <formatted-text>
-                    <run fontcolor='#074080' fontsize='14'>Search by Region:</run>
+                    <run fontcolor='#074080' fontsize='12'>Search by Region:</run>
                   </formatted-text>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
@@ -1580,7 +1692,7 @@
                     <format attr='padding' value='0' />
                   </zone-style>
                 </zone>
-                <zone h='2429' id='33' mode='checkdropdown' name='NeighborhoodMap' param='[federated.0ze7y1n179jrf211fw0080nw6wrh].[none:region:nk]' show-title='false' type='filter' values='database' w='14833' x='17250' y='6143'>
+                <zone h='3934' id='33' mode='checkdropdown' name='NeighborhoodMap' param='[federated.0ze7y1n179jrf211fw0080nw6wrh].[none:region:nk]' show-title='false' type='filter' values='database' w='11413' x='48550' y='9016'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
                     <format attr='border-style' value='none' />
@@ -1589,7 +1701,7 @@
                     <format attr='padding' value='0' />
                   </zone-style>
                 </zone>
-                <zone fixed-size='280' h='35143' id='28' is-fixed='true' name='NeighborhoodMap' show-title='false' w='94083' x='3083' y='9000'>
+                <zone fixed-size='280' h='39508' id='28' is-fixed='true' name='NeighborhoodMap' show-title='false' w='94387' x='2806' y='14262'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
                     <format attr='border-style' value='none' />
@@ -1598,7 +1710,7 @@
                     <format attr='padding' value='0' />
                   </zone-style>
                 </zone>
-                <zone fixed-size='280' h='52857' id='34' is-fixed='true' name='NeighborhoodList' show-title='false' w='93917' x='3167' y='45714'>
+                <zone fixed-size='280' h='42295' id='34' is-fixed='true' name='NeighborhoodList' show-title='false' w='93920' x='3181' y='56230'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
                     <format attr='border-style' value='none' />
@@ -1622,7 +1734,7 @@
     </dashboard>
   </dashboards>
   <windows source-height='30'>
-    <window class='worksheet' maximized='true' name='NeighborhoodMap'>
+    <window class='worksheet' name='NeighborhoodMap'>
       <cards>
         <edge name='left'>
           <strip size='160'>
@@ -1688,7 +1800,8 @@
           <default-map-tool-selection tool='1' />
         </viewpoint>
       </viewpoints>
-      <active id='-1' />
+      <active id='11' />
+      <grid grid-overlay-mode='on' />
       <simple-id uuid='{0C9453AA-3D58-4F8D-84A4-24D943A9F6B8}' />
     </window>
     <window class='worksheet' name='CountyMap4'>
@@ -1780,7 +1893,7 @@
           <zoom type='entire-view' />
         </viewpoint>
       </viewpoints>
-      <active id='-1' />
+      <active id='11' />
       <simple-id uuid='{3B5EB587-CCED-4EFD-8BF4-2D0597280A8B}' />
     </window>
     <window class='worksheet' name='AnalyticsPage'>
@@ -1858,9 +1971,7 @@
     <window class='dashboard' name='AnalyticsDash'>
       <viewpoints>
         <viewpoint name='AnalyticsContacts' />
-        <viewpoint name='AnalyticsDays'>
-          <zoom type='entire-view' />
-        </viewpoint>
+        <viewpoint name='AnalyticsDays' />
         <viewpoint name='AnalyticsPage'>
           <zoom type='entire-view' />
         </viewpoint>
@@ -1869,7 +1980,22 @@
         </viewpoint>
       </viewpoints>
       <active id='-1' />
+      <device-preview visible='true' />
+      <grid grid-overlay-mode='on' />
       <simple-id uuid='{E3D56704-D053-4499-AB90-FC30CE322824}' />
+    </window>
+    <window class='dashboard' maximized='true' name='AnalyticsDash (2)'>
+      <viewpoints>
+        <viewpoint name='AnalyticsContacts' />
+        <viewpoint name='AnalyticsPage' />
+        <viewpoint name='CountyMap4'>
+          <zoom type='entire-view' />
+        </viewpoint>
+      </viewpoints>
+      <active id='7' />
+      <device-preview visible='true' />
+      <grid grid-overlay-mode='on' />
+      <simple-id uuid='{E9749E33-FA9A-4BD4-9786-8AD63F92F1EB}' />
     </window>
   </windows>
   <external>
