@@ -5,7 +5,7 @@ import os
 import time 
 import pandas as pd
 import numpy as np
-# from config import connection 
+from config import connection 
 import sqlalchemy
 from sqlalchemy.ext.automap import automap_base
 from sqlalchemy.orm import Session

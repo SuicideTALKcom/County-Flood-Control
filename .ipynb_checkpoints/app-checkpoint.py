@@ -1,138 +1,3 @@
-    
-#################################################
-# Database Setup
-################################################## Import Dependencies
-# import os
-# import time 
-# import pandas as pd
-# import numpy as np
-
-# import sqlalchemy
-# from sqlalchemy.ext.automap import automap_base
-# from sqlalchemy.orm import Session
-# from sqlalchemy import create_engine, func
-#import pymysql
-
-# from flask import Flask, jsonify, render_template
-#from flask_sqlalchemy import SQLAlchemy
-
-
-
-
-#################################################
-# Database Setup
-#################################################
-
-# engine = os.environ.get("JAWSDB_URL") or create_engine("mysql+pymysql://root:banana@localhost/homes_db")
-
-# reflect an existing database into a new model
-# Base = automap_base()
-# reflect the tables
-# Base.prepare(engine, reflect=True)
-
-# print(dir(Base.classes))
-# print(Base.classes.keys())
-# print(Base.classes.items())
-
-# Save reference to the table
-# home_table = Base.classes.home
-
-# Create our session (link) from Python to the DB
-# session = Session(engine)
-
-
-
-#################################################
-# Flask Setup
-#################################################
-# app = Flask(__name__)
-
-
-#################################################
-# Flask Routes
-#################################################
-
-# @app.route("/")
-# def index():
-#     """Return the homepage."""
-#     return render_template("/templates/index.html")
-
-
-# @app.route("/buyouts/search")
-# def search():
-#     return render_template("index.html")
-    
-
-# @app.route("/buyouts/analytics")
-# def analytics():
-#     return render_template("index.html")
-
-# @app.route("/buyouts/faqs")
-# def faqs():
-#     return render_template("index.html")
-
-
-# @app.route("/buyouts/alerts")
-# def alerts():
-#     return render_template("index.html")
-
-
-
-#@app.route("/buyouts/charts")
-#def charts():
-    #return render_templates ("")
-
-
-#@app.route("/buyouts/about")
-# def about():
-#     return render_template("index.html")
-
-
-
-#API routes below here 
-
-#need an api route for search
-#single neighborhood
-
-# @app.route('/api/neighborhood', defaults={'neighborhood':True})
-# @app.route("/api/neighborhood/<neighborhood>")
-# def api(neighborhood):
-#     print("neighborhood route")
-#     query = session.query(home_table.Neighborhood,home_table.Address, home_table.Price, home_table.Days_on_Market, home_table.Agent)
-    
-#     if neighborhood == True:
-#         results = query.all()
-#     else:
-#         results = query.filter_by(Address = neighborhood)
-
-#     return jsonify(results)
-   
-
-#change from array of arrays into an array of objects
-#query for a specific neighborhood instead of all rows 
-
-
-
-
-#Neighborhood Name
-#Address
-#Price
-#Days on Market
-#Agent    
-    
-
-#need an API route for analytics 
-
-# @app.route("/api")
-# def dummy():
-#     return jsonify({
-#         "test": "success"
-#     })
-
-# if __name__ == "__main__":
-#     app.run()
-
-
 #################################################
  # Database Setup
 ################################################## Import Dependencies
@@ -140,14 +5,18 @@ import os
 import time 
 import pandas as pd
 import numpy as np
-
+from config import connection 
 import sqlalchemy
 from sqlalchemy.ext.automap import automap_base
 from sqlalchemy.orm import Session
-from sqlalchemy import create_engine, func
-#import pymysql
-
+from sqlalchemy import create_engine, func, inspect
+import pymysql
+from Lesly_scrape import main
+import threading
 from flask import Flask, jsonify, render_template
+import json
+import requests
+
 #from flask_sqlalchemy import SQLAlchemy
 
 
@@ -157,21 +26,19 @@ from flask import Flask, jsonify, render_template
 # Database Setup
 #################################################
 
-engine= create_engine("mysql+pymysql://root:banana@localhost/homes_db")
-
-# engine = os.environ.get("JAWSDB_URL") or create_engine("mysql+pymysql://root:banana@localhost/homes_db")
+if (os.environ.get("JAWSDB_URL")):
+    engine = create_engine(os.environ.get("JAWSDB_URL"))
+else:
+    engine = create_engine("mysql://xq5039a54f2ukgye:pzghos28lbhgg711@otwsl2e23jrxcqvx.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/lmib79r99ct0zdgq")
 
 # reflect an existing database into a new model
 Base = automap_base()
 # reflect the tables
 Base.prepare(engine, reflect=True)
-
-print(dir(Base.classes))
-print(Base.classes.keys())
-print(Base.classes.items())
-
+insp = inspect(engine)
+print(insp.get_table_names())
 # Save reference to the table
-home = Base.classes.home
+home = Base.classes.homes
 
 # Create our session (link) from Python to the DB
 session = Session(engine)
@@ -193,36 +60,73 @@ def index():
     """Return the homepage."""
     return render_template("index.html")
 
+@app.route("/county")
+def county():
+    return render_template("county.html")
 
-@app.route("/buyouts/search")
-def search():
-    return render_template("index.html")
-    
+@app.route("/neighborhoods")
+def neighborhoods():
+    return render_template("neighborhoods.html")
 
-@app.route("/buyouts/analytics")
+@app.route("/analytics")
 def analytics():
-    return render_template("index.html")
+    return render_template("analytics.html")
 
-@app.route("/buyouts/faqs")
+@app.route("/dashboard")
+def dashboard():
+    return render_template("dashboard.html")
+
+@app.route("/forecasting")
+def forecasting():
+    return render_template("forecasting.html")
+
+@app.route("/canvas")
+def canvas():
+    return render_template("canvas.html")
+
+@app.route("/atest")
+def atest():
+    return render_template("atest.html")
+
+@app.route("/support")
+def support():
+    return render_template("support.html")
+
+@app.route("/faqs")
 def faqs():
-    return render_template("index.html")
+    return render_template("faqs.html")
 
-
-@app.route("/buyouts/alerts")
+@app.route("/alerts")
 def alerts():
-    return render_template("index.html")
+    return render_template("alerts.html")
 
+@app.route("/contact")
+def contact():
+    return render_template("contact.html")
 
-
-@app.route("/buyouts/charts")
+@app.route("/charts")
 def charts():
-    return render_template ("index.html")
+    return render_template ("charts.html")
 
+@app.route("/tableau1")
+def tableau1():
+    return render_template ("tableau1.html")
 
-@app.route("/buyouts/about")
+@app.route("/tableau2")
+def tableau2():
+    return render_template ("tableau2.html")
+
+@app.route("/tableau3")
+def tableau3():
+    return render_template ("tableau3.html")
+
+@app.route("/tableau4")
+def tableau4():
+    return render_template ("tableau4.html")
+
+@app.route("/about")
 def about():
-    return render_template("index.html")
-
+    return render_template("about.html")
 
 
 #API routes below here 
@@ -234,36 +138,26 @@ def about():
 @app.route("/api/neighborhood/<neighborhood>")
 def api(neighborhood):
     print("neighborhood route")
-    query = session.query(home.Neighborhood,home.Address, home.Price, home.Days_on_Market, home.Agent)
+    query = session.query(home.neighborhood,home.address, home.price, home.days, home.agent,home.state,home.zip,home.office)
     
     if neighborhood == True:
         results = query.all()
     else:
         results = query.filter_by(Address = neighborhood)
 
-    return jsonify(results)
+    new_home = pd.DataFrame(results).to_json(orient = 'records')
+    
+    # from pprint import pprint
+
+
+    # pprint(json.loads(new_home))
+
+    return jsonify(json.loads(new_home))
    
 
-#change from array of arrays into an array of objects
-#query for a specific neighborhood instead of all rows 
-
-
-
-
-#Neighborhood Name
-#Address
-#Price
-#Days on Market
-#Agent    
-    
-
-#need an API route for analytics 
-
-# @app.route("/api")
-# def dummy():
-#     return jsonify({
-#         "test": "success"
-#     })
-
 if __name__ == "__main__":
-    app.run()   
+    app.debug = False
+    threading.Thread(target=app.run).start()
+    while True:
+        main()
+   
