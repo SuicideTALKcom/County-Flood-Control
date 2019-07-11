@@ -1,146 +1,41 @@
-address,agent,city,days,neighborhood,office,price,state,zip,datetime
-10919 Sagecanyon Drive,Nusrat Ghafoor,Houston,3,sagemont,Walzel Properties,224500,TX,77089,2019-07-09 00:28:06.031865
-11010 Sagepark Lane,Amanda Escamilla,Houston,5,sagemont,JLA Realty,175000,TX,77089,2019-07-09 00:28:06.031865
-11323 Sagevale Lane,Sonal Shah,Houston,9,sagemont,REALM Real Estate Professionals - Sugar Land,199990,TX,77089,2019-07-09 00:28:06.031865
-11026 Sagemeadow Lane,Robert Roland,Houston,10,sagemont,Realty Associates,220000,TX,77089,2019-07-09 00:28:06.031865
-11118 Sagedowne Lane,Sebastian Ponce,Houston,5,sagemont,Ponce Realty & Investments,199900,TX,77089,2019-07-09 00:28:06.031865
-18922 Picnic Pavilion Court,Richard Hale,Cypress,18,sagemont,Perry Development Management,424900,TX,77433,2019-07-09 00:28:06.031865
-10339 Sagerock Drive,Rebecca Casey,Houston,18,sagemont,"Casey Castles, LLC",148900,TX,77089,2019-07-09 00:28:06.031865
-10818 Sageleaf Lane,Mark Benoit,Houston,19,sagemont,RE/MAX 1st Source,169900,TX,77089,2019-07-09 00:28:06.031865
-10402 Sagedowne Lane,Davian Walker,Houston,5,sagemont,Houston's Choice Realty,199000,TX,77089,2019-07-09 00:28:06.031865
-10910 Sagetrail Drive,Yesenia Guerra,Houston,30,sagemont,CJM Realty Advisors,204999,TX,77089,2019-07-09 00:28:06.031865
-11602 Sagedowne Lane,Yaneth Zaragosa,Houston,34,sagemont,Strada,195000,TX,77089,2019-07-09 00:28:06.031865
-10835 Sageburrow Drive,Jane NgaDung Nguyen,Houston,34,sagemont,"Alpha, REALTORS",225990,TX,77089,2019-07-09 00:28:06.031865
-6106 Great Oaks Drive,Marisa Lopez,Houston,15,riverwood estates,Near Town Properties,144700,TX,77050,2019-07-09 00:28:06.031865
-21807 Forest Glade Drive,Jodi Manfred,Humble,24,forest shadows,JLA Realty,199000,TX,77338,2019-07-09 00:28:06.031865
-4706 Broadmark Lane,Cellina Stokes,Humble,66,forest shadows,Crowne Realty,171500,TX,77338,2019-07-09 00:28:06.031865
-4602 Fieldwick Lane,Michael Thiltgen,Humble,80,forest shadows,Greenbriar Real Estate Service,189900,TX,77338,2019-07-09 00:28:06.031865
-21802 Pine Cone Drive,Katherine Ware,Humble,81,forest shadows,"Irie Properties, LLC",239900,TX,77338,2019-07-09 00:28:06.031865
-4503 Clairfield Lane,Rick Raymor,Humble,122,forest shadows,RE/MAX Universal,259500,TX,77338,2019-07-09 00:28:06.031865
-15202 Claypool Street,Rosa Gonzalez,Houston,111,aldine estates,REALM Real Estate Professionals - North Houston,650000,TX,77032,2019-07-09 00:28:06.031865
-2418 Toyah Avenue,Paula Plata,Houston,15,castlewood,Keller Williams Memorial,175000,TX,77039,2019-07-09 00:28:06.031865
-2517 Woodgate Street,Gina Lopez,Houston,109,castlewood,Loft Realty,200000,TX,77039,2019-07-09 00:28:06.031865
-2802 Rosebury Drive,Esmeralda Herrera,Houston,131,castlewood,Century 21 Hardee-Team Realty,159000,TX,77039,2019-07-09 00:28:06.031865
-2615 Balmorhea Avenue,Mary Villarreal,Houston,169,castlewood,Ability Real Estate,125000,TX,77039,2019-07-09 00:28:06.031865
-906 Lynwood Road,Rania Hanania,Spring,17,lynwood estates,JLA Realty,255000,TX,77373,2019-07-09 00:28:06.031865
-1311 Lynwood Road,Gidget Sauceda,Spring,4,lynwood estates,RE/MAX Universal,189900,TX,77373,2019-07-09 00:28:06.031865
-14301 Lee Road,Maria Salazar,Houston,164,parkwood estates 77032,"Nautilus Real Estate, Ltd",184900,TX,77032,2019-07-09 00:28:06.031865
-13200 Huffmeister Road,Amjad Mushtaq,Cypress,20,lake cypress estates u_r,Fast Homes,199000,TX,77429,2019-07-09 00:28:06.031865
-0 Maxwell Road,Kristi Grimes,Cypress,84,lake cypress estates u_r,eXp Realty LLC,100000,TX,77429,2019-07-09 00:28:06.031865
-13026 Maxwell Road,Ryan Jockers,Cypress,244,lake cypress estates u_r,Better Homes and Gardens Real Estate Gary Greene - Champions,384990,TX,77429,2019-07-09 00:28:06.031865
-16314 Waycreek Road,Arlene Simmons,Houston,3,bammel forest,RE/MAX Integrity,219000,TX,77068,2019-07-09 00:28:06.031865
-2511 Bycreek Drive,Lisa Shackleton,Houston,8,bammel forest,JLA Realty,210000,TX,77068,2019-07-09 00:28:06.031865
-2618 Colwell Road,Gay Perque,Houston,23,bammel forest,RE/MAX Vintage,189500,TX,77068,2019-07-09 00:28:06.031865
-16211 Creeksouth Road,Cameron Namazi,Houston,25,bammel forest,Summit Realty,214900,TX,77068,2019-07-09 00:28:06.031865
-16523 Waycreek Road,Yvonne Chauvin,Houston,28,bammel forest,Better Homes and Gardens Real Estate Gary Greene,230000,TX,77068,2019-07-09 00:28:06.031865
-2610 Creekhickory Road,Rick Shelton,Houston,60,bammel forest,The Horizon Team,241990,TX,77068,2019-07-09 00:28:06.031865
-2402 Encreek Road,Rick Shelton,Houston,65,bammel forest,The Horizon Team,272500,TX,77068,2019-07-09 00:28:06.031865
-2503 Encreek Road,Angela Muniz,Houston,43,bammel forest,Champions Real Estate Group,249900,TX,77068,2019-07-09 00:28:06.031865
-2319 Encreek Road,Rick Shelton,Houston,235,bammel forest,The Horizon Team,244990,TX,77068,2019-07-09 00:28:06.031865
-16911 Creeksouth Road,Cecilia Hernandez,Houston,119,bammel forest,Champions Real Estate Group,289900,TX,77068,2019-07-09 00:28:06.031865
-9501 North Freeway,Benito Armas,Houston,689,airline farms,Armas Realty,750000,TX,77037,2019-07-09 00:28:06.031865
-10530 Normont Drive,Alfonso Parodi,Houston,18,norchester,Realty Associates,290000,TX,77070,2019-07-09 00:28:06.031865
-10522 Idlebrook Drive,Jose Portillo,Houston,24,norchester,Champions Real Estate Group,279700,TX,77070,2019-07-09 00:28:06.031865
-10722 Fawnview Drive,Dee Pardue,Houston,23,norchester,NextHome Realty Center,224500,TX,77070,2019-07-09 00:28:06.031865
-10906 Archmont Drive,J.P. Bowers,Houston,37,norchester,"RE/MAX Westside, REALTORS",275000,TX,77070,2019-07-09 00:28:06.031865
-10723 Brentway Drive,Timothy Merritt,Houston,5,norchester,Better Homes and Gardens Real Estate Gary Greene - Champions,236000,TX,77070,2019-07-09 00:28:06.031865
-10530 Glenway Drive,Angelica Fernandez,Houston,15,norchester,RE/MAX Signature,279999,TX,77070,2019-07-09 00:28:06.031865
-10515 Laneview Drive,Rebecca Robertson,Houston,52,norchester,Better Homes and Gardens Real Estate Gary Greene,247000,TX,77070,2019-07-09 00:28:06.031865
-10818 Elmdale Drive,Albert Tapia,Houston,60,norchester,Champions Real Estate Group,254800,TX,77070,2019-07-09 00:28:06.031865
-10511 Moorcreek,Lisa Pittman,Houston,77,norchester,NextHome Realty Center,255000,TX,77070,2019-07-09 00:28:06.031865
-10610 Normont Drive,Karen Davis,Houston,77,norchester,Karen Davis Properties,34900,TX,77070,2019-07-09 00:28:06.031865
-10803 Fawnview Drive,Lex Parker,Houston,100,norchester,"MHW Real Estate, Inc.",185000,TX,77070,2019-07-09 00:28:06.031865
-10534 Jaycreek Drive,Chuck Pounds,North Houston,113,norchester,REALM Real Estate Professionals - North Houston,299500,TX,77070,2019-07-09 00:28:06.031865
-11934 Deep Woods Drive Drive,Miriam Ackley,Cypress,143,windwood extn u_r,"On the Market Realty, Inc",399999,TX,77429,2019-07-09 00:28:06.031865
-13927 Sherburn Manor Drive,Raymond LaFuente,Cypress,9,coles crossing,RE/MAX Integrity,299999,TX,77429,2019-07-09 00:28:06.031865
-15839 Cypress Hall Drive,David Flory,Cypress,10,coles crossing,RE/MAX Universal,300000,TX,77429,2019-07-09 00:28:06.031865
-14231 Northface Manor Court,Terri Garza,Cypress,4,coles crossing,NextHome Realty Center,499000,TX,77429,2019-07-09 00:28:06.031865
-13823 Sherburn Manor Drive,Tracy Hughes,Cypress,5,coles crossing,"Coldwell Banker United, Realtors - CY Fair",305000,TX,77429,2019-07-09 00:28:06.031865
-13714 Sherburn Manor Drive,Astrid West,Cypress,12,coles crossing,Better Homes and Gardens Real Estate Gary Greene,269900,TX,77429,2019-07-09 00:28:06.031865
-13526 Greenwood Manor Drive,Amy Lippincott,Cypress,2,coles crossing,Keller Williams Platinum,475000,TX,77429,2019-07-09 00:28:06.031865
-16306 Wytchwood Circle,Jeanne Skinner,Cypress,13,coles crossing,Walzel Properties - Corporate Office,278000,TX,77429,2019-07-09 00:28:06.031865
-14035 Fosters Creek Drive Drive,Tanya Bailey,Cypress,36,coles crossing,Texas United Realty,337000,TX,77429,2019-07-09 00:28:06.031865
-13927 Prospect Point Drive,Tanya Langner,Cypress,15,coles crossing,Levine & Co. Real Estate LLC,315000,TX,77429,2019-07-09 00:28:06.031865
-13415 N Bend Landing,Rochelle Barrow,Cypress,18,coles crossing,Berkshire Hathaway HomeServices Anderson Properties,519000,TX,77429,2019-07-09 00:28:06.031865
-14646 Bergenia Drive,Melanie Dubendorff,Cypress,2,coles crossing,Keller Williams Platinum,234913,TX,77429,2019-07-09 00:28:06.031865
-8114 Clarion Way,Colleen Sherlock,Houston,1,woodwind lakes,Greenwood King Properties,305000,TX,77040,2019-07-09 00:28:06.031865
-7907 Ensemble Drive,Lance Loken,Houston,16,woodwind lakes,Keller Williams Platinum,370000,TX,77040,2019-07-09 00:28:06.031865
-8018 Sonata Court,Lynn Collins,Houston,6,woodwind lakes,Better Homes and Gardens Real Estate Gary Greene - Champions,385000,TX,77040,2019-07-09 00:28:06.031865
-9346 Adagio Lane,Lynn Collins,Houston,24,woodwind lakes,BHGRE Gary Greene,238000,TX,77040,2019-07-09 00:28:06.031865
-9223 Symphonic Lane,Sonia Cousins,Houston,35,woodwind lakes,RE/MAX Fine Properties,289900,TX,77040,2019-07-09 00:28:06.031865
-9106 Symphonic Lane,Paula Forno-Engler,Houston,27,woodwind lakes,Heritage Texas Properties - Post Oak Park,399000,TX,77040,2019-07-09 00:28:06.031865
-7707 Cadenza Court,Sam Sadeghi,Houston,83,woodwind lakes,Co/Max Holding & Realty Co.,309500,TX,77040,2019-07-09 00:28:06.031865
-8715 Andante Drive,Gregory Stessel,Houston,48,woodwind lakes,Leaping Cat Homes,347500,TX,77040,2019-07-09 00:28:06.031865
-7714 Allegro Drive,Lynn Collins,Houston,102,woodwind lakes,BHGRE Gary Greene,305000,TX,77040,2019-07-09 00:28:06.031865
-9015 Rhapsody Lane,Katherine Weatherford,Houston,92,woodwind lakes,Exp Realty LLC,325000,TX,77040,2019-07-09 00:28:06.031865
-8419 Battle Plains Drive,Luz Hall,Houston,2,woodland trails west,Nan & Company Properties,215000,TX,77040,2019-07-09 00:28:06.031865
-7435 Woodoak Drive,Lara Forssell,Houston,4,woodland trails west,Keller Williams Realty The Woodlands,159900,TX,77040,2019-07-09 00:28:06.031865
-3626 Abinger Lane,Lydia Flores,Houston,4,inwood pines,"Lydia's Fine Homes, LLC",164000,TX,77088,2019-07-09 00:28:06.031865
-3622 Pine Ridge Lane,Carol Bonner,Houston,20,inwood pines,Champions Real Estate Group,145000,TX,77088,2019-07-09 00:28:06.031865
-3423 Lemon Tree Lane,Michelle Pena,Houston,24,inwood pines,MetroPlus Realty,175000,TX,77088,2019-07-09 00:28:06.031865
-3515 Black Locust Drive,Mechelle Williams,Houston,97,inwood pines,Exceed Realty,195000,TX,77088,2019-07-09 00:28:06.031865
-3702 Black Locust Drive,Nining Maharddhika,Houston,249,inwood pines,Indostar Realty&Property Mgmt,189900,TX,77088,2019-07-09 00:28:06.031865
-318 E 37th Street,Lance Loken,Houston,12,independence heights,Keller Williams Platinum,200000,TX,77018,2019-07-09 00:28:06.031865
-227 E 38th Street,Tyrone Mims,Houston,16,independence heights,Realty Associates,210000,TX,77018,2019-07-09 00:28:06.031865
-310 E 35th Street,Richard Vegsund,Houston,22,independence heights,CRC Real Estate Services,120000,TX,77018,2019-07-09 00:28:06.031865
-317 E 37th Street,Melyssa Wiseman,Houston,33,independence heights,Wiseman Properties,339000,TX,77018,2019-07-09 00:28:06.031865
-7702 N Main St Street,Lydia Cruz,Houston,48,independence heights,Porchlight Realtors,339500,TX,77022,2019-07-09 00:28:06.031865
-324 E 39th Street,Martin Melchor,Houston,50,independence heights,Keller Williams Houston Preferred,339000,TX,77018,2019-07-09 00:28:06.031865
-414 E 35th Street,Wayne Comer,Houston,55,independence heights,360 Realty & Management,190000,TX,77018,2019-07-09 00:28:06.031865
-326 E 39th Street,Martin Melchor,Houston,69,independence heights,Keller Williams Houston Preferred,319000,TX,77018,2019-07-09 00:28:06.031865
-7904 N Main Street,Martin Melchor,Houston,64,independence heights,Keller Williams Houston Preferred,275000,TX,77022,2019-07-09 00:28:06.031865
-632 E 38th Street,Beatrice Bartlett,Houston,81,independence heights,The Bartlett Real Estate Group,149999,TX,77022,2019-07-09 00:28:06.031865
-538 E 38th,George Balla,Houston,86,independence heights,Contemporary Real Estate LLC,239900,TX,77022,2019-07-09 00:28:06.031865
-536 E 38th,George Balla,Houston,86,independence heights,Contemporary Real Estate LLC,239900,TX,77022,2019-07-09 00:28:06.031865
-8607 Friendship Road,Melissa Huffman,Houston,6,langwood,Melissa Huffman,265100,TX,77080,2019-07-09 00:28:06.031865
-3106 Maysel Street,Michael McSorley,Houston,9,langwood,Keller Williams Memorial,164962,TX,77080,2019-07-09 00:28:06.031865
-8546 Norton Drive,Maihuong Nguyen,Houston,6,langwood,Precious Realty & Mortgage,190000,TX,77080,2019-07-09 00:28:06.031865
-6710 Clemson Street,Sharyn Short,Houston,4,langwood,Greenwood King Properties - Voss Office,150000,TX,77092,2019-07-09 00:28:06.031865
-8418 Churchville Drive,Armina Bradley,Houston,38,langwood,Realty Right,149900,TX,77080,2019-07-09 00:28:06.031865
-8618 McDade Street,Christi Baylor,Houston,13,langwood,UP Realty,173250,TX,77080,2019-07-09 00:28:06.031865
-6527 Underhill Street,Nicholas Castaneda,Houston,20,langwood,"American Property Realty, LLC",169000,TX,77092,2019-07-09 00:28:06.031865
-8410 Sonneville Drive,Roger Pallas-Nieto,Houston,67,langwood,REALM Real Estate Professionals - Galleria,155000,TX,77080,2019-07-09 00:28:06.031865
-8466 Sonneville Drive,Lydia Flores,Houston,88,langwood,"Lydia's Fine Homes, LLC",169000,TX,77080,2019-07-09 00:28:06.031865
-6730 Thornwall Street,Gilbert Hernandez,Houston,10,langwood,Keller Williams Platinum,130000,TX,77092,2019-07-09 00:28:06.031865
-8402 Churchville Drive,Daniel Enriquez,Houston,86,langwood,Texas United Realty,224900,TX,77080,2019-07-09 00:28:06.031865
-3318 Springrock Lane,Ulises Bernardotti,Houston,15,kempwood,Lone Star Realty,249000,TX,77080,2019-07-09 00:28:06.031865
-3351 Spring Valley Road,Scott O'Connell,Houston,35,kempwood,O'Connell Yarborough Prop,240000,TX,77080,2019-07-09 00:28:06.031865
-9706 Crestdale Circle,Jinren Jim Lee,Houston,110,kempwood,Jim's Real Estate & Loan Svcs,229000,TX,77080,2019-07-09 00:28:06.031865
-3207 Springrock Lane,Joanne Naponic,Houston,244,kempwood,Naponic Properties,299000,TX,77080,2019-07-09 00:28:06.031865
-13433 Bandera Street,Claudia Oakley,Houston,2,home owned estates,Keller Williams Realty Professionals,159900,TX,77015,2019-07-09 00:28:06.031865
-13306 Joliet Street,Blake Torrence,Houston,5,home owned estates,"Coldwell Banker United,",94900,TX,77015,2019-07-09 00:28:06.031865
-13371 Indianapolis Street,Mirna Hernandez,Houston,5,home owned estates,Prime Realty Group,129000,TX,77015,2019-07-09 00:28:06.031865
-806 Westmont Drive,Yuqiu Tang,Houston,6,home owned estates,"Forever Realty, LLC",208000,TX,77015,2019-07-09 00:28:06.031865
-13338 Force Street,Brenda Hernandez,Houston,8,home owned estates,Keller Williams Memorial,164900,TX,77015,2019-07-09 00:28:06.031865
-1007 Westmont Drive,Ellen Holt,Houston,17,home owned estates,RE/MAX Associates Northeast,119900,TX,77015,2019-07-09 00:28:06.031865
-13359 Indianapolis Street,Juvy Sudario,Houston,4,home owned estates,Prime Realty Group,89750,TX,77015,2019-07-09 00:28:06.031865
-13355 Joliet Street,Hernan Garcia,Houston,17,home owned estates,Turn Key Realty,149900,TX,77015,2019-07-09 00:28:06.031865
-13318 Peoria Street,Omar Scanu,Houston,62,home owned estates,RE/MAX 1st Source,45500,TX,77015,2019-07-09 00:28:06.031865
-0 Mobile Street,Jeff Denning,Houston,184,home owned estates,"Turner Mangum,LLC",160000,TX,77015,2019-07-09 00:28:06.031865
-1050 Glenalbyn Street,Omar Scanu,Houston,248,home owned estates,RE/MAX 1st Source,24500,TX,77015,2019-07-09 00:28:06.031865
-1126 Westmont Drive,Lou Rosas,Houston,367,home owned estates,RE/MAX Real Estate Assoc.,265000,TX,77015,2019-07-09 00:28:06.031865
-2507 15th Street,Erik Czirr,Galena Park,1,galenapark,NextHome First Source,144500,TX,77547,2019-07-09 00:28:06.031865
-1107 Clinton Drive,Ellen Holt,Galena Park,17,galenapark,RE/MAX Associates Northeast,275000,TX,77547,2019-07-09 00:28:06.031865
-2516 6th Street,Denes Jafari,Galena Park,17,galenapark,Better Homes and Gardens Real Estate Gary Greene - Champions,145000,TX,77547,2019-07-09 00:28:06.031865
-2503 9th Street,Emelita Rhoades,Galena Park,26,galenapark,Realty World Elite Group,189999,TX,77547,2019-07-09 00:28:06.031865
-2515 5th Street,Roosevelt Mucker,Galena Park,31,galenapark,"Generation Realty, LLC",99500,TX,77547,2019-07-09 00:28:06.031865
-2516 15th Street,Gloria Gutierrez,Galena Park,15,galenapark,The Horizon Team,169999,TX,77547,2019-07-09 00:28:06.031865
-1501 Bank Drive,Gloria Gutierrez,Galena Park,37,galenapark,The Horizon Team,129999,TX,77547,2019-07-09 00:28:06.031865
-1905 11th Street,Thelma Ibarra,Galena Park,110,galenapark,Houston Realty,120900,TX,77547,2019-07-09 00:28:06.031865
-2513 11th Street,Ana Gonzalez,Galena Park,87,galenapark,Circa Real Estate LLC,142500,TX,77547,2019-07-09 00:28:06.031865
-1712 10th,Belinda Malone,Galena Park,110,galenapark,Keller Williams Memorial,108000,TX,77547,2019-07-09 00:28:06.031865
-1607 Clinton Drive,Jose Ramon,Galena Park,147,galenapark,Can-2 Realty,379000,TX,77547,2019-07-09 00:28:06.031865
-8811 Imogene Street,Nguyen Wilson,Houston,5,braeburn glen,"Wilson Realty & Inv Grp, LLC",135000,TX,77074,2019-07-09 00:28:06.031865
-8711 Reamer Street,Wayne Comer,Houston,18,braeburn glen,360 Realty & Management,215000,TX,77074,2019-07-09 00:28:06.031865
-8706 Jason Street,Nguyen Wilson,Houston,169,braeburn glen,"Wilson Realty & Inv Grp, LLC",219000,TX,77074,2019-07-09 00:28:06.031865
-LT 27 Highland Shores Road,Veronica Gamez,Highlands,112,highland shores,"Coldwell Banker United, REALTORS- Baytown",19900,TX,77562,2019-07-09 00:28:06.031865
-00 Shorewick Drive,Emiliano Nino,Highlands,272,highland shores,Mission Realty,75000,TX,77562,2019-07-09 00:28:06.031865
-0 Shorewick Drive,Emiliano Nino,Highlands,272,highland shores,Mission Realty,75000,TX,77562,2019-07-09 00:28:06.031865
-2425 Shorewick Drive,Emiliano Nino,Highlands,173,highland shores,Mission Realty,250000,TX,77562,2019-07-09 00:28:06.031865
-17404 Moreland Drive,Dessiree Macias,Channelview,29,san jacinto river estates,Keller Williams Realty Metropolitan,250000,TX,77530,2019-07-09 00:28:06.031865
-5816 Melinda Lane,Renee Taylor,Pasadena,9,bliss meadows,"Prince Properties, LLC",199900,TX,77505,2019-07-09 00:28:06.031865
-5802 Lucy Lane,Lance Loken,Pasadena,21,bliss meadows,Keller Williams Platinum,150000,TX,77505,2019-07-09 00:28:06.031865
-5816 S Meadow Drive,Ozzie Ramirez,Pasadena,46,bliss meadows,Keller Williams Realty,190000,TX,77505,2019-07-09 00:28:06.031865
-6419 Olson Lane,James Toler,Pasadena,3,crest haven estates,Logos Investment Properties,155000,TX,77505,2019-07-09 00:28:06.031865
-9414 Spencer Hwy Highway,Mary Carrizal,La Porte,96,spenwick place,Main Properties,199900,TX,77571,2019-07-09 00:28:06.031865
-9406 Spencer Hwy Highway,Mary Carrizal,La Porte,96,spenwick place,Main Properties,796599,TX,77571,2019-07-09 00:28:06.031865
+address,agent,city,days,neighborhood,office,state,zip,datetime,Region
+6106 Great Oaks Drive,Marisa Lopez,Houston,15,riverwood estates,Near Town Properties,TX,77050,32:20.2,Northeast
+21807 Forest Glade Drive,Jodi Manfred,Humble,23,forest shadows,JLA Realty,TX,77338,32:20.2,Northeast
+4706 Broadmark Lane,Cellina Stokes,Humble,65,forest shadows,Crowne Realty,TX,77338,32:20.2,Northeast
+4602 Fieldwick Lane,Michael Thiltgen,Humble,79,forest shadows,Greenbriar Real Estate Service,TX,77338,32:20.2,Northeast
+21802 Pine Cone Drive,Katherine Ware,Humble,80,forest shadows,"Irie Properties, LLC",TX,77338,32:20.2,Northeast
+4503 Clairfield Lane,Rick Raymor,Humble,121,forest shadows,RE/MAX Universal,TX,77338,32:20.2,Northeast
+15202 Claypool Street,Rosa Gonzalez,Houston,110,aldine estates,REALM Real Estate Professionals - North Houston,TX,77032,32:20.2,Northeast
+2418 Toyah Avenue,Paula Plata,Houston,15,castlewood,Keller Williams Memorial,TX,77039,32:20.2,Northeast
+2517 Woodgate Street,Gina Lopez,Houston,108,castlewood,Loft Realty,TX,77039,32:20.2,Northeast
+2802 Rosebury Drive,Esmeralda Herrera,Houston,130,castlewood,Century 21 Hardee-Team Realty,TX,77039,32:20.2,Northeast
+2615 Balmorhea Avenue,Mary Villarreal,Houston,168,castlewood,Ability Real Estate,TX,77039,32:20.2,Northeast
+906 Lynwood Road,Rania Hanania,Spring,17,lynwood estates,JLA Realty,TX,77373,32:20.2,Northwest
+1311 Lynwood Road,Gidget Sauceda,Spring,4,lynwood estates,RE/MAX Universal,TX,77373,32:20.2,Northwest
+14301 Lee Road,Maria Salazar,Houston,163,parkwood estates 77032,"Nautilus Real Estate, Ltd",TX,77032,32:20.2,Northeast
+13200 Huffmeister Road,Amjad Mushtaq,Cypress,19,lake cypress estates u_r,Fast Homes,TX,77429,32:20.2,Northwest
+0 Maxwell Road,Kristi Grimes,Cypress,83,lake cypress estates u_r,eXp Realty LLC,TX,77429,32:20.2,Northwest
+13026 Maxwell Road,Ryan Jockers,Cypress,243,lake cypress estates u_r,Better Homes and Gardens Real Estate Gary Greene - Champions,TX,77429,32:20.2,Northwest
+16314 Waycreek Road,Arlene Simmons,Houston,3,bammel forest,RE/MAX Integrity,TX,77068,32:20.2,Northwest
+2511 Bycreek Drive,Lisa Shackleton,Houston,7,bammel forest,JLA Realty,TX,77068,32:20.2,Northwest
+2618 Colwell Road,Gay Perque,Houston,22,bammel forest,RE/MAX Vintage,TX,77068,32:20.2,Northwest
+16211 Creeksouth Road,Cameron Namazi,Houston,24,bammel forest,Summit Realty,TX,77068,32:20.2,Northwest
+16523 Waycreek Road,Yvonne Chauvin,Houston,27,bammel forest,Better Homes and Gardens Real Estate Gary Greene,TX,77068,32:20.2,Northwest
+2610 Creekhickory Road,Rick Shelton,Houston,59,bammel forest,The Horizon Team,TX,77068,32:20.2,Northwest
+2402 Encreek Road,Rick Shelton,Houston,64,bammel forest,The Horizon Team,TX,77068,32:20.2,Northwest
+2503 Encreek Road,Angela Muniz,Houston,43,bammel forest,Champions Real Estate Group,TX,77068,32:20.2,Northwest
+2319 Encreek Road,Rick Shelton,Houston,234,bammel forest,The Horizon Team,TX,77068,32:20.2,Northwest
+16911 Creeksouth Road,Cecilia Hernandez,Houston,119,bammel forest,Champions Real Estate Group,TX,77068,32:20.2,Northwest
+9501 North Freeway,Benito Armas,Houston,688,airline farms,Armas Realty,TX,77037,32:20.2,Northeast
+10530 Normont Drive,Alfonso Parodi,Houston,17,norchester,Realty Associates,TX,77070,32:20.2,Northwest
+10522 Idlebrook Drive,Jose Portillo,Houston,23,norchester,Champions Real Estate Group,TX,77070,32:20.2,Northwest
+10722 Fawnview Drive,Dee Pardue,Houston,22,norchester,NextHome Realty Center,TX,77070,32:20.2,Northwest
+10906 Archmont Drive,J.P. Bowers,Houston,36,norchester,"RE/MAX Westside, REALTORS",TX,77070,32:20.2,Northwest
+10723 Brentway Drive,Timothy Merritt,Houston,5,norchester,Better Homes and Gardens Real Estate Gary Greene - Champions,TX,77070,32:20.2,Northwest
+10803 Archmont Drive,Dee Pardue,Houston,7,norchester,NextHome Realty Center,TX,77070,32:20.2,Northwest
+10530 Glenway Drive,Angelica Fernandez,Houston,15,norchester,RE/MAX Signature,TX,77070,32:20.2,Northwest
+10515 Laneview Drive,Rebecca Robertson,Houston,51,norchester,Better Homes and Gardens Real Estate Gary Greene,TX,77070,32:20.2,Northwest
+10818 Elmdale Drive,Albert Tapia,Houston,59,norchester,Champions Real Estate Group,TX,77070,32:20.2,Northwest
+10511 Moorcreek,Lisa Pittman,Houston,76,norchester,NextHome Realty Center,TX,77070,32:20.2,Northwest
+10610 Normont Drive,Karen Davis,Houston,77,norchester,Karen Davis Properties,TX,77070,32:20.2,Northwest
+10803 Fawnview Drive,Lex Parker,Houston,100,norchester,"MHW Real Estate, Inc.",TX,77070,32:20.2,Northwest
