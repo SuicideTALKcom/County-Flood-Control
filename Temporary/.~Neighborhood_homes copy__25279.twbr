@@ -19,13 +19,13 @@
       <connection class='federated'>
         <named-connections>
           <named-connection caption='scraped_hommes' name='textscan.0gd8dar0ki4g971cp8yye1b7sk8i'>
-            <connection class='textscan' directory='Data/Downloads' filename='scraped_hommes.csv' password='' server='' workgroup-auth-mode='as-is' />
+            <connection class='textscan' directory='/Users/margretsaniel/Downloads' filename='scraped_hommes.csv' password='' server='' workgroup-auth-mode='as-is' />
           </named-connection>
           <named-connection caption='scraped_hommes (2)' name='textscan.00aeve60w05cac1e6s5cx1xsigei'>
-            <connection class='textscan' directory='Data/Documents/County-Flood-Control/Temporary' filename='scraped_hommes.csv' password='' server='' workgroup-auth-mode='as-is' />
+            <connection class='textscan' directory='/Users/margretsaniel/Documents/County-Flood-Control/Temporary' filename='scraped_hommes.csv' password='' server='' workgroup-auth-mode='as-is' />
           </named-connection>
           <named-connection caption='data' name='textscan.1qkztxk184lwtt19lilbm0apzejl'>
-            <connection class='textscan' directory='Data/Documents/County-Flood-Control' filename='data.csv' password='' server='' />
+            <connection class='textscan' directory='/Users/margretsaniel/Documents/County-Flood-Control' filename='data.csv' password='' server='' />
           </named-connection>
         </named-connections>
         <relation connection='textscan.1qkztxk184lwtt19lilbm0apzejl' name='data.csv' table='[data#csv]' type='table'>
@@ -246,7 +246,7 @@
           <groupfilter function='level-members' level='[zip]' />
         </groupfilter>
       </group>
-      <extract count='-1' enabled='false' units='records'>
+      <extract count='-1' enabled='true' units='records'>
         <connection access_mode='readonly' authentication='auth-none' author-locale='en_US' class='hyper' dbname='Data/Datasources/scraped_hommes.hyper' default-settings='yes' schema='Extract' sslmode='' tablename='Extract' update-time='' username='tableau_internal_user'>
           <relation name='Extract' table='[Extract].[Extract]' type='table' />
           <metadata-records>
@@ -1683,7 +1683,7 @@
     </dashboard>
   </dashboards>
   <windows source-height='30'>
-    <window class='worksheet' maximized='true' name='NeighborhoodMap'>
+    <window class='worksheet' name='NeighborhoodMap'>
       <cards>
         <edge name='left'>
           <strip size='160'>
@@ -1712,7 +1712,7 @@
       </viewpoint>
       <simple-id uuid='{A26D8211-1D90-4617-A4FD-95D46DA7EBA6}' />
     </window>
-    <window class='worksheet' name='NeighborhoodList'>
+    <window class='worksheet' maximized='true' name='NeighborhoodList'>
       <cards>
         <edge name='left'>
           <strip size='160'>
