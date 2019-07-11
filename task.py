@@ -6,11 +6,11 @@ import numpy as np
 import time
 from datetime import datetime
 import json
-from config import connection 
+# from config import connection 
 
 def homes_comparison(scraped_homes):
     #create a connection to the sql database 
-    engine = create_engine("mysql://xq5039a54f2ukgye:pzghos28lbhgg711@otwsl2e23jrxcqvx.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/lmib79r99ct0zdgq", echo=False)
+    engine = create_engine("mysql+pymysql://xq5039a54f2ukgye:pzghos28lbhgg711@otwsl2e23jrxcqvx.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/lmib79r99ct0zdgq", echo=False)
     conn = engine.connect()
     cur = conn.cursor()
     #put the results of the function into a dataframe
