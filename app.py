@@ -174,7 +174,7 @@ def start_runner():
         has_started = False
         while not has_started:
             try:
-                r = requests.get("http://localhost:5000/")
+                r = requests.get("http://localhost:5000/") # what goes here?
                 if r.status_code == 200:
                     print("server started")
                     has_started = True

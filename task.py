@@ -12,7 +12,7 @@ def homes_comparison(scraped_homes):
     #create a connection to the sql database 
     engine = create_engine("mysql+pymysql://xq5039a54f2ukgye:pzghos28lbhgg711@otwsl2e23jrxcqvx.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/lmib79r99ct0zdgq", echo=False)
     conn = engine.connect()
-    cur = conn.cursor()
+    # cur = conn.cursor()
     #put the results of the function into a dataframe
     homesdf = pd.DataFrame(scraped_homes)
     
@@ -27,19 +27,25 @@ def homes_comparison(scraped_homes):
 
     #loop thorugh each new df scrape and compare it against the sql database
     for i, house in homesdf.iterrows():
-        #read the sql database and take the address column to compare 
+        #read the sql database and take the address column to compare
         retrieved_data = pd.read_sql(f"SELECT address FROM lmib79r99ct0zdgq.homes WHERE address = '{house['address']}'", engine)
+        
         #grab the address from the web scrape and  
         #compare if the address exists against the address column in the sql database
+
         if retrieved_data.empty:
-            homesdf.iloc[i].to_sql('lmib79r99ct0zdgq.homes', if_exists = 'append', schema= 'online', con=conn)
+            format_string = "','"
+            string = f"INSERT INTO lmib79r99ct0zdgq.homes ({','.join(homesdf.columns)}) VALUES (\'{format_string.join(house.values)}\')"
+            print(string)
+            pd.read_sql(string,engine)
+            # homesdf.iloc[i].to_sql('lmib79r99ct0zdgq.homes', if_exists = 'append', schema= 'online', con=conn)
 
 #     cur.execute(f"INSERT INTO lmib79r99ct0zdgq.homes VALUES homesdf")
     
 
     conn.commit()
     
-    cur.close()
+    # cur.close()
 
     conn.close()
 
