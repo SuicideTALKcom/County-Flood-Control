@@ -26,6 +26,7 @@ def homes_comparison(scraped_homes):
 
 
     #loop thorugh each new df scrape and compare it against the sql database
+    # execute_conn = conn.execute(
     for i, house in homesdf.iterrows():
         #read the sql database and take the address column to compare
         retrieved_data = pd.read_sql(f"SELECT address FROM lmib79r99ct0zdgq.homes WHERE address = '{house['address']}'", engine)
@@ -39,11 +40,11 @@ def homes_comparison(scraped_homes):
             print(string)
             pd.read_sql(string,engine)
             # homesdf.iloc[i].to_sql('lmib79r99ct0zdgq.homes', if_exists = 'append', schema= 'online', con=conn)
-
+    # )
 #     cur.execute(f"INSERT INTO lmib79r99ct0zdgq.homes VALUES homesdf")
     
 
-    conn.commit()
+    # conn.commit()
     
     # cur.close()
 

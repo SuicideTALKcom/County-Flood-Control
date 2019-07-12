@@ -181,8 +181,8 @@ def start_runner():
                 print(r.status_code)
             except: 
                 print("ex")
-            time.sleep(2)
-
+            time.sleep(180)
+            # time.sleep(21600)
     thread = threading.Thread(target=start_loop)
     thread.start()
 
