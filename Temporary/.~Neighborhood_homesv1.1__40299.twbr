@@ -3,13 +3,12 @@
 <!-- build 20191.19.0417.1429                               -->
 <workbook source-build='2019.1.3 (20191.19.0417.1429)' source-platform='mac' version='18.1' xml:base='https://public.tableau.com' xmlns:user='http://www.tableausoftware.com/xml/user'>
   <document-format-change-manifest>
-    <IntuitiveSorting />
-    <IntuitiveSorting_SP2 />
     <SheetIdentifierTracking />
+    <SortTagCleanup />
     <WindowsPersistSimpleIdentifiers />
     <ZoneBackgroundTransparency />
   </document-format-change-manifest>
-  <repository-location id='County_dash1' path='/workbooks' revision='1.2' />
+  <repository-location id='Analytics_dash1' path='/workbooks' revision='1.4' />
   <preferences>
     <preference name='ui.encoding.shelf.height' value='24' />
     <preference name='ui.shelf.height' value='26' />
@@ -19,29 +18,32 @@
       <connection class='federated'>
         <named-connections>
           <named-connection caption='scraped_hommes' name='textscan.0gd8dar0ki4g971cp8yye1b7sk8i'>
-            <connection class='textscan' directory='Data/Temporary' filename='scraped_hommes.csv' password='' server='' workgroup-auth-mode='as-is' />
+            <connection class='textscan' directory='/Users/margretsaniel/Documents/County-Flood-Control/Temporary' filename='scraped_hommes.csv' password='' server='' workgroup-auth-mode='as-is' />
+          </named-connection>
+          <named-connection caption='full_list' name='textscan.0m9v2a01mnnfgj1bda5tg07lscjm'>
+            <connection class='textscan' directory='/Users/margretsaniel/Documents/County-Flood-Control' filename='full_list.csv' password='' server='' workgroup-auth-mode='as-is' />
           </named-connection>
         </named-connections>
-        <relation connection='textscan.0gd8dar0ki4g971cp8yye1b7sk8i' name='scraped_hommes.csv' table='[scraped_hommes#csv]' type='table'>
+        <relation connection='textscan.0m9v2a01mnnfgj1bda5tg07lscjm' name='full_list.csv' table='[full_list#csv]' type='table'>
           <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
-            <column datatype='string' name='neighborhood' ordinal='0' />
-            <column datatype='string' name='address' ordinal='1' />
+            <column datatype='string' name='address' ordinal='0' />
+            <column datatype='string' name='agent' ordinal='1' />
             <column datatype='string' name='city' ordinal='2' />
-            <column datatype='string' name='state' ordinal='3' />
-            <column datatype='integer' name='zip' ordinal='4' />
-            <column datatype='string' name='region' ordinal='5' />
-            <column datatype='integer' name='days' ordinal='6' />
-            <column datatype='string' name='agent' ordinal='7' />
-            <column datatype='string' name='office' ordinal='8' />
-            <column datatype='integer' name='price' ordinal='9' />
-            <column datatype='datetime' name='datetime' ordinal='10' />
+            <column datatype='integer' name='days' ordinal='3' />
+            <column datatype='string' name='neighborhood' ordinal='4' />
+            <column datatype='string' name='office' ordinal='5' />
+            <column datatype='integer' name='price' ordinal='6' />
+            <column datatype='string' name='state' ordinal='7' />
+            <column datatype='integer' name='zip' ordinal='8' />
+            <column datatype='datetime' name='datetime' ordinal='9' />
+            <column datatype='string' name='region' ordinal='10' />
           </columns>
         </relation>
         <metadata-records>
           <metadata-record class='capability'>
             <remote-name />
             <remote-type>0</remote-type>
-            <parent-name>[scraped_hommes.csv]</parent-name>
+            <parent-name>[full_list.csv]</parent-name>
             <remote-alias />
             <aggregation>Count</aggregation>
             <contains-null>true</contains-null>
@@ -55,11 +57,11 @@
             </attributes>
           </metadata-record>
           <metadata-record class='column'>
-            <remote-name>neighborhood</remote-name>
+            <remote-name>address</remote-name>
             <remote-type>129</remote-type>
-            <local-name>[neighborhood]</local-name>
-            <parent-name>[scraped_hommes.csv]</parent-name>
-            <remote-alias>neighborhood</remote-alias>
+            <local-name>[address]</local-name>
+            <parent-name>[full_list.csv]</parent-name>
+            <remote-alias>address</remote-alias>
             <ordinal>0</ordinal>
             <local-type>string</local-type>
             <aggregation>Count</aggregation>
@@ -69,11 +71,11 @@
             <collation flag='0' name='LEN_RUS' />
           </metadata-record>
           <metadata-record class='column'>
-            <remote-name>address</remote-name>
+            <remote-name>agent</remote-name>
             <remote-type>129</remote-type>
-            <local-name>[address]</local-name>
-            <parent-name>[scraped_hommes.csv]</parent-name>
-            <remote-alias>address</remote-alias>
+            <local-name>[agent]</local-name>
+            <parent-name>[full_list.csv]</parent-name>
+            <remote-alias>agent</remote-alias>
             <ordinal>1</ordinal>
             <local-type>string</local-type>
             <aggregation>Count</aggregation>
@@ -86,48 +88,9 @@
             <remote-name>city</remote-name>
             <remote-type>129</remote-type>
             <local-name>[city]</local-name>
-            <parent-name>[scraped_hommes.csv]</parent-name>
+            <parent-name>[full_list.csv]</parent-name>
             <remote-alias>city</remote-alias>
             <ordinal>2</ordinal>
-            <local-type>string</local-type>
-            <aggregation>Count</aggregation>
-            <scale>1</scale>
-            <width>1073741823</width>
-            <contains-null>true</contains-null>
-            <collation flag='0' name='LEN_RUS' />
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>state</remote-name>
-            <remote-type>129</remote-type>
-            <local-name>[state]</local-name>
-            <parent-name>[scraped_hommes.csv]</parent-name>
-            <remote-alias>state</remote-alias>
-            <ordinal>3</ordinal>
-            <local-type>string</local-type>
-            <aggregation>Count</aggregation>
-            <scale>1</scale>
-            <width>1073741823</width>
-            <contains-null>true</contains-null>
-            <collation flag='0' name='LEN_RUS' />
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>zip</remote-name>
-            <remote-type>20</remote-type>
-            <local-name>[zip]</local-name>
-            <parent-name>[scraped_hommes.csv]</parent-name>
-            <remote-alias>zip</remote-alias>
-            <ordinal>4</ordinal>
-            <local-type>integer</local-type>
-            <aggregation>Sum</aggregation>
-            <contains-null>true</contains-null>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>region</remote-name>
-            <remote-type>129</remote-type>
-            <local-name>[region]</local-name>
-            <parent-name>[scraped_hommes.csv]</parent-name>
-            <remote-alias>region</remote-alias>
-            <ordinal>5</ordinal>
             <local-type>string</local-type>
             <aggregation>Count</aggregation>
             <scale>1</scale>
@@ -139,20 +102,20 @@
             <remote-name>days</remote-name>
             <remote-type>20</remote-type>
             <local-name>[days]</local-name>
-            <parent-name>[scraped_hommes.csv]</parent-name>
+            <parent-name>[full_list.csv]</parent-name>
             <remote-alias>days</remote-alias>
-            <ordinal>6</ordinal>
+            <ordinal>3</ordinal>
             <local-type>integer</local-type>
             <aggregation>Sum</aggregation>
             <contains-null>true</contains-null>
           </metadata-record>
           <metadata-record class='column'>
-            <remote-name>agent</remote-name>
+            <remote-name>neighborhood</remote-name>
             <remote-type>129</remote-type>
-            <local-name>[agent]</local-name>
-            <parent-name>[scraped_hommes.csv]</parent-name>
-            <remote-alias>agent</remote-alias>
-            <ordinal>7</ordinal>
+            <local-name>[neighborhood]</local-name>
+            <parent-name>[full_list.csv]</parent-name>
+            <remote-alias>neighborhood</remote-alias>
+            <ordinal>4</ordinal>
             <local-type>string</local-type>
             <aggregation>Count</aggregation>
             <scale>1</scale>
@@ -164,9 +127,9 @@
             <remote-name>office</remote-name>
             <remote-type>129</remote-type>
             <local-name>[office]</local-name>
-            <parent-name>[scraped_hommes.csv]</parent-name>
+            <parent-name>[full_list.csv]</parent-name>
             <remote-alias>office</remote-alias>
-            <ordinal>8</ordinal>
+            <ordinal>5</ordinal>
             <local-type>string</local-type>
             <aggregation>Count</aggregation>
             <scale>1</scale>
@@ -178,9 +141,34 @@
             <remote-name>price</remote-name>
             <remote-type>20</remote-type>
             <local-name>[price]</local-name>
-            <parent-name>[scraped_hommes.csv]</parent-name>
+            <parent-name>[full_list.csv]</parent-name>
             <remote-alias>price</remote-alias>
-            <ordinal>9</ordinal>
+            <ordinal>6</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>state</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[state]</local-name>
+            <parent-name>[full_list.csv]</parent-name>
+            <remote-alias>state</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>zip</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[zip]</local-name>
+            <parent-name>[full_list.csv]</parent-name>
+            <remote-alias>zip</remote-alias>
+            <ordinal>8</ordinal>
             <local-type>integer</local-type>
             <aggregation>Sum</aggregation>
             <contains-null>true</contains-null>
@@ -189,12 +177,26 @@
             <remote-name>datetime</remote-name>
             <remote-type>134</remote-type>
             <local-name>[datetime]</local-name>
-            <parent-name>[scraped_hommes.csv]</parent-name>
+            <parent-name>[full_list.csv]</parent-name>
             <remote-alias>datetime</remote-alias>
-            <ordinal>10</ordinal>
+            <ordinal>9</ordinal>
             <local-type>datetime</local-type>
             <aggregation>Hour</aggregation>
             <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>region</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[region]</local-name>
+            <parent-name>[full_list.csv]</parent-name>
+            <remote-alias>region</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
           </metadata-record>
         </metadata-records>
       </connection>
@@ -213,11 +215,12 @@
       <column caption='Address' datatype='string' name='[address]' role='dimension' type='nominal' />
       <column caption='Agent' datatype='string' name='[agent]' role='dimension' type='nominal' />
       <column caption='City' datatype='string' name='[city]' role='dimension' semantic-role='[City].[Name]' type='nominal' />
-      <column caption='Datetime' datatype='datetime' name='[datetime]' role='dimension' type='ordinal' />
+      <column aggregation='Hour' caption='Datetime' datatype='datetime' name='[datetime]' role='dimension' type='ordinal' />
       <column caption='Days' datatype='integer' name='[days]' role='measure' type='quantitative' />
       <column caption='Neighborhood' datatype='string' name='[neighborhood]' role='dimension' type='nominal' />
       <column caption='Office' datatype='string' name='[office]' role='dimension' type='nominal' />
       <column aggregation='Sum' caption='Price' datatype='integer' name='[price]' role='dimension' type='ordinal' />
+      <column caption='Region' datatype='string' name='[region]' role='dimension' type='nominal' />
       <column caption='State' datatype='string' name='[state]' role='dimension' semantic-role='[State].[Name]' type='nominal' />
       <column caption='Zip' datatype='integer' default-format='*00000' name='[zip]' role='dimension' semantic-role='[ZipCode].[Name]' type='ordinal' />
       <column-instance column='[address]' derivation='None' name='[none:address:nk]' pivot='key' type='nominal' />
@@ -248,35 +251,35 @@
           <groupfilter function='level-members' level='[zip]' />
         </groupfilter>
       </group>
-      <extract count='-1' enabled='false' units='records'>
+      <extract count='-1' enabled='true' units='records'>
         <connection access_mode='readonly' authentication='auth-none' author-locale='en_US' class='hyper' dbname='Data/Datasources/scraped_hommes.hyper' default-settings='yes' schema='Extract' sslmode='' tablename='Extract' update-time='' username='tableau_internal_user'>
           <relation name='Extract' table='[Extract].[Extract]' type='table' />
           <metadata-records>
-            <metadata-record class='column'>
-              <remote-name>neighborhood</remote-name>
-              <remote-type>129</remote-type>
-              <local-name>[neighborhood]</local-name>
-              <parent-name>[Extract]</parent-name>
-              <remote-alias>neighborhood</remote-alias>
-              <ordinal>0</ordinal>
-              <family>scraped_hommes.csv</family>
-              <local-type>string</local-type>
-              <aggregation>Count</aggregation>
-              <approx-count>27</approx-count>
-              <contains-null>true</contains-null>
-              <collation flag='0' name='LEN_RUS' />
-            </metadata-record>
             <metadata-record class='column'>
               <remote-name>address</remote-name>
               <remote-type>129</remote-type>
               <local-name>[address]</local-name>
               <parent-name>[Extract]</parent-name>
               <remote-alias>address</remote-alias>
-              <ordinal>1</ordinal>
-              <family>scraped_hommes.csv</family>
+              <ordinal>0</ordinal>
+              <family>full_list.csv</family>
               <local-type>string</local-type>
               <aggregation>Count</aggregation>
-              <approx-count>27</approx-count>
+              <approx-count>143</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>agent</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[agent]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>agent</remote-alias>
+              <ordinal>1</ordinal>
+              <family>full_list.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>125</approx-count>
               <contains-null>true</contains-null>
               <collation flag='0' name='LEN_RUS' />
             </metadata-record>
@@ -287,12 +290,66 @@
               <parent-name>[Extract]</parent-name>
               <remote-alias>city</remote-alias>
               <ordinal>2</ordinal>
-              <family>scraped_hommes.csv</family>
+              <family>full_list.csv</family>
               <local-type>string</local-type>
               <aggregation>Count</aggregation>
-              <approx-count>8</approx-count>
+              <approx-count>10</approx-count>
               <contains-null>true</contains-null>
               <collation flag='0' name='LEN_RUS' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>days</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[days]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>days</remote-alias>
+              <ordinal>3</ordinal>
+              <family>full_list.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>80</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>neighborhood</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[neighborhood]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>neighborhood</remote-alias>
+              <ordinal>4</ordinal>
+              <family>full_list.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>28</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>office</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[office]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>office</remote-alias>
+              <ordinal>5</ordinal>
+              <family>full_list.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>96</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>price</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[price]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>price</remote-alias>
+              <ordinal>6</ordinal>
+              <family>full_list.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>109</approx-count>
+              <contains-null>true</contains-null>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>state</remote-name>
@@ -300,8 +357,8 @@
               <local-name>[state]</local-name>
               <parent-name>[Extract]</parent-name>
               <remote-alias>state</remote-alias>
-              <ordinal>3</ordinal>
-              <family>scraped_hommes.csv</family>
+              <ordinal>7</ordinal>
+              <family>full_list.csv</family>
               <local-type>string</local-type>
               <aggregation>Count</aggregation>
               <approx-count>1</approx-count>
@@ -314,76 +371,8 @@
               <local-name>[zip]</local-name>
               <parent-name>[Extract]</parent-name>
               <remote-alias>zip</remote-alias>
-              <ordinal>4</ordinal>
-              <family>scraped_hommes.csv</family>
-              <local-type>integer</local-type>
-              <aggregation>Sum</aggregation>
-              <approx-count>21</approx-count>
-              <contains-null>true</contains-null>
-            </metadata-record>
-            <metadata-record class='column'>
-              <remote-name>region</remote-name>
-              <remote-type>129</remote-type>
-              <local-name>[region]</local-name>
-              <parent-name>[Extract]</parent-name>
-              <remote-alias>region</remote-alias>
-              <ordinal>5</ordinal>
-              <family>scraped_hommes.csv</family>
-              <local-type>string</local-type>
-              <aggregation>Count</aggregation>
-              <approx-count>4</approx-count>
-              <contains-null>true</contains-null>
-              <collation flag='0' name='LEN_RUS' />
-            </metadata-record>
-            <metadata-record class='column'>
-              <remote-name>days</remote-name>
-              <remote-type>20</remote-type>
-              <local-name>[days]</local-name>
-              <parent-name>[Extract]</parent-name>
-              <remote-alias>days</remote-alias>
-              <ordinal>6</ordinal>
-              <family>scraped_hommes.csv</family>
-              <local-type>integer</local-type>
-              <aggregation>Sum</aggregation>
-              <approx-count>21</approx-count>
-              <contains-null>true</contains-null>
-            </metadata-record>
-            <metadata-record class='column'>
-              <remote-name>agent</remote-name>
-              <remote-type>129</remote-type>
-              <local-name>[agent]</local-name>
-              <parent-name>[Extract]</parent-name>
-              <remote-alias>agent</remote-alias>
-              <ordinal>7</ordinal>
-              <family>scraped_hommes.csv</family>
-              <local-type>string</local-type>
-              <aggregation>Count</aggregation>
-              <approx-count>27</approx-count>
-              <contains-null>true</contains-null>
-              <collation flag='0' name='LEN_RUS' />
-            </metadata-record>
-            <metadata-record class='column'>
-              <remote-name>office</remote-name>
-              <remote-type>129</remote-type>
-              <local-name>[office]</local-name>
-              <parent-name>[Extract]</parent-name>
-              <remote-alias>office</remote-alias>
               <ordinal>8</ordinal>
-              <family>scraped_hommes.csv</family>
-              <local-type>string</local-type>
-              <aggregation>Count</aggregation>
-              <approx-count>27</approx-count>
-              <contains-null>true</contains-null>
-              <collation flag='0' name='LEN_RUS' />
-            </metadata-record>
-            <metadata-record class='column'>
-              <remote-name>price</remote-name>
-              <remote-type>20</remote-type>
-              <local-name>[price]</local-name>
-              <parent-name>[Extract]</parent-name>
-              <remote-alias>price</remote-alias>
-              <ordinal>9</ordinal>
-              <family>scraped_hommes.csv</family>
+              <family>full_list.csv</family>
               <local-type>integer</local-type>
               <aggregation>Sum</aggregation>
               <approx-count>25</approx-count>
@@ -395,55 +384,69 @@
               <local-name>[datetime]</local-name>
               <parent-name>[Extract]</parent-name>
               <remote-alias>datetime</remote-alias>
-              <ordinal>10</ordinal>
-              <family>scraped_hommes.csv</family>
+              <ordinal>9</ordinal>
+              <family>full_list.csv</family>
               <local-type>datetime</local-type>
               <aggregation>Hour</aggregation>
-              <approx-count>27</approx-count>
+              <approx-count>1</approx-count>
               <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>region</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[region]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>region</remote-alias>
+              <ordinal>10</ordinal>
+              <family>full_list.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>4</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
             </metadata-record>
           </metadata-records>
         </connection>
       </extract>
-      <layout dim-ordering='alphabetic' dim-percentage='0.554656' measure-ordering='alphabetic' measure-percentage='0.445344' show-structure='true' />
+      <layout dim-ordering='alphabetic' dim-percentage='0.574899' measure-ordering='alphabetic' measure-percentage='0.425101' show-structure='true' />
       <style>
         <style-rule element='mark'>
           <encoding attr='color' field='[none:neighborhood:nk]' type='palette'>
             <map to='#499894'>
-              <bucket>&quot;galenapark&quot;</bucket>
+              <bucket>&quot;forest shadows&quot;</bucket>
             </map>
             <map to='#4e79a7'>
               <bucket>&quot;airline farms&quot;</bucket>
             </map>
             <map to='#4e79a7'>
-              <bucket>&quot;riverwood estates&quot;</bucket>
+              <bucket>&quot;parkwood estates 77032&quot;</bucket>
             </map>
             <map to='#59a14f'>
               <bucket>&quot;braeburn glen&quot;</bucket>
             </map>
             <map to='#59a14f'>
-              <bucket>&quot;windwood extn u_r&quot;</bucket>
+              <bucket>&quot;spenwick place&quot;</bucket>
             </map>
             <map to='#79706e'>
               <bucket>&quot;humble road place&quot;</bucket>
             </map>
             <map to='#86bcb6'>
-              <bucket>&quot;greenbranch&quot;</bucket>
+              <bucket>&quot;galenapark&quot;</bucket>
             </map>
             <map to='#8cd17d'>
               <bucket>&quot;castlewood&quot;</bucket>
             </map>
             <map to='#8cd17d'>
-              <bucket>&quot;woodland trails west&quot;</bucket>
+              <bucket>&quot;windwood extn u_r&quot;</bucket>
             </map>
             <map to='#9d7660'>
-              <bucket>&quot;norchester&quot;</bucket>
+              <bucket>&quot;lynwood estates&quot;</bucket>
             </map>
             <map to='#a0cbe8'>
               <bucket>&quot;aldine estates&quot;</bucket>
             </map>
             <map to='#a0cbe8'>
-              <bucket>&quot;sagemont&quot;</bucket>
+              <bucket>&quot;riverwood estates&quot;</bucket>
             </map>
             <map to='#b07aa1'>
               <bucket>&quot;lake cypress estates u_r&quot;</bucket>
@@ -452,7 +455,7 @@
               <bucket>&quot;coles crossing&quot;</bucket>
             </map>
             <map to='#b6992d'>
-              <bucket>&quot;woodwind lakes&quot;</bucket>
+              <bucket>&quot;woodland trails west&quot;</bucket>
             </map>
             <map to='#bab0ac'>
               <bucket>&quot;independence heights&quot;</bucket>
@@ -464,19 +467,22 @@
               <bucket>&quot;langwood&quot;</bucket>
             </map>
             <map to='#d7b5a6'>
-              <bucket>&quot;parkwood estates 77032&quot;</bucket>
+              <bucket>&quot;norchester&quot;</bucket>
             </map>
             <map to='#e15759'>
               <bucket>&quot;highland shores&quot;</bucket>
             </map>
             <map to='#f1ce63'>
-              <bucket>&quot;forest shadows&quot;</bucket>
+              <bucket>&quot;crest haven estates&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;woodwind lakes&quot;</bucket>
             </map>
             <map to='#f28e2b'>
               <bucket>&quot;bammel forest&quot;</bucket>
             </map>
             <map to='#f28e2b'>
-              <bucket>&quot;san jacinto river estates&quot;</bucket>
+              <bucket>&quot;sagemont&quot;</bucket>
             </map>
             <map to='#fabfd2'>
               <bucket>&quot;kempwood&quot;</bucket>
@@ -488,90 +494,438 @@
               <bucket>&quot;bliss meadows&quot;</bucket>
             </map>
             <map to='#ffbe7d'>
-              <bucket>&quot;spenwick place&quot;</bucket>
+              <bucket>&quot;san jacinto river estates&quot;</bucket>
             </map>
           </encoding>
           <encoding attr='color' field='[none:address:nk]' type='palette'>
             <map to='#499894'>
-              <bucket>&quot;3106 Maysel Street&quot;</bucket>
+              <bucket>&quot;10339 Sagerock Drive&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;11323 Sagevale Lane&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;14413 Ravendale Road&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;2425 Shorewick Drive&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;322 E 37th A Street&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;3626 Abinger Lane&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;8018 Sonata Court&quot;</bucket>
             </map>
             <map to='#4e79a7'>
-              <bucket>&quot;0 East Freeway&quot;</bucket>
-            </map>
-            <map to='#4e79a7'>
-              <bucket>&quot;11934 Deep Woods Drive Drive&quot;</bucket>
-            </map>
-            <map to='#59a14f'>
-              <bucket>&quot;1430 Old Greens Road&quot;</bucket>
-            </map>
-            <map to='#59a14f'>
-              <bucket>&quot;14301 Lee Road&quot;</bucket>
-            </map>
-            <map to='#79706e'>
-              <bucket>&quot;8030 Western Trail Drive&quot;</bucket>
-            </map>
-            <map to='#86bcb6'>
-              <bucket>&quot;3907 Black Locust Drive&quot;</bucket>
-            </map>
-            <map to='#8cd17d'>
-              <bucket>&quot;14409 Grandy Street&quot;</bucket>
-            </map>
-            <map to='#8cd17d'>
-              <bucket>&quot;2515 5th Street&quot;</bucket>
-            </map>
-            <map to='#9d7660'>
-              <bucket>&quot;10618 Archmont Drive&quot;</bucket>
-            </map>
-            <map to='#a0cbe8'>
-              <bucket>&quot;0 Highland Shores Road&quot;</bucket>
-            </map>
-            <map to='#a0cbe8'>
-              <bucket>&quot;12403 Swan River Drive&quot;</bucket>
-            </map>
-            <map to='#b07aa1'>
-              <bucket>&quot;9501 North Freeway&quot;</bucket>
-            </map>
-            <map to='#b6992d'>
-              <bucket>&quot;15202 Claypool Street&quot;</bucket>
-            </map>
-            <map to='#b6992d'>
-              <bucket>&quot;2517 Woodgate Street&quot;</bucket>
-            </map>
-            <map to='#bab0ac'>
-              <bucket>&quot;8939 Altamont Drive&quot;</bucket>
-            </map>
-            <map to='#d37295'>
-              <bucket>&quot;9346 Adagio Lane&quot;</bucket>
-            </map>
-            <map to='#d4a6c8'>
-              <bucket>&quot;9706 Crestdale Circle&quot;</bucket>
-            </map>
-            <map to='#d7b5a6'>
-              <bucket>&quot;10918 Sagecanyon Drive&quot;</bucket>
-            </map>
-            <map to='#e15759'>
-              <bucket>&quot;4706 Broadmark Lane&quot;</bucket>
-            </map>
-            <map to='#f1ce63'>
-              <bucket>&quot;2615 Creekhickory Road&quot;</bucket>
-            </map>
-            <map to='#f28e2b'>
               <bucket>&quot;0 Maxwell Road&quot;</bucket>
             </map>
-            <map to='#f28e2b'>
-              <bucket>&quot;13003 Oakwood Manor Drive&quot;</bucket>
+            <map to='#4e79a7'>
+              <bucket>&quot;10818 Elmdale Drive&quot;</bucket>
             </map>
-            <map to='#fabfd2'>
+            <map to='#4e79a7'>
+              <bucket>&quot;1126 Westmont Drive&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;13433 Bandera Street&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;21802 Pine Cone Drive&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;2802 Rosebury Drive&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;6730 Thornwall Street&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;9015 Rhapsody Lane&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;10919 Sagecanyon Drive&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;13927 Sherburn Manor Drive&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;1905 11th Street&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;227 E 38th Street&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;3351 Spring Valley Road&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;7707 Cadenza Court&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;9406 Spencer Hwy Highway&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;10522 Idlebrook Drive&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;13126 Tarbet Place Court&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;16211 Creeksouth Road&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;2511 Bycreek Drive&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;414 E 35th Street&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;4706 Broadmark Lane&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;8418 Churchville Drive&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;10402 Sagedowne Lane&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;11602 Sagedowne Lane&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;14418 Grandy Street&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;2503 9th Street&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;322 E 37th Street&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;3702 Black Locust Drive&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;8114 Clarion Way&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;11010 Sagepark Lane&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;14231 Northface Manor Court&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;2319 Encreek Road&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;310 E 35th Street&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;3423 Lemon Tree Lane&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;7714 Allegro Drive&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
               <bucket>&quot;9414 Spencer Hwy Highway&quot;</bucket>
             </map>
-            <map to='#ff9d9a'>
-              <bucket>&quot;5816 S Meadow Drive&quot;</bucket>
+            <map to='#9d7660'>
+              <bucket>&quot;1050 Glenalbyn Street&quot;</bucket>
             </map>
-            <map to='#ffbe7d'>
+            <map to='#9d7660'>
+              <bucket>&quot;10723 Brentway Drive&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;13359 Indianapolis Street&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;17404 Moreland Drive&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;2615 Balmorhea Avenue&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;6527 Underhill Street&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;8711 Reamer Street&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;0 Mobile Street&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;10818 Sageleaf Lane&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;13526 Greenwood Manor Drive&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;1501 Bank Drive&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;21807 Forest Glade Drive&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;3106 Maysel Street&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;6733 Feldspar Street&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;9106 Symphonic Lane&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;10610 Normont Drive&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;13338 Force Street&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;16523 Waycreek Road&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;2517 Woodgate Street&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;6106 Great Oaks Drive&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;8607 Friendship Road&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;908 Sage Drive&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;11026 Sagemeadow Lane&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;14301 Lee Road&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;2402 Encreek Road&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;317 E 37th Street&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;3515 Black Locust Drive&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;7904 N Main Street&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;9501 North Freeway&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;10530 Glenway Drive&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;13200 Huffmeister Road&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;16214 Mahan Road&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;2513 11th Street&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;5802 Lucy Lane&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;632 E 38th Street&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;8419 Battle Plains Drive&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;10530 Normont Drive&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;13306 Joliet Street&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;16306 Wytchwood Circle&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;2516 6th Street&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;5816 Melinda Lane&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;806 Westmont Drive&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;8466 Sonneville Drive&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;1007 Westmont Drive&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;10722 Fawnview Drive&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;13355 Joliet Street&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;16911 Creeksouth Road&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;2610 Creekhickory Road&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;6419 Olson Lane&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;8706 Jason Street&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;10803 Fawnview Drive&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;1107 Clinton Drive&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;13371 Indianapolis Street&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;18922 Picnic Pavilion Court&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;2618 Colwell Road&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;6710 Clemson Street&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;8715 Andante Drive&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;10511 Moorcreek&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;11934 Deep Woods Drive Drive&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;15202 Claypool Street&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;2503 Encreek Road&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;324 E 39th Street&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;4503 Clairfield Lane&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;8402 Churchville Drive&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;11118 Sagedowne Lane&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;14407 Bush Sage Drive&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;2418 Toyah Avenue&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;318 E 37th Street&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;3622 Pine Ridge Lane&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;7907 Ensemble Drive&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;9706 Crestdale Circle&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;0 Shorewick Drive&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;10906 Archmont Drive&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;13714 Sherburn Manor Drive&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;1607 Clinton Drive&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;3207 Springrock Lane&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;7435 Woodoak Drive&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;9223 Symphonic Lane&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;LT 27 Highland Shores Road&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;10534 Jaycreek Drive&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
               <bucket>&quot;13318 Peoria Street&quot;</bucket>
             </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;16314 Waycreek Road&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;2516 15th Street&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;5816 S Meadow Drive&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;8546 Norton Drive&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;906 Lynwood Road&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;10515 Laneview Drive&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;13026 Maxwell Road&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;15839 Cypress Hall Drive&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;2507 15th Street&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;326 E 39th Street&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;4602 Fieldwick Lane&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;8410 Sonneville Drive&quot;</bucket>
+            </map>
             <map to='#ffbe7d'>
-              <bucket>&quot;414 E 35th Street&quot;</bucket>
+              <bucket>&quot;00 Shorewick Drive&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;10910 Sagetrail Drive&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;13823 Sherburn Manor Drive&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;1712 10th&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;3318 Springrock Lane&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;7702 N Main St Street&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;9346 Adagio Lane&quot;</bucket>
             </map>
           </encoding>
         </style-rule>
@@ -623,6 +977,14 @@
       <command command='tsc:tsl-filter'>
         <param name='special-fields' value='all' />
         <param name='target' value='CountyDash' />
+      </command>
+    </action>
+    <action caption='Filter 6 (generated)' name='[Action6]'>
+      <activation auto-clear='true' type='on-select' />
+      <source dashboard='AnalyticsDash' type='sheet' worksheet='AnalyticsPage' />
+      <command command='tsc:tsl-filter'>
+        <param name='special-fields' value='all' />
+        <param name='target' value='AnalyticsDash' />
       </command>
     </action>
   </actions>
@@ -722,9 +1084,39 @@
               <groupfilter function='level-members' level='[zip]' />
             </groupfilter>
           </filter>
-          <shelf-sorts>
-            <shelf-sort-v2 dimension-to-sort='[federated.0ze7y1n179jrf211fw0080nw6wrh].[none:neighborhood:nk]' direction='ASC' is-on-innermost-dimension='true' measure-to-sort-by='[federated.0ze7y1n179jrf211fw0080nw6wrh].[sum:days:qk]' shelf='rows' />
-          </shelf-sorts>
+          <manual-sort column='[federated.0ze7y1n179jrf211fw0080nw6wrh].[none:neighborhood:nk]' direction='ASC'>
+            <dictionary>
+              <bucket>&quot;home owned estates&quot;</bucket>
+              <bucket>&quot;highland shores&quot;</bucket>
+              <bucket>&quot;airline farms&quot;</bucket>
+              <bucket>&quot;bammel forest&quot;</bucket>
+              <bucket>&quot;norchester&quot;</bucket>
+              <bucket>&quot;galenapark&quot;</bucket>
+              <bucket>&quot;independence heights&quot;</bucket>
+              <bucket>&quot;woodwind lakes&quot;</bucket>
+              <bucket>&quot;castlewood&quot;</bucket>
+              <bucket>&quot;kempwood&quot;</bucket>
+              <bucket>&quot;inwood pines&quot;</bucket>
+              <bucket>&quot;forest shadows&quot;</bucket>
+              <bucket>&quot;lake cypress estates u_r&quot;</bucket>
+              <bucket>&quot;langwood&quot;</bucket>
+              <bucket>&quot;spenwick place&quot;</bucket>
+              <bucket>&quot;braeburn glen&quot;</bucket>
+              <bucket>&quot;sagemont&quot;</bucket>
+              <bucket>&quot;parkwood estates 77032&quot;</bucket>
+              <bucket>&quot;windwood extn u_r&quot;</bucket>
+              <bucket>&quot;aldine estates&quot;</bucket>
+              <bucket>&quot;bliss meadows&quot;</bucket>
+              <bucket>&quot;coles crossing&quot;</bucket>
+              <bucket>&quot;san jacinto river estates&quot;</bucket>
+              <bucket>&quot;lynwood estates&quot;</bucket>
+              <bucket>&quot;riverwood estates&quot;</bucket>
+              <bucket>&quot;woodland trails west&quot;</bucket>
+              <bucket>&quot;crest haven estates&quot;</bucket>
+              <bucket>&quot;humble road place&quot;</bucket>
+              <bucket>%all%</bucket>
+            </dictionary>
+          </manual-sort>
           <slices>
             <column>[federated.0ze7y1n179jrf211fw0080nw6wrh].[Action (Neighborhood,Zip)]</column>
           </slices>
@@ -872,9 +1264,6 @@
           <filter class='categorical' column='[federated.0ze7y1n179jrf211fw0080nw6wrh].[Action (Zip)]'>
             <groupfilter function='level-members' level='[zip]' user:ui-action-filter='[Action5]' user:ui-enumeration='all' user:ui-marker='enumerate' />
           </filter>
-          <shelf-sorts>
-            <shelf-sort-v2 dimension-to-sort='[federated.0ze7y1n179jrf211fw0080nw6wrh].[none:neighborhood:nk]' direction='ASC' measure-to-sort-by='[federated.0ze7y1n179jrf211fw0080nw6wrh].[sum:days:qk]' shelf='rows' />
-          </shelf-sorts>
           <slices>
             <column>[federated.0ze7y1n179jrf211fw0080nw6wrh].[:Measure Names]</column>
             <column>[federated.0ze7y1n179jrf211fw0080nw6wrh].[Action (Zip)]</column>
@@ -961,10 +1350,6 @@
           <aggregation value='true' />
         </view>
         <style>
-          <style-rule element='axis'>
-            <encoding attr='space' class='0' field='[federated.0ze7y1n179jrf211fw0080nw6wrh].[Longitude (generated)]' field-type='quantitative' max='-10508713.307042126' min='-10751634.570720989' projection='EPSG:3857' range-type='fixed' scope='cols' type='space' />
-            <encoding attr='space' class='0' field='[federated.0ze7y1n179jrf211fw0080nw6wrh].[Latitude (generated)]' field-type='quantitative' max='3526791.7493818849' min='3414640.9342431584' projection='EPSG:3857' range-type='fixed' scope='rows' type='space' />
-          </style-rule>
           <style-rule element='map-layer'>
             <format attr='enabled' id='tab_base' value='true' />
             <format attr='enabled' id='um_lcover' value='true' />
@@ -1050,9 +1435,6 @@
               <groupfilter function='level-members' level='[zip]' />
             </groupfilter>
           </filter>
-          <shelf-sorts>
-            <shelf-sort-v2 dimension-to-sort='[federated.0ze7y1n179jrf211fw0080nw6wrh].[none:neighborhood:nk]' direction='ASC' measure-to-sort-by='[federated.0ze7y1n179jrf211fw0080nw6wrh].[sum:days:qk]' shelf='rows' />
-          </shelf-sorts>
           <slices>
             <column>[federated.0ze7y1n179jrf211fw0080nw6wrh].[:Measure Names]</column>
             <column>[federated.0ze7y1n179jrf211fw0080nw6wrh].[Action (Neighborhood,Zip)]</column>
@@ -1115,7 +1497,7 @@
             <column-instance column='[neighborhood]' derivation='None' name='[none:neighborhood:nk]' pivot='key' type='nominal' />
             <column-instance column='[region]' derivation='None' name='[none:region:nk]' pivot='key' type='nominal' />
             <column-instance column='[zip]' derivation='None' name='[none:zip:ok]' pivot='key' type='ordinal' />
-            <column datatype='string' name='[region]' role='dimension' type='nominal' />
+            <column caption='Region' datatype='string' name='[region]' role='dimension' type='nominal' />
             <column-instance column='[Calculation_4777685945976995840]' derivation='User' name='[usr:Calculation_4777685945976995840:qk]' pivot='key' type='quantitative' />
             <column caption='Zip' datatype='integer' default-format='*00000' name='[zip]' role='dimension' semantic-role='[ZipCode].[Name]' type='ordinal' />
           </datasource-dependencies>
@@ -1387,7 +1769,7 @@
             <run fontalignment='1' fontcolor='#074080' fontsize='20'>Harris County Home Listings by Zip Code</run>
           </formatted-text>
         </zone>
-        <zone h='51214' id='15' name='CountyList' show-title='false' w='93417' x='3083' y='45286' />
+        <zone h='54643' id='15' name='CountyList' show-title='false' w='93417' x='3083' y='45286' />
       </zones>
       <devicelayouts>
         <devicelayout name='Phone'>
@@ -1446,7 +1828,7 @@
       </datasources>
       <datasource-dependencies datasource='federated.0ze7y1n179jrf211fw0080nw6wrh'>
         <column-instance column='[region]' derivation='None' name='[none:region:nk]' pivot='key' type='nominal' />
-        <column datatype='string' name='[region]' role='dimension' type='nominal' />
+        <column caption='Region' datatype='string' name='[region]' role='dimension' type='nominal' />
       </datasource-dependencies>
       <zones>
         <zone h='2500' id='10' type='empty' w='97100' x='1200' y='3357'>
@@ -1469,8 +1851,8 @@
           </formatted-text>
         </zone>
         <zone h='37429' id='16' name='NeighborhoodMap' show-title='false' w='93417' x='3417' y='8286' />
-        <zone h='44357' id='18' name='NeighborhoodList' show-title='false' w='93583' x='3417' y='47786' />
-        <zone h='2214' id='33' mode='checkdropdown' name='NeighborhoodMap' param='[federated.0ze7y1n179jrf211fw0080nw6wrh].[none:region:nk]' show-title='false' type='filter' values='database' w='12750' x='48833' y='5357' />
+        <zone h='52214' id='18' name='NeighborhoodList' show-title='false' w='93583' x='3417' y='47786' />
+        <zone h='2214' id='33' mode='checkdropdown' name='NeighborhoodMap' param='[federated.0ze7y1n179jrf211fw0080nw6wrh].[none:region:nk]' show-title='false' type='filter' values='database' w='12750' x='48833' y='5714' />
       </zones>
       <devicelayouts>
         <devicelayout name='Phone'>
@@ -1605,7 +1987,7 @@
           <zoom type='entire-view' />
         </viewpoint>
       </viewpoints>
-      <active id='-1' />
+      <active id='3' />
       <simple-id uuid='{0C9453AA-3D58-4F8D-84A4-24D943A9F6B8}' />
     </window>
     <window class='worksheet' name='NeighborhoodMap'>
@@ -1666,7 +2048,7 @@
           <zoom type='entire-view' />
         </viewpoint>
       </viewpoints>
-      <active id='10' />
+      <active id='18' />
       <simple-id uuid='{3B5EB587-CCED-4EFD-8BF4-2D0597280A8B}' />
     </window>
     <window class='worksheet' name='AnalyticsPage'>
@@ -1718,7 +2100,7 @@
       </cards>
       <simple-id uuid='{D04BE91D-FB69-49DE-B209-4304A5A5A225}' />
     </window>
-    <window class='worksheet' name='AnalyticsDays'>
+    <window class='worksheet' maximized='true' name='AnalyticsDays'>
       <cards>
         <edge name='left'>
           <strip size='160'>
@@ -1741,7 +2123,7 @@
       </cards>
       <simple-id uuid='{605BF88A-7837-4CC1-973E-E3651ED6B245}' />
     </window>
-    <window class='dashboard' maximized='true' name='AnalyticsDash'>
+    <window class='dashboard' name='AnalyticsDash'>
       <viewpoints>
         <viewpoint name='AnalyticsContacts' />
         <viewpoint name='AnalyticsDays'>
@@ -1754,7 +2136,7 @@
           <zoom type='entire-view' />
         </viewpoint>
       </viewpoints>
-      <active id='11' />
+      <active id='-1' />
       <simple-id uuid='{E3D56704-D053-4499-AB90-FC30CE322824}' />
     </window>
   </windows>
