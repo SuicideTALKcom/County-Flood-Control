@@ -10,11 +10,14 @@ from sqlalchemy.ext.automap import automap_base
 from sqlalchemy.orm import Session
 from sqlalchemy import create_engine, func, inspect
 import pymysql
-from Lesly_scrape import main
+from Lesly_scrape import compare
 import threading
 from flask import Flask, jsonify, render_template
 import json
 import requests
+
+
+
 
 # from config import connection 
 #from flask_sqlalchemy import SQLAlchemy
@@ -54,6 +57,17 @@ app = Flask(__name__)
 #################################################
 # Flask Routes
 #################################################
+
+@app.before_first_request
+def activate_job():
+    def run_job():
+        while True:
+            print("Running task")
+            compare()
+            time.sleep(3)
+
+    thread = threading.Thread(target=run_job)
+    thread.start()
 
 @app.route("/")
 def index():
@@ -138,6 +152,7 @@ def about():
 @app.route("/api/neighborhood/<neighborhood>")
 def api(neighborhood):
     print("neighborhood route")
+
     query = session.query(home.neighborhood,home.address, home.price, home.days, home.agent,home.state,home.zip,home.office)
     
     if neighborhood == True:
@@ -153,11 +168,26 @@ def api(neighborhood):
     # pprint(json.loads(new_home))
 
     return jsonify(json.loads(new_home))
-   
+
+def start_runner():
+    def start_loop():
+        has_started = False
+        while not has_started:
+            try:
+                r = requests.get("http://localhost:5000/") # what goes here?
+                if r.status_code == 200:
+                    print("server started")
+                    has_started = True
+                print(r.status_code)
+            except: 
+                print("ex")
+            time.sleep(2)
+
+    thread = threading.Thread(target=start_loop)
+    thread.start()
+
 
 if __name__ == "__main__":
     app.debug = False
-    threading.Thread(target=app.run).start()
-    while True:
-        main()
-   
+    start_runner()
+    app.run()

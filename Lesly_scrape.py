@@ -119,17 +119,8 @@ def har_homes():
 
 def compare():
     homes_comparison(scraped_homes = har_homes())
-    # print("banana")
+    print("compare ran")
 
-def threader(job_func):
-    job_thread = threading.Thread(target=job_func)
-    job_thread.start()
-
-    schedule.every(180).seconds.do(threader, compare)
-
-def main():    
-    schedule.run_pending()
-    time.sleep(1)
 
 
 
