@@ -15,6 +15,7 @@ import threading
 from flask import Flask, jsonify, render_template
 import json
 import requests
+from config import connection
 
 
 #################################################
@@ -24,7 +25,7 @@ import requests
 if (os.environ.get("JAWSDB_URL")):
     engine = create_engine(os.environ.get("JAWSDB_URL"))
 else:
-    engine = create_engine("mysql+pymysql://xq5039a54f2ukgye:pzghos28lbhgg711@otwsl2e23jrxcqvx.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/lmib79r99ct0zdgq")
+    engine = create_engine(connection)
 
 # reflect an existing database into a new model
 Base = automap_base()
@@ -158,7 +159,7 @@ def start_runner():
         has_started = False
         while not has_started:
             try:
-                r = requests.get("http://localhost:5000/") # what goes here?
+                r = requests.get("https://county-flood-control.herokuapp.com:80/") 
                 if r.status_code == 200:
                     print("server started")
                     has_started = True
