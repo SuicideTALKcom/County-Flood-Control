@@ -15,29 +15,28 @@ import threading
 from flask import Flask, jsonify, render_template
 import json
 import requests
-from config import connection
 
 
 #################################################
 # Database Setup
 #################################################
 
-if (os.environ.get("JAWSDB_URL")):
-    engine = create_engine(os.environ.get("JAWSDB_URL"))
+if os.environ.get("JAWSDB_URL"):
+    connection = os.environ.get["JAWSDB_URL"]
 else:
-    engine = create_engine(connection)
+    from config import connection
 
 # reflect an existing database into a new model
 Base = automap_base()
 # reflect the tables
-Base.prepare(engine, reflect=True)
-insp = inspect(engine)
+Base.prepare(connection, reflect=True)
+insp = inspect(connection)
 print(insp.get_table_names())
 # Save reference to the table
 home = Base.classes.homes
 
 # Create our session (link) from Python to the DB
-session = Session(engine)
+session = Session(connection)
 
 
 
