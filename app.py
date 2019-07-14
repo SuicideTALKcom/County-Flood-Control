@@ -17,14 +17,6 @@ import json
 import requests
 
 
-
-
-# from config import connection 
-#from flask_sqlalchemy import SQLAlchemy
-
-
-
-
 #################################################
 # Database Setup
 #################################################
@@ -145,8 +137,6 @@ def about():
 
 #API routes below here 
 
-#need an api route for search
-#single neighborhood
 
 @app.route('/api/neighborhood', defaults={'neighborhood':True})
 @app.route("/api/neighborhood/<neighborhood>")
@@ -161,12 +151,6 @@ def api(neighborhood):
         results = query.filter_by(Address = neighborhood)
 
     new_home = pd.DataFrame(results).to_json(orient = 'records')
-    
-    # from pprint import pprint
-
-
-    # pprint(json.loads(new_home))
-
     return jsonify(json.loads(new_home))
 
 def start_runner():
@@ -181,7 +165,6 @@ def start_runner():
                 print(r.status_code)
             except: 
                 print("ex")
-            # time.sleep(180)
             time.sleep(21600)
     thread = threading.Thread(target=start_loop)
     thread.start()
