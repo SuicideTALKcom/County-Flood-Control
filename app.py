@@ -158,7 +158,7 @@ def start_runner():
         has_started = False
         while not has_started:
             try:
-                r = requests.get("https://county-flood-control.herokuapp.com:80/") 
+                r = requests.get("https://county-flood-control.herokuapp.com:33507/") 
                 if r.status_code == 200:
                     print("server started")
                     has_started = True
