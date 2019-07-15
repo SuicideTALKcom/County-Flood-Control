@@ -6,12 +6,18 @@ import numpy as np
 import time
 from datetime import datetime
 import json
-from config import connection
+# from config import connection
 
 def homes_comparison(scraped_homes):
     #create a connection to the sql database 
-    engine = create_engine(connection, echo=False)
-    conn = engine.connect()
+    if os.environ.get("JAWSDB_URL"):
+        connection = os.environ.get["JAWSDB_URL"]
+    else:
+        from config import connection
+
+
+#     engine = create_engine(connection, echo=False)
+#     conn = engine.connect()
     #put the results of the function into a dataframe
     homesdf = pd.DataFrame(scraped_homes)
 
