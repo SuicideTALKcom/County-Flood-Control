@@ -36,7 +36,7 @@ def homes_comparison(scraped_homes):
             format_string = "','"
             string = f"INSERT INTO lmib79r99ct0zdgq.homes ({','.join(homesdf.columns)}) VALUES (\'{format_string.join(house.values)}\')"
             print(string)
-            pd.read_sql(string,engine)
+            engine.execute(string,engine)
 
     conn.close()
 
