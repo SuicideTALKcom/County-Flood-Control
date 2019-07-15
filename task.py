@@ -21,6 +21,7 @@ def homes_comparison(scraped_homes):
     conn = engine.connect()
     #put the results of the function into a dataframe
     homesdf = pd.DataFrame(scraped_homes)
+    homesdf['datetime'] = datetime.now()
 
     #loop thorugh each new df scrape and compare it against the sql database
     # execute_conn = conn.execute(
