@@ -1895,6 +1895,11 @@
             <card type='rows' />
           </strip>
         </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card param='[federated.0y1g3v31sxu9dk13a7ore1611n8b].[:Measure Names]' show-morefewerbutton='false' type='filter' />
+          </strip>
+        </edge>
       </cards>
       <viewpoint>
         <zoom type='entire-view' />
@@ -1961,7 +1966,7 @@
     </window>
     <window class='dashboard' name='ARIMA'>
       <viewpoints />
-      <active id='-1' />
+      <active id='20' />
       <simple-id uuid='{EEEF8CD2-555F-423B-84BE-20A3F24BFE65}' />
     </window>
     <window class='dashboard' name='Prophet'>
