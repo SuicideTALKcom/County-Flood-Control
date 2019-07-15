@@ -6,6 +6,7 @@ import numpy as np
 import time
 from datetime import datetime
 import json
+import os
 # from config import connection
 
 def homes_comparison(scraped_homes):
