@@ -22,7 +22,7 @@ import requests
 #################################################
 
 if os.environ.get("JAWSDB_URL"):
-    connection = os.environ.get["JAWSDB_URL"]
+    connection = os.environ["JAWSDB_URL"]
 else:
     from config import connection
 
