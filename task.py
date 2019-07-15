@@ -11,7 +11,7 @@ import json
 def homes_comparison(scraped_homes):
     #create a connection to the sql database 
     if os.environ.get("JAWSDB_URL"):
-        connection = os.environ.get["JAWSDB_URL"]
+        connection = os.environ["JAWSDB_URL"]
     else:
         from config import connection
 

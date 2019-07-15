@@ -25,18 +25,18 @@ if os.environ.get("JAWSDB_URL"):
     connection = os.environ["JAWSDB_URL"]
 else:
     from config import connection
-
+engine = create_engine(connection)
 # reflect an existing database into a new model
 Base = automap_base()
 # reflect the tables
-Base.prepare(connection, reflect=True)
-insp = inspect(connection)
+Base.prepare(engine, reflect=True)
+insp = inspect(engine)
 print(insp.get_table_names())
 # Save reference to the table
 home = Base.classes.homes
 
 # Create our session (link) from Python to the DB
-session = Session(connection)
+session = Session(engine)
 
 
 
