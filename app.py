@@ -56,7 +56,7 @@ def activate_job():
         while True:
             print("Running task")
             compare()
-            time.sleep(3)
+            time.sleep(21600)
 
     thread = threading.Thread(target=run_job)
     thread.start()
