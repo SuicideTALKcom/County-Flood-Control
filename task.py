@@ -16,8 +16,8 @@ def homes_comparison(scraped_homes):
         from config import connection
 
 
-#     engine = create_engine(connection, echo=False)
-#     conn = engine.connect()
+    engine = create_engine(connection, echo=False)
+    conn = engine.connect()
     #put the results of the function into a dataframe
     homesdf = pd.DataFrame(scraped_homes)
 
